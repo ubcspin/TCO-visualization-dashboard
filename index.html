@@ -20,19 +20,19 @@
         </div>
 
         <div class="row">
-            <div id="bar-chart-container" class="container" style="flex: 2">
+            <div id="bar-chart-container" class="container" style="flex: 10">
                 <select class="selector dimension" name="bar-chart-dimension-selector" id="bar-chart-dimension-selector"></select>
                 <a class="vis-lock"><img src="media/lock-image.png"></img></a>
                 <svg class="chart" id="bar-chart"></svg>
             </div>
 
-            <div id="scatter-plot-container" class="container" style="flex: 3">
+            <div id="scatter-plot-container" class="container" style="flex: 15">
                 <a class="vis-lock"><img src="media/lock-image.png"></img></a>
                 <select class="selector dimension" name="scatter-plot-dimension-selector" id="scatter-plot-dimension-selector"></select>
                 <svg class="chart" id="scatter-plot"></svg>
             </div>
 
-            <div id="radar-plot-container" class="container" style="flex: 2">
+            <div id="radar-plot-container" class="container" style="flex: 12">
                 <select class="selector" name="radar-plot-preset-selector" id="radar-plot-preset-selector"></select>
                 <div class="selector" id="radar-plot-vertex-count-selector">
                     <p style="flex: 3">vertices</p>
@@ -51,7 +51,7 @@
         </div>
 
         <div class="row">
-            <div id="jitter-plot-container" class="container" style="flex: 2">
+            <div id="jitter-plot-container" class="container" style="flex: 10">
                 <select class="selector" name="jitter-plot-preset-selector" id="jitter-plot-preset-selector"></select>
                 <a class="vis-lock"><img src="media/lock-image.png"></img></a>
                 <select class="selector" name="jitter-plot-dimension-x-selector" id="jitter-plot-dimension-x-selector"></select>
@@ -59,7 +59,7 @@
                 <svg class="chart" id="jitter-plot"></svg>
             </div>
 
-            <div id="sankey-diagram-container" class="container" style="flex: 3">
+            <div id="sankey-diagram-container" class="container" style="flex: 15">
                 <select class="selector" name="sankey-diagram-preset-selector" id="sankey-diagram-preset-selector"></select>
                 <div class="selector" id="sankey-diagram-vertex-count-selector">
                     <p style="flex: 3">layers</p>
@@ -72,7 +72,7 @@
                 <div id="sankey-diagram-dimension-selectors"></div>
             </div>
 
-            <div id="word-cloud-container" class="container" style="flex: 2">
+            <div id="word-cloud-container" class="container" style="flex: 12">
                 <select class="selector dimension" name="word-cloud-dimension-selector" id="word-cloud-dimension-selector"></select>
                 <a class="vis-lock"><img src="media/lock-image.png"></img></a>
                 <svg class="chart" id="word-cloud"></svg>
@@ -81,6 +81,7 @@
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="js/d3.layout.cloud.js"></script>
     <script src="js/chart.js"></script>
     <script src="js/barChart.js"></script>
     <script src="js/scatterPlot.js"></script>
