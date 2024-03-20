@@ -1,0 +1,115 @@
+[
+    {
+        "block": "Meta Data",
+        "dimensions": [
+            "Recruitment Channel",
+            "Recruitment Category",
+            "Photo Uploaded",
+            "Like to be Contacted"
+        ]
+    },
+    {
+        "block": "Demographics: General",
+        "dimensions": [
+            "Gender",
+            "Cultural Background",
+            "Age",
+            "Education",
+            "Lived Experiences"
+        ]
+    },
+    {
+        "block": "Demographics: Personality",
+        "dimensions": [
+            "Reserved Self-Perception",
+            "Generally Trusting",
+            "Tends to be Lazy",
+            "Relaxed, Handles Stress Well",
+            "Has Few Artistic Interests",
+            "Outgoing, Sociable",
+            "Tends to Find Fault",
+            "Does a Thorough Job",
+            "Gets Nervous Easily",
+            "Has an Active Imagination"
+        ]
+    },
+    {
+        "block": "Demographics: Preferences",
+        "dimensions": [
+            "Tendency to Fidget",
+            "Emotional Attachment to Objects",
+            "Values Design and Aesthetics",
+            "Non-Functional Personal Objects"
+        ]
+    },
+    {
+        "block": "Object Identification: Broad and Specific",
+        "dimensions": [
+            "Cultural Significance",
+            "Object Category"
+        ]
+    },
+    {
+        "block": "Object Characteristics: General",
+        "dimensions": [
+            "Technology",
+            "Ability to Move",
+            "Device Type",
+            "Appearance",
+            "Targeted Body Part",
+            "Portability",
+            "Collective vs Individual Use"
+        ]
+    },
+    {
+        "block": "Object Characteristics: Tactile",
+        "dimensions": [
+            "Texture",
+            "Size",
+            "Shape",
+            "Conformability and Compliance",
+            "Softness Rating",
+            "Subjective Temperature",
+            "Other Sensory Channel Used"
+        ]
+    },
+    {
+        "block": "Object Use: Importance",
+        "dimensions": [
+            "Functional Value Importance",
+            "Emotional Significance Importance",
+            "Physical Soothing Importance"
+        ]
+    },
+    {
+        "block": "Object Use",
+        "dimensions": [
+            "Usage Context",
+            "Usage Setting",
+            "Non-Usage Settings",
+            "Physical Interaction",
+            "Interaction Type",
+            "Usage Frequency",
+            "Interaction Duration",
+            "Usage Start"
+        ]
+    },
+    {
+        "block": "Object Context",
+        "dimensions": [
+            "Object Acquisition",
+            "Object Attachment",
+            "Object Meaningfulness",
+            "Object Customization",
+            "Cultural Influence on Object Significance"
+        ]
+    },
+    {
+        "block": "Technology Design Preferences",
+        "dimensions": [
+            "Emotion-aware Interactions",
+            "Social-Emotional Agency",
+            "Communication Facilitation"
+        ]
+    }
+]

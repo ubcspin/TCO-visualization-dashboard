@@ -44,7 +44,7 @@ html, body {
     justify-content: center;
     align-items: center;
     height: 45%;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .container {
@@ -67,22 +67,25 @@ html, body {
     width: 100%;
 }
 
-select.selector {
+.selector {
     background-color: #bc6c23;
     margin-top: 10px;
+    margin-left: 10px;
     padding: 10px;
     border: 0;
     border-radius: 10px;
     width: 200px;
     height: 40px;
+    position: absolute;
+}
+
+select.selector {
+    width: 200px;
+    height: 40px;
+    color: #fefadf;
 }
 
 div.selector {
-    background-color: #bc6c23;
-    margin-top: 10px;
-    padding: 10px;
-    border: 0;
-    border-radius: 10px;
     width: 180px;
     height: 20px;
     position: relative;
@@ -99,5 +102,43 @@ div.selector a {
     cursor: pointer;
 }
 
+.chart {
+    position: absolute;
+    color: black;
+}
+
 /* Bar Chart */
 
+#bar-chart-dimension-selector {
+    top: 0;
+    left: 0;
+}
+
+#bar-chart {
+    top: 60px;
+    left: 10px;
+}
+
+/* Scatter Plot - Softness */
+
+#scatter-plot-dimension-selector {
+    top: 0;
+    left: 0;
+}
+
+#scatter-plot {
+    top: 60px;
+    left: 10px;
+}
+
+/* Scatter Plot - General */
+
+#jitter-plot-dimension-selector {
+    top: 0;
+    left: 0;
+}
+
+#jitter-plot {
+    top: 60px;
+    left: 10px;
+}

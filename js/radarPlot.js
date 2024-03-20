@@ -1,4 +1,4 @@
-class RadarPlot {
+class RadarPlot extends Chart {
 
   /**
    * Class constructor with initial configuration
@@ -8,16 +8,16 @@ class RadarPlot {
   constructor(_config, data) {
     this.config = {
       parentElement: _config.parentElement,
-      containerWidth: 1000,
-      containerHeight: 380,
+      containerWidth: _config.width,
+      containerHeight: _config.height,
       margin: {
-        top: 15,
-        right: 15,
+        top: 30,
+        right: 5,
         bottom: 20,
-        left: 25
+        left: 30
       }
-      // Todo: Add or remove attributes from config as needed
     }
+    this.data = data;
     this.initVis();
   }
 
@@ -38,104 +38,16 @@ class RadarPlot {
     vis.chartArea = vis.svg.append('g')
       .attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top})`);
 
-    // Apply clipping mask to 'vis.chart' to clip arrows
-    vis.chart = vis.chartArea.append('g')
-      .attr('clip-path', 'url(#chart-mask)');
-
-    // Initialize clipping mask that covers the whole chart
-    vis.chart.append('defs')
-      .append('clipPath')
-      .attr('id', 'chart-mask')
-      .append('rect')
-      .attr('width', vis.config.width + 5)
-      .attr('y', -vis.config.margin.top)
-      .attr('height', vis.config.containerHeight);
-
-    // Helper function to create the arrows and styles for our various arrow heads
-    vis.createMarkerEnds();
-
     // Todo: initialize scales, axes, static elements, etc.
   }
 
-
   updateVis() {
     let vis = this;
-    // Todo: prepare data
+    // Todo: Prepare data and scales
   }
-
 
   renderVis() {
     let vis = this;
-    // Todo: Bind data to visual elements (enter-update-exit or join)
-  }
-
-  /**
-   * Create all of the different arrow heads.
-   * Styles: default, hover, highlight, highlight-selected
-   * To switch between these styles you can switch between the CSS class.
-   * We populated an example css class with how to use the marker-end attribute.
-   * See link for more info.
-   * https://observablehq.com/@stvkas/interacting-with-marker-ends
-   */
-  createMarkerEnds() {
-    // Default arrow head
-    // id: arrow-head
-    vis.chart.append('defs').append('marker')
-      .attr('id', 'arrow-head')
-      .attr('markerUnits', 'strokeWidth')
-      .attr('refX', '2')
-      .attr('refY', '2')
-      .attr('markerWidth', '10')
-      .attr('markerHeight', '10')
-      .attr('orient', 'auto')
-      .append('path')
-      .attr('d', 'M0,0 L2,2 L 0,4')
-      .attr('stroke', '#ddd')
-      .attr('fill', 'none');
-
-    // Hovered arrow head
-    // id: arrow-head-hovered
-    vis.chart.append('defs').append('marker')
-      .attr('id', 'arrow-head-hovered')
-      .attr('markerUnits', 'strokeWidth')
-      .attr('refX', '2')
-      .attr('refY', '2')
-      .attr('markerWidth', '10')
-      .attr('markerHeight', '10')
-      .attr('orient', 'auto')
-      .append('path')
-      .attr('d', 'M0,0 L2,2 L 0,4')
-      .attr('stroke', '#888')
-      .attr('fill', 'none');
-
-    // Highlight arrow head
-    // id: arrow-head-highlighted
-    vis.chart.append('defs').append('marker')
-      .attr('id', 'arrow-head-highlighted')
-      .attr('markerUnits', 'strokeWidth')
-      .attr('refX', '2')
-      .attr('refY', '2')
-      .attr('markerWidth', '10')
-      .attr('markerHeight', '10')
-      .attr('orient', 'auto')
-      .append('path')
-      .attr('d', 'M0,0 L2,2 L 0,4')
-      .attr('stroke', '#aeaeca')
-      .attr('fill', 'none');
-
-    // Highlighted-selected arrow head
-    // id: arrow-head-highlighted-selected
-    vis.chart.append('defs').append('marker')
-      .attr('id', 'arrow-head-highlighted-selected')
-      .attr('markerUnits', 'strokeWidth')
-      .attr('refX', '2')
-      .attr('refY', '2')
-      .attr('markerWidth', '10')
-      .attr('markerHeight', '10')
-      .attr('orient', 'auto')
-      .append('path')
-      .attr('d', 'M0,0 L2,2 L 0,4')
-      .attr('stroke', '#e89f03')
-      .attr('fill', 'none');
+    // Todo: Bind data to visual elements, update axes
   }
 }

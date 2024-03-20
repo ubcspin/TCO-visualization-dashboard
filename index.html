@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>TCO Repo</title>
-    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
     <link rel="stylesheet" href="css/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,15 +21,15 @@
 
         <div class="row">
             <div id="bar-chart-container" class="container" style="flex: 2">
-                <select class="selector" name="bar-chart-dimension-selector" id="bar-chart-dimension-selector"></select>
+                <select class="selector dimension" name="bar-chart-dimension-selector" id="bar-chart-dimension-selector"></select>
                 <a class="vis-lock"><img src="media/lock-image.png"></img></a>
-                <svg id="bar-chart"></svg>
+                <svg class="chart" id="bar-chart"></svg>
             </div>
 
             <div id="scatter-plot-container" class="container" style="flex: 3">
                 <a class="vis-lock"><img src="media/lock-image.png"></img></a>
-                <select class="selector" name="scatter-plot-dimension-selector" id="scatter-plot-dimension-selector"></select>
-                <svg id="scatter-plot"></svg>
+                <select class="selector dimension" name="scatter-plot-dimension-selector" id="scatter-plot-dimension-selector"></select>
+                <svg class="chart" id="scatter-plot"></svg>
             </div>
 
             <div id="radar-plot-container" class="container" style="flex: 2">
@@ -47,7 +46,7 @@
                     <select class="selector" name="radar-plot-layer-1-selector" id="radar-plot-layer-1-selector"></select>
                     <select class="selector" name="radar-plot-layer-2-selector" id="radar-plot-layer-2-selector"></select>
                 </div>
-                <svg id="radar-plot"></svg>
+                <svg class="chart" id="radar-plot"></svg>
             </div>
         </div>
 
@@ -57,7 +56,7 @@
                 <a class="vis-lock"><img src="media/lock-image.png"></img></a>
                 <select class="selector" name="jitter-plot-dimension-x-selector" id="jitter-plot-dimension-x-selector"></select>
                 <select class="selector" name="jitter-plot-dimension-y-selector" id="jitter-plot-dimension-y-selector"></select>
-                <svg id="jitter-plot"></svg>
+                <svg class="chart" id="jitter-plot"></svg>
             </div>
 
             <div id="sankey-diagram-container" class="container" style="flex: 3">
@@ -69,24 +68,24 @@
                     <a id="sankey-diagram-layer-plus" style="flex: 1">+</a>
                 </div>
                 <a class="vis-lock"><img src="media/lock-image.png"></img></a>
-                <svg id="sankey-diagram"></svg>
+                <svg class="chart" id="sankey-diagram"></svg>
                 <div id="sankey-diagram-dimension-selectors"></div>
             </div>
 
             <div id="word-cloud-container" class="container" style="flex: 2">
-                <select class="selector" name="word-cloud-dimension-selector" id="word-cloud-dimension-selector"></select>
+                <select class="selector dimension" name="word-cloud-dimension-selector" id="word-cloud-dimension-selector"></select>
                 <a class="vis-lock"><img src="media/lock-image.png"></img></a>
-                <svg id="word-cloud"></svg>
+                <svg class="chart" id="word-cloud"></svg>
             </div>
         </div>
     </div>
     
-    <script src="https://cdn.jsdelivr.net/npm/d3@7/+esm"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="js/chart.js"></script>
     <script src="js/barChart.js"></script>
-    <script src="js/jitterPlot.js"></script>
+    <script src="js/scatterPlot.js"></script>
     <script src="js/radarPlot.js"></script>
     <script src="js/sankeyDiagram.js"></script>
-    <script src="js/scatterPlot.js"></script>
     <script src="js/wordCloud.js"></script>
     <script src="js/main.js"></script>
 </body>
