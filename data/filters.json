@@ -1,0 +1,38 @@
+[
+    {
+        "block": "Gender",
+        "options": [
+            "Male",
+            "Female",
+            "Non-binary",
+            "Prefer not to disclose",
+            "Prefer to self-describe"
+        ]
+    },
+    {
+        "block": "Cultural Background",
+        "options": [
+            "Black/African Canadian",
+            "East Asian",
+            "Hispanic/Latinx",
+            "First Nations or Indigenous (please specify)",
+            "Pacific Islander",
+            "South Asian",
+            "European/White",
+            "Middle Eastern",
+            "Prefer not to disclose",
+            "Prefer to self-describe"
+        ]
+    },
+    {
+        "block": "Age",
+        "options": [
+            "18-24",
+            "25-35",
+            "36-45",
+            "45-65",
+            "Over 65",
+            "Prefer not to disclose"
+        ]
+    }
+]

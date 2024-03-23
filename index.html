@@ -12,69 +12,123 @@
     <div id="dashboard">
         <div id="header">
             <h1>Touchable Comfort Object (TCO) Repository</h1>
-            <select name="global-filter" id="global-filter" class="header-selector">
-                <option selected disabled>Filter</option>
-            </select>
+
+            <ul class="main-navigation header-selector" id="global-filter">
+                <li>
+                    <a href="#" class="dropdown-label">Filter</a>
+                </li>
+            </ul>
+
             <button type="button" id="photo-gallery-button" class="header-selector">Photo Gallery</a>
             <button type="button" id="schema-link" href="" class="header-selector">Schema</a>
         </div>
 
         <div class="row">
-            <div id="bar-chart-container" class="container" style="flex: 10">
-                <select class="selector dimension" name="bar-chart-dimension-selector" id="bar-chart-dimension-selector"></select>
+            <div id="bar-chart-container" class="chart-container" style="flex: 10">
+                <ul class="selector dimension" id="bar-chart-dimension-selector">
+                    <li>
+                        <a href="#" class="dropdown-label"></a>
+                    </li>
+                </ul>
+
                 <a class="vis-lock"><img src="media/lock-image.png"></img></a>
+
                 <svg class="chart" id="bar-chart"></svg>
             </div>
 
-            <div id="scatter-plot-container" class="container" style="flex: 15">
+            <div id="scatter-plot-container" class="chart-container" style="flex: 15">
                 <a class="vis-lock"><img src="media/lock-image.png"></img></a>
-                <select class="selector dimension" name="scatter-plot-dimension-selector" id="scatter-plot-dimension-selector"></select>
+                
+                <ul class="selector dimension" id="scatter-plot-dimension-selector">
+                    <li>
+                        <a href="#" class="dropdown-label"></a>
+                    </li>
+                </ul>
+
                 <svg class="chart" id="scatter-plot"></svg>
             </div>
 
-            <div id="radar-plot-container" class="container" style="flex: 12">
+            <div id="radar-plot-container" class="chart-container" style="flex: 12">
                 <select class="selector" name="radar-plot-preset-selector" id="radar-plot-preset-selector"></select>
+
                 <div class="selector" id="radar-plot-vertex-count-selector">
                     <p style="flex: 3">vertices</p>
                     <a id="radar-plot-layer-minus" style="flex: 1">-</a>
                     <p style="flex: 1" id="radar-plot-vertex-count">5</p>
                     <a id="radar-plot-layer-plus" style="flex: 1">+</a>
                 </div>
+
                 <a class="vis-lock"><img src="media/lock-image.png"></img></a>
+
                 <div id="radar-plot-dimension-selectors"></div>
+
                 <div id="radar-plot-layer-selectors">
                     <select class="selector" name="radar-plot-layer-1-selector" id="radar-plot-layer-1-selector"></select>
-                    <select class="selector" name="radar-plot-layer-2-selector" id="radar-plot-layer-2-selector"></select>
+                
+                    <ul class="selector dimension" id="radar-plot-layer-2-selector">
+                        <li>
+                            <a href="#" class="dropdown-label"></a>
+                        </li>
+                    </ul>
                 </div>
+
                 <svg class="chart" id="radar-plot"></svg>
             </div>
         </div>
 
         <div class="row">
-            <div id="jitter-plot-container" class="container" style="flex: 10">
-                <select class="selector" name="jitter-plot-preset-selector" id="jitter-plot-preset-selector"></select>
+            <div id="jitter-plot-container" class="chart-container" style="flex: 10">                
+                <ul class="selector dimension" id="jitter-plot-preset-selector">
+                    <li>
+                        <a href="#" class="dropdown-label"></a>
+                    </li>
+                </ul>
+                
                 <a class="vis-lock"><img src="media/lock-image.png"></img></a>
-                <select class="selector" name="jitter-plot-dimension-x-selector" id="jitter-plot-dimension-x-selector"></select>
-                <select class="selector" name="jitter-plot-dimension-y-selector" id="jitter-plot-dimension-y-selector"></select>
+                
+                <ul class="selector dimension" id="jitter-plot-dimension-x-selector">
+                    <li>
+                        <a href="#" class="dropdown-label"></a>
+                    </li>
+                </ul>
+                
+                <ul class="selector dimension" id="jitter-plot-dimension-y-selector">
+                    <li>
+                        <a href="#" class="dropdown-label"></a>
+                    </li>
+                </ul>
+
                 <svg class="chart" id="jitter-plot"></svg>
             </div>
 
-            <div id="sankey-diagram-container" class="container" style="flex: 15">
+            <div id="sankey-diagram-container" class="chart-container" style="flex: 15">
                 <select class="selector" name="sankey-diagram-preset-selector" id="sankey-diagram-preset-selector"></select>
+
                 <div class="selector" id="sankey-diagram-vertex-count-selector">
                     <p style="flex: 3">layers</p>
                     <a id="sankey-diagram-layer-minus" style="flex: 1">-</a>
                     <p style="flex: 1" id="sankey-diagram-layer-count">4</p>
                     <a id="sankey-diagram-layer-plus" style="flex: 1">+</a>
                 </div>
+
                 <a class="vis-lock"><img src="media/lock-image.png"></img></a>
+
                 <svg class="chart" id="sankey-diagram"></svg>
-                <div id="sankey-diagram-dimension-selectors"></div>
+
+                <div id="sankey-diagram-dimension-selectors">
+                    
+                </div>
             </div>
 
-            <div id="word-cloud-container" class="container" style="flex: 12">
-                <select class="selector dimension" name="word-cloud-dimension-selector" id="word-cloud-dimension-selector"></select>
+            <div id="word-cloud-container" class="chart-container" style="flex: 12">                
+                <ul class="selector dimension" id="word-cloud-dimension-selector">
+                    <li>
+                        <a href="#" class="dropdown-label"></a>
+                    </li>
+                </ul>
+
                 <a class="vis-lock"><img src="media/lock-image.png"></img></a>
+
                 <svg class="chart" id="word-cloud"></svg>
             </div>
         </div>

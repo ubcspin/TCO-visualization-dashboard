@@ -47,7 +47,7 @@ html, body {
     margin-top: 20px;
 }
 
-.container {
+.chart-container {
     margin: 10px;
     height: 100%;
     background-color: #f8ecde;
@@ -77,6 +77,7 @@ html, body {
     width: 200px;
     height: 40px;
     position: absolute;
+    z-index: 1;
 }
 
 select.selector {
@@ -92,10 +93,16 @@ div.selector {
     display: flex;
 }
 
-div.selector p,a {
+ul.selector {
+    width: 180px;
+    height: 20px;
+    position: relative;
+    display: flex;
+}
+
+div.selector p, a {
     padding: 0;
     margin: 0;
-    text-align: center;
 }
 
 div.selector a {
@@ -104,6 +111,8 @@ div.selector a {
 
 .chart {
     position: absolute;
+    top: 0;
+    left: 0;
     color: black;
 }
 
@@ -114,11 +123,6 @@ div.selector a {
     left: 0;
 }
 
-#bar-chart {
-    top: 60px;
-    left: 10px;
-}
-
 /* Scatter Plot - Softness */
 
 #scatter-plot-dimension-selector {
@@ -126,31 +130,23 @@ div.selector a {
     left: 0;
 }
 
-#scatter-plot {
-    top: 60px;
-    left: 10px;
-}
+
 
 /* Scatter Plot - General */
 
 #jitter-plot-dimension-x-selector {
-    top: 60px;
+    top: 0px;
     left: 220px;
 }
 
 #jitter-plot-dimension-y-selector {
-    top: 60px;
+    top: -56px;
     left: 0;
 }
 
 #jitter-plot-preset-selector {
     top: 0;
     left: 0;
-}
-
-#jitter-plot {
-    top: 120px;
-    left: 10px;
 }
 
 /* Word Cloud */
@@ -160,7 +156,109 @@ div.selector a {
     left: 0;
 }
 
-#word-cloud {
-    top: 60px;
-    left: 10px;
+/* Dropdowns */
+
+.main-navigation {
+    z-index: 2
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    width: 100%;
+}
+
+ul li {
+    display: block;
+    position: relative;
+    float: left;
+}
+
+.main-navigation ul li {
+    background: #5f6c37;
+}
+
+.selector ul li {
+    background: #bc6c23;
+}
+
+
+li ul { 
+    display: none; 
+}
+
+ul li a {
+    display: block;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #fefadf;
+    font-family: "Open Sans", sans-serif;
+}
+
+ul ul li a {
+    padding: 6px;
+}
+
+.selector ul ul li {
+    padding: 6px;
+}
+
+li:hover > ul {
+    display: block;
+    position: absolute;
+}
+
+li:hover li { 
+    float: none; 
+}
+
+.main-navigation ul li a:hover { 
+    background: #556131; 
+}
+
+.main-navigation ul ul ul li a:hover { 
+    background: #5f6c37; 
+}
+
+.selector ul li:hover { 
+    background: #ad6420; 
+}
+
+.main-navigation li ul li { 
+    border-top: 0;
+}
+
+ul ul {
+    top: 100%;
+    left: 0%;
+    right: 0%;
+    width: 180%;
+    padding: 0;
+    text-align: left;
+}
+
+ul ul ul {
+    left: 100%;
+    top: 0;
+    width: 100%;
+    text-align: left;
+}
+
+ul ul ul li {
+    overflow: hidden;
+}
+
+ul ul ul li a {
+    float: left;
+}
+
+ul:before, ul:after {
+    content: " ";
+    display: table;
+}
+
+ul:after { 
+    clear: both; 
 }

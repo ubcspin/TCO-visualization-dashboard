@@ -2,114 +2,656 @@
     {
         "block": "Meta Data",
         "dimensions": [
-            "Recruitment Channel",
-            "Recruitment Category",
-            "Photo Uploaded",
-            "Like to be Contacted"
+            {
+                "name": "Recruitment Channel",
+                "type": "Single ",
+                "#word-cloud": true,
+                "#bar-chart": false,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Recruitment Category",
+                "type": "Single ",
+                "#word-cloud": true,
+                "#bar-chart": false,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Photo Uploaded",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Like to be Contacted",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            }
         ]
     },
     {
         "block": "Demographics: General",
         "dimensions": [
-            "Gender",
-            "Cultural Background",
-            "Age",
-            "Education",
-            "Lived Experiences"
+            {
+                "name": "Gender",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Cultural Background",
+                "type": "Multi",
+                "#word-cloud": true,
+                "#bar-chart": false,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Age",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Education",
+                "type": "Single ",
+                "#word-cloud": true,
+                "#bar-chart": false,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "[DER] Education",
+                "type": "Single ",
+                "#word-cloud": true,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Lived Experiences",
+                "type": "Multi",
+                "#word-cloud": true,
+                "#bar-chart": false,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            }
         ]
     },
     {
-        "block": "Demographics: Personality",
+        "block": "Demographics: Personality Specific",
         "dimensions": [
-            "Reserved Self-Perception",
-            "Generally Trusting",
-            "Tends to be Lazy",
-            "Relaxed, Handles Stress Well",
-            "Has Few Artistic Interests",
-            "Outgoing, Sociable",
-            "Tends to Find Fault",
-            "Does a Thorough Job",
-            "Gets Nervous Easily",
-            "Has an Active Imagination"
+            {
+                "name": "Reserved Self-Perception",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Generally Trusting",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Tends to be Lazy",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Relaxed, Handles Stress Well",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Has Few Artistic Interests",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Outgoing, Sociable",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Tends to Find Fault",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Does a Thorough Job",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Gets Nervous Easily",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Has an Active Imagination",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Tendency to Fidget",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            }
         ]
     },
     {
         "block": "Demographics: Preferences",
         "dimensions": [
-            "Tendency to Fidget",
-            "Emotional Attachment to Objects",
-            "Values Design and Aesthetics",
-            "Non-Functional Personal Objects"
+            {
+                "name": "Emotional Attachment to Objects",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Values Design and Aesthetics",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Non-Functional Personal Objects",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            }
         ]
     },
     {
-        "block": "Object Identification: Broad and Specific",
+        "block": "Object Identification",
         "dimensions": [
-            "Cultural Significance",
-            "Object Category"
+            {
+                "name": "Cultural Significance",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "[DER] Object Category",
+                "type": "Single ",
+                "#word-cloud": true,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            }
         ]
     },
     {
         "block": "Object Characteristics: General",
         "dimensions": [
-            "Technology",
-            "Ability to Move",
-            "Device Type",
-            "Appearance",
-            "Targeted Body Part",
-            "Portability",
-            "Collective vs Individual Use"
+            {
+                "name": "Involves Technology",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Ability to Move",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Device Type",
+                "type": "Single ",
+                "#word-cloud": true,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Appearance",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Targeted Body Part",
+                "type": "Multi",
+                "#word-cloud": true,
+                "#bar-chart": false,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Targeted Body Part",
+                "type": "Multi",
+                "#word-cloud": true,
+                "#bar-chart": false,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Portability",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Collective vs Individual Use",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            }
         ]
     },
     {
         "block": "Object Characteristics: Tactile",
         "dimensions": [
-            "Texture",
-            "Size",
-            "Shape",
-            "Conformability and Compliance",
-            "Softness Rating",
-            "Subjective Temperature",
-            "Other Sensory Channel Used"
+            {
+                "name": "Texture",
+                "type": "Multi",
+                "#word-cloud": true,
+                "#bar-chart": false,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Size",
+                "type": "Single ",
+                "#word-cloud": true,
+                "#bar-chart": false,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Shape",
+                "type": "Multi",
+                "#word-cloud": true,
+                "#bar-chart": false,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Conformability and Compliance",
+                "type": "Multi",
+                "#word-cloud": true,
+                "#bar-chart": false,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Softness Rating",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Subjective Temperature",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Other Sensory Channel Used",
+                "type": "Multi",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            }
         ]
     },
     {
         "block": "Object Use: Importance",
         "dimensions": [
-            "Functional Value Importance",
-            "Emotional Significance Importance",
-            "Physical Soothing Importance"
+            {
+                "name": "Functional Value Importance",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Emotional Significance Importance",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Physical Soothing Importance",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            }
         ]
     },
     {
-        "block": "Object Use",
+        "block": "Object Use: General",
         "dimensions": [
-            "Usage Context",
-            "Usage Setting",
-            "Non-Usage Settings",
-            "Physical Interaction",
-            "Interaction Type",
-            "Usage Frequency",
-            "Interaction Duration",
-            "Usage Start"
+            {
+                "name": "Usage Context",
+                "type": "Multi",
+                "#word-cloud": true,
+                "#bar-chart": false,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Usage Setting",
+                "type": "Multi",
+                "#word-cloud": true,
+                "#bar-chart": false,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Non-Usage Settings",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Physical Interaction",
+                "type": "Multi",
+                "#word-cloud": true,
+                "#bar-chart": false,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Interaction Type",
+                "type": "Multi",
+                "#word-cloud": true,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Usage Frequency",
+                "type": "Single ",
+                "#word-cloud": true,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Interaction Duration",
+                "type": "Single ",
+                "#word-cloud": true,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Usage Start",
+                "type": "Single ",
+                "#word-cloud": true,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            }
         ]
     },
     {
         "block": "Object Context",
         "dimensions": [
-            "Object Acquisition",
-            "Object Attachment",
-            "Object Meaningfulness",
-            "Object Customization",
-            "Cultural Influence on Object Significance"
+            {
+                "name": "Object Acquisition",
+                "type": "Single ",
+                "#word-cloud": true,
+                "#bar-chart": false,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Object Attachment",
+                "type": "Single ",
+                "#word-cloud": true,
+                "#bar-chart": false,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Object Meaningfulness",
+                "type": "Multi",
+                "#word-cloud": true,
+                "#bar-chart": false,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Object Customization",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Cultural Influence on Object Significance",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            }
         ]
     },
     {
         "block": "Technology Design Preferences",
         "dimensions": [
-            "Emotion-aware Interactions",
-            "Social-Emotional Agency",
-            "Communication Facilitation"
+            {
+                "name": "Emotion-aware Interactions",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Social-Emotional Agency",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            },
+            {
+                "name": "Communication Facilitation",
+                "type": "Single ",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": false
+            }
         ]
     }
 ]

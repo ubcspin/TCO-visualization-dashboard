@@ -5,54 +5,33 @@ class ScatterPlot extends Chart {
 	 */
 	// Todo: Add or remove parameters from the constructor as needed
 	constructor(_config, data) {
-		super()
-		this.config = {
-		parentElement: _config.parentElement,
-		containerWidth: _config.width,
-		containerHeight: _config.height,
-		margin: {
-			top: 30,
-			right: 5,
-			bottom: 50,
-			left: 150
-		}
-		}
+		super(_config, data)
 		this.xDimension = _config.xDimension;
 		this.yDimension = _config.yDimension;
 		this.colourDimension = _config.colourDimension;
-		this.data = data;
 		this.initVis();
 	}
 
 	initVis() {
 		let vis = this;
 
-		// Calculate inner chart size. Margin specifies the space around the actual chart.
-		vis.config.width = vis.config.containerWidth - vis.config.margin.left - vis.config.margin.right;
-		vis.config.height = vis.config.containerHeight - vis.config.margin.top - vis.config.margin.bottom;
-
 		// Define size of SVG drawing area
-		vis.svg = d3.select(vis.config.parentElement)
-			.attr('width', vis.config.containerWidth)
-			.attr('height', vis.config.containerHeight);
+		vis.svg = d3.select(vis.config.parentElement);
 
 		// Append group element that will contain our actual chart
 		// and position it according to the given margin config
 		vis.chartArea = vis.svg.append('g')
 			.attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top})`);
 
-		vis.xScale = d3.scaleBand()
-			.range([0, vis.config.width]);
-		vis.yScale = d3.scaleBand()
-			.range([0, vis.config.height])
+		vis.xScale = d3.scaleBand();
+		vis.yScale = d3.scaleBand();
 
 		vis.xAxis = d3.axisBottom(vis.xScale);
 		vis.yAxis = d3.axisLeft(vis.yScale);
 
 		// Append empty x-axis group and move it to the bottom of the chart
 		vis.xAxisG = vis.chartArea.append('g')
-			.attr('class', 'axis x-axis')
-			.attr('transform', `translate(0,${vis.config.height})`);
+			.attr('class', 'axis x-axis');
 
 		// Append y-axis group
 		vis.yAxisG = vis.chartArea.append('g')
@@ -66,27 +45,44 @@ class ScatterPlot extends Chart {
 			.force('collision', d3.forceCollide().radius(5))
 			.force('x', vis.xForce)
 			.force('y', vis.yForce);
-		
-		vis.simulation.nodes(vis.data);
-
-		vis.yAxisTitle = vis.chartArea.append("text")
-			.attr("transform", "rotate(-90)")
-			.attr("font-size", 16)
-			.attr("y", 0 - vis.config.margin.left + 16)
-			.attr("x", 0 - (vis.config.height / 2))
-			.style("text-anchor", "middle")
 
 		vis.xAxisTitle = vis.chartArea.append("text")
-		.attr("font-size", 16)
-			.attr("x", vis.config.width / 2 )
-			.attr("y", vis.config.height + vis.config.margin.bottom - 16)
-			.style("text-anchor", "middle")
+			.attr("font-size", 16)
+			.style("text-anchor", "middle");
+
+		vis.yAxisTitle = vis.chartArea.append("text")
+			.attr("transform", "rotate(-90) translate(0, 10)")
+			.attr("font-size", 16)
+			.style("text-anchor", "middle");
 
 		vis.updateVis();
 	}
 
 	updateVis() {
 		let vis = this;
+
+		vis.data = JSON.parse(JSON.stringify(vis.ogData));
+
+		// Calculate inner chart size. Margin specifies the space around the actual chart.
+		vis.config.width = vis.config.containerWidth - vis.config.margin.left - vis.config.margin.right;
+		vis.config.height = vis.config.containerHeight - vis.config.margin.top - vis.config.margin.bottom;
+
+		vis.svg
+			.attr('width', vis.config.containerWidth)
+			.attr('height', vis.config.containerHeight);
+
+		vis.xAxisG
+			.attr('transform', `translate(0,${vis.config.height})`);
+
+		vis.yAxisTitle
+			.attr("y", 0 - vis.config.margin.left + 16)
+			.attr("x", 0 - (vis.config.height / 2));
+
+		vis.xAxisTitle
+			.attr("x", vis.config.width / 2 )
+			.attr("y",  vis.config.height + vis.config.margin.bottom - 16)
+		
+		vis.simulation.nodes(vis.data);
 
 		// Specificy x- and y-accessor functions
 		vis.xValue = d => d[vis.xDimension];
@@ -96,8 +92,12 @@ class ScatterPlot extends Chart {
 		vis.colourData = d3.rollups(vis.data, d => d.length, d => vis.colourValue(d));
 
 		// Set the scale input domains
-		vis.xScale.domain(vis.data.map(vis.xValue).sort());
-		vis.yScale.domain(vis.data.map(vis.yValue));
+		vis.xScale
+			.domain(vis.data.map(vis.xValue).sort())
+			.range([0, vis.config.width]);
+		vis.yScale
+			.domain(vis.data.map(vis.yValue))
+			.range([0, vis.config.height]);
 
 		vis.simulation.force("x").x(d => vis.xScale(vis.xValue(d)) + vis.xScale.bandwidth() / 2);
 		vis.simulation.force("y").y(d => vis.yScale(vis.yValue(d)) + vis.yScale.bandwidth() / 2);
@@ -141,7 +141,7 @@ class ScatterPlot extends Chart {
 		});
 
 		vis.simulation.nodes(vis.data);
-		vis.simulation.alpha(1).alphaTarget(0.3).restart();
+		vis.simulation.alpha(1).alphaTarget(0.1).restart();
 
 		vis.simulation.force("x").initialize(vis.data);
 
