@@ -27,20 +27,20 @@
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Like to be Contacted",
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             }
         ]
     },
@@ -52,10 +52,10 @@
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Cultural Background",
@@ -72,10 +72,10 @@
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Education",
@@ -92,10 +92,10 @@
                 "type": "Single ",
                 "#word-cloud": true,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Lived Experiences",
@@ -117,110 +117,110 @@
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
-                "#radar-plot": false,
-                "#sankey-diagram": false
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true
             },
             {
                 "name": "Generally Trusting",
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
-                "#radar-plot": false,
-                "#sankey-diagram": false
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true
             },
             {
                 "name": "Tends to be Lazy",
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
-                "#radar-plot": false,
-                "#sankey-diagram": false
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true
             },
             {
                 "name": "Relaxed, Handles Stress Well",
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
-                "#radar-plot": false,
-                "#sankey-diagram": false
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true
             },
             {
                 "name": "Has Few Artistic Interests",
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
-                "#radar-plot": false,
-                "#sankey-diagram": false
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true
             },
             {
                 "name": "Outgoing, Sociable",
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
-                "#radar-plot": false,
-                "#sankey-diagram": false
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true
             },
             {
                 "name": "Tends to Find Fault",
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
-                "#radar-plot": false,
-                "#sankey-diagram": false
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true
             },
             {
                 "name": "Does a Thorough Job",
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
-                "#radar-plot": false,
-                "#sankey-diagram": false
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true
             },
             {
                 "name": "Gets Nervous Easily",
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
-                "#radar-plot": false,
-                "#sankey-diagram": false
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true
             },
             {
                 "name": "Has an Active Imagination",
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
-                "#radar-plot": false,
-                "#sankey-diagram": false
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true
             },
             {
                 "name": "Tendency to Fidget",
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
-                "#radar-plot": false,
-                "#sankey-diagram": false
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true
             }
         ]
     },
@@ -232,30 +232,30 @@
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
-                "#radar-plot": false,
-                "#sankey-diagram": false
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true
             },
             {
                 "name": "Values Design and Aesthetics",
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
-                "#radar-plot": false,
-                "#sankey-diagram": false
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true
             },
             {
                 "name": "Non-Functional Personal Objects",
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
-                "#radar-plot": false,
-                "#sankey-diagram": false
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true
             }
         ]
     },
@@ -267,20 +267,20 @@
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Object Category",
                 "type": "Single ",
                 "#word-cloud": true,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             }
         ]
     },
@@ -292,40 +292,40 @@
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Ability to Move",
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Device Type",
                 "type": "Single ",
                 "#word-cloud": true,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Appearance",
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Targeted Body Part",
@@ -352,20 +352,20 @@
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Collective vs Individual Use",
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             }
         ]
     },
@@ -417,30 +417,30 @@
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Subjective Temperature",
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Other Sensory Channel Used",
                 "type": "Multi",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             }
         ]
     },
@@ -452,30 +452,30 @@
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
-                "#radar-plot": false,
-                "#sankey-diagram": false
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true
             },
             {
                 "name": "Emotional Significance Importance",
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
-                "#radar-plot": false,
-                "#sankey-diagram": false
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true
             },
             {
                 "name": "Physical Soothing Importance",
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
-                "#radar-plot": false,
-                "#sankey-diagram": false
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true
             }
         ]
     },
@@ -507,10 +507,10 @@
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Physical Interaction",
@@ -527,40 +527,40 @@
                 "type": "Multi",
                 "#word-cloud": true,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Usage Frequency",
                 "type": "Single ",
                 "#word-cloud": true,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Interaction Duration",
                 "type": "Single ",
                 "#word-cloud": true,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Usage Start",
                 "type": "Single ",
                 "#word-cloud": true,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             }
         ]
     },
@@ -602,20 +602,20 @@
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Cultural Influence on Object Significance",
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             }
         ]
     },
@@ -627,30 +627,30 @@
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Social-Emotional Agency",
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Communication Facilitation",
                 "type": "Single ",
                 "#word-cloud": false,
                 "#bar-chart": true,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             }
         ]
     }

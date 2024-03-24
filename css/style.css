@@ -130,7 +130,52 @@ div.selector a {
     left: 0;
 }
 
+/* Radar Plot */
 
+#radar-plot-vertex-count-selector {
+    top: -56px;
+    left: 0;
+}
+
+#radar-plot-preset-selector {
+    top: 0;
+    left: 220px;
+}
+
+#radar-plot-dimension-1-selector {
+    top: 0;
+    left: 0;
+}
+
+#radar-plot-dimension-2-selector {
+    top: 0;
+    left: 0;
+}
+
+#radar-plot-dimension-3-selector {
+    top: 0;
+    left: 0;
+}
+
+#radar-plot-dimension-4-selector {
+    top: 0;
+    left: 0;
+}
+
+#radar-plot-dimension-5-selector {
+    top: 0;
+    left: 0;
+}
+
+#radar-plot-layer-1-selector {
+    top: 30px;
+    left: 0;
+}
+
+#radar-plot-layer-2-selector {
+    top: 30px;
+    left: 0;
+}
 
 /* Scatter Plot - General */
 
@@ -149,6 +194,38 @@ div.selector a {
     left: 0;
 }
 
+/* Sankey Diagram */
+
+#sankey-diagram-preset-selector {
+    top: 0;
+    left: 220px;
+}
+
+#sankey-diagram-vertex-count-selector {
+    top: -56px;
+    left: 0;
+}
+
+#sankey-diagram-dimension-1-selector {
+    top: -41px;
+    left: 0;
+}
+
+#sankey-diagram-dimension-2-selector {
+    top: -41px;
+    left: 0;
+}
+
+#sankey-diagram-dimension-3-selector {
+    top: -41px;
+    left: 0;
+}
+
+#sankey-diagram-dimension-4-selector {
+    top: -41px;
+    left: 0;
+}
+
 /* Word Cloud */
 
 #word-cloud-dimension-selector {
@@ -159,7 +236,7 @@ div.selector a {
 /* Dropdowns */
 
 .main-navigation {
-    z-index: 2
+    z-index: 10;
 }
 
 ul {
@@ -183,7 +260,6 @@ ul li {
 .selector ul li {
     background: #bc6c23;
 }
-
 
 li ul { 
     display: none; 

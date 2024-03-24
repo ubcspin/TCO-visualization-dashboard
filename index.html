@@ -31,13 +31,13 @@
                     </li>
                 </ul>
 
-                <a class="vis-lock"><img src="media/lock-image.png"></img></a>
+                <!-- <a class="vis-lock"><img src="media/lock-image.png"></img></a> -->
 
                 <svg class="chart" id="bar-chart"></svg>
             </div>
 
             <div id="scatter-plot-container" class="chart-container" style="flex: 15">
-                <a class="vis-lock"><img src="media/lock-image.png"></img></a>
+                <!-- <a class="vis-lock"><img src="media/lock-image.png"></img></a> -->
                 
                 <ul class="selector dimension" id="scatter-plot-dimension-selector">
                     <li>
@@ -49,7 +49,11 @@
             </div>
 
             <div id="radar-plot-container" class="chart-container" style="flex: 12">
-                <select class="selector" name="radar-plot-preset-selector" id="radar-plot-preset-selector"></select>
+                <ul class="selector preset" id="radar-plot-preset-selector" style="z-index: 7">
+                    <li>
+                        <a href="#" class="dropdown-label"></a>
+                    </li>
+                </ul>
 
                 <div class="selector" id="radar-plot-vertex-count-selector">
                     <p style="flex: 3">vertices</p>
@@ -58,14 +62,48 @@
                     <a id="radar-plot-layer-plus" style="flex: 1">+</a>
                 </div>
 
-                <a class="vis-lock"><img src="media/lock-image.png"></img></a>
+                <!-- <a class="vis-lock"><img src="media/lock-image.png"></img></a> -->
 
-                <div id="radar-plot-dimension-selectors"></div>
+                <div id="radar-plot-dimension-selectors">
+                    <ul class="selector dimension" id="radar-plot-dimension-1-selector" style="z-index: 6">
+                        <li>
+                            <a href="#" class="dropdown-label"></a>
+                        </li>
+                    </ul>
+
+                    <ul class="selector dimension" id="radar-plot-dimension-2-selector" style="z-index: 5">
+                        <li>
+                            <a href="#" class="dropdown-label"></a>
+                        </li>
+                    </ul>
+
+                    <ul class="selector dimension" id="radar-plot-dimension-3-selector" style="z-index: 4">
+                        <li>
+                            <a href="#" class="dropdown-label"></a>
+                        </li>
+                    </ul>
+
+                    <ul class="selector dimension" id="radar-plot-dimension-4-selector" style="z-index: 3">
+                        <li>
+                            <a href="#" class="dropdown-label"></a>
+                        </li>
+                    </ul>
+
+                    <ul class="selector dimension" id="radar-plot-dimension-5-selector" style="z-index: 2">
+                        <li>
+                            <a href="#" class="dropdown-label"></a>
+                        </li>
+                    </ul>
+                </div>
 
                 <div id="radar-plot-layer-selectors">
-                    <select class="selector" name="radar-plot-layer-1-selector" id="radar-plot-layer-1-selector"></select>
+                    <ul class="selector layer" id="radar-plot-layer-1-selector">
+                        <li>
+                            <a href="#" class="dropdown-label"></a>
+                        </li>
+                    </ul>
                 
-                    <ul class="selector dimension" id="radar-plot-layer-2-selector">
+                    <ul class="selector layer" id="radar-plot-layer-2-selector">
                         <li>
                             <a href="#" class="dropdown-label"></a>
                         </li>
@@ -78,13 +116,13 @@
 
         <div class="row">
             <div id="jitter-plot-container" class="chart-container" style="flex: 10">                
-                <ul class="selector dimension" id="jitter-plot-preset-selector">
+                <ul class="selector preset" id="jitter-plot-preset-selector">
                     <li>
                         <a href="#" class="dropdown-label"></a>
                     </li>
                 </ul>
                 
-                <a class="vis-lock"><img src="media/lock-image.png"></img></a>
+                <!-- <a class="vis-lock"><img src="media/lock-image.png"></img></a> -->
                 
                 <ul class="selector dimension" id="jitter-plot-dimension-x-selector">
                     <li>
@@ -102,7 +140,11 @@
             </div>
 
             <div id="sankey-diagram-container" class="chart-container" style="flex: 15">
-                <select class="selector" name="sankey-diagram-preset-selector" id="sankey-diagram-preset-selector"></select>
+                <ul class="selector dimension" id="sankey-diagram-preset-selector" style="z-index: 7">
+                    <li>
+                        <a href="#" class="dropdown-label"></a>
+                    </li>
+                </ul>
 
                 <div class="selector" id="sankey-diagram-vertex-count-selector">
                     <p style="flex: 3">layers</p>
@@ -111,12 +153,42 @@
                     <a id="sankey-diagram-layer-plus" style="flex: 1">+</a>
                 </div>
 
-                <a class="vis-lock"><img src="media/lock-image.png"></img></a>
+                <!-- <a class="vis-lock"><img src="media/lock-image.png"></img></a> -->
 
                 <svg class="chart" id="sankey-diagram"></svg>
 
-                <div id="sankey-diagram-dimension-selectors">
+                <div id="sankey-diagram-dimension-selectors" style="display: flex">
+                    <div id="sankey-diagram-dimension-1-selector-container" style="flex: 1;">
+                        <ul class="selector dimension" id="sankey-diagram-dimension-1-selector" style="z-index: 6; margin: auto">
+                            <li>
+                                <a href="#" class="dropdown-label"></a>
+                            </li>
+                        </ul>
+                    </div>
                     
+                    <div id="sankey-diagram-dimension-2-selector-container" style="flex: 1">
+                        <ul class="selector dimension" id="sankey-diagram-dimension-2-selector" style="z-index: 5; margin: auto">
+                            <li>
+                                <a href="#" class="dropdown-label"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="sankey-diagram-dimension-3-selector-container" style="flex: 1">
+                        <ul class="selector dimension" id="sankey-diagram-dimension-3-selector" style="z-index: 4; margin: auto">
+                            <li>
+                                <a href="#" class="dropdown-label"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="sankey-diagram-dimension-4-selector-container" style="flex: 1">
+                        <ul class="selector dimension" id="sankey-diagram-dimension-4-selector" style="z-index: 3; margin: auto">
+                            <li>
+                                <a href="#" class="dropdown-label"></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -127,7 +199,7 @@
                     </li>
                 </ul>
 
-                <a class="vis-lock"><img src="media/lock-image.png"></img></a>
+                <!-- <a class="vis-lock"><img src="media/lock-image.png"></img></a> -->
 
                 <svg class="chart" id="word-cloud"></svg>
             </div>
@@ -135,6 +207,11 @@
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://unpkg.com/d3-array@1"></script>
+    <script src="https://unpkg.com/d3-collection@1"></script>
+    <script src="https://unpkg.com/d3-path@1"></script>
+    <script src="https://unpkg.com/d3-shape@1"></script>
+    <script src="https://unpkg.com/d3-sankey@0"></script>
     <script src="js/d3.layout.cloud.js"></script>
     <script src="js/chart.js"></script>
     <script src="js/barChart.js"></script>

@@ -2,14 +2,14 @@ Sno,Block,Subblock,Dimension,Type,Original or Derived,Choices (old),Choices (cle
 1,Meta Data,,Recruitment Channel,categorical,Original,"UBC, OUTUBC, CLOSECIRCLES, LOCAL, LOCAL-NEW, ONLINE, ONLINE-NEW","UBC, OUTUBC, CLOSECIRCLES, LOCAL, LOCAL-NEW, ONLINE, ONLINE-NEW",Single ,7,,use,,,,
 2,Meta Data,,Recruitment Category,categorical,Original,"Email, Slack, Flyer, Instagram, Facebook Group, Word of mouth, Other, Prefer not to answer  ","Email, Slack, Flyer, Instagram, Facebook Group, Word of mouth, Other, Prefer not to answer",Single ,8,,use,,,,
 3,Meta Data,,Recruitment Category: Others,open-ended,Original,,,,1,,,,,,
-4,Demographics,General,Gender,categorical,Original,"Male, Female, Non-binary, Prefer not to disclose, Prefer to self-describe  ","Male, Female, Non-binary, Prefer not to disclose, Prefer to self-describe",Single ,5,use,,use,,,
+4,Demographics,General,Gender,categorical,Original,"Male, Female, Non-binary, Prefer not to disclose, Prefer to self-describe  ","Male, Female, Non-binary, Prefer not to disclose, Prefer to self-describe",Single ,5,use,,use,use,,use
 5,Demographics,General,Gender: Others,open-ended,Original,,,,1,,,,,,
 6,Demographics,General,Cultural Background,categorical,Original,"Black/African Canadian, East Asian, Hispanic/Latinx, First Nations or Indigenous (please specify), Pacific Islander, South Asian, European/White, Middle Eastern, Prefer not to disclose, Prefer to self-describe  ","Black/African Canadian, East Asian, Hispanic/Latinx, First Nations or Indigenous (please specify), Pacific Islander, South Asian, European/White, Middle Eastern, Prefer not to disclose, Prefer to self-describe",Multi,10,use,use,,,,
 7,Demographics,General,Cultural Background: Indigenous Description,open-ended,Original,,,,1,,,,,,
 8,Demographics,General,Cultural Background: Others,open-ended,Original,,,,1,,,,,,
-9,Demographics,General,Age,categorical,Original,"18-24, 25-35, 36-45, 45-65, Over 65, Prefer not to disclose","18-24, 25-35, 36-45, 45-65, Over 65, Prefer not to disclose",Single ,6,use,,use,,,
+9,Demographics,General,Age,categorical,Original,"18-24, 25-35, 36-45, 45-65, Over 65, Prefer not to disclose","18-24, 25-35, 36-45, 45-65, Over 65, Prefer not to disclose",Single ,6,use,,use,use,,use
 10,Demographics,General,Education,categorical,Original,"No schooling completed, High School Diploma, Some college credit but less than 1 year of college, 1 or more years of college credit no degree, Trade/technical/vocational training, Associates degree (for example: AA, AS), Bachelor’s degree (for example: BA. BS), Master’s degree (for example: MA, MS, MEng, MEd, MSW, MBA), Professional degree beyond bachelor’s degree (for example: MD, DDS, DVM, LLB, JD), Doctorate degree (for example, PhD, EdD), Others, Prefer not to disclose","No schooling completed, High School Diploma, Some college credit, 1 or more years of college credit, Trade/technical/vocational training, Associates degree, Bachelor's degree, Master's degree, Professional degree beyond bachelor's degree, Doctorate degree, Others, Prefer not to disclose",Single ,12,,use,,,,
-11,Demographics,General,[DER] Education,categorical,Derived,"No schooling completed, High School Diploma, Bachelor's degree or equivalent, Master's degree or equivalent, Doctorate degree","No schooling completed, High School Diploma, Bachelor's degree or equivalent, Master's degree or equivalent, Doctorate degree",Single ,5,,use,use,,,
+11,Demographics,General,[DER] Education,categorical,Derived,"No schooling completed, High School Diploma, Bachelor's degree or equivalent, Master's degree or equivalent, Doctorate degree","No schooling completed, High School Diploma, Bachelor's degree or equivalent, Master's degree or equivalent, Doctorate degree",Single ,5,,use,use,use,,use
 12,Demographics,General,Education: Others,open-ended,Original,,,,1,,,,,,
 13,Demographics,General,Lived Experiences,categorical,Original,"LGBTQIA+, Neurodivergent, Person of Colour, Person of a Marginalised Gender Identity, Indigenous/Native/First Nations, Person of a Minority Religion or Faith, Immigrant or Foreign-Born, Refugee or Asylum Seeker, Person from a Low-Income Background, Survivor of Domestic Violence or Abuse, Survivor of Violence or Abuse, Veteran or Active Duty Military Personnel, Person who has Experienced Homelessness, Person with Chronic Illness or Medical Condition, Caregiver (Caring for a family member or loved one), Person from a Rural or Remote Area, Student, Parent, Not Applicable, Prefer to self-describe, Prefer not to disclose
 
@@ -17,25 +17,25 @@ Sno,Block,Subblock,Dimension,Type,Original or Derived,Choices (old),Choices (cle
 
 ",Multi,21,,use,,,,
 14,Demographics,General,Lived Experiences: Others,open-ended,Original,,,,1,,,,,,
-15,Demographics,Personality Specific,Reserved Self-Perception,categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,,,
-16,Demographics,Personality Specific,Generally Trusting,categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,,,
-17,Demographics,Personality Specific,Tends to be Lazy,categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,,,
-18,Demographics,Personality Specific,"Relaxed, Handles Stress Well",categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,,,
-19,Demographics,Personality Specific,Has Few Artistic Interests,categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,,,
-20,Demographics,Personality Specific,"Outgoing, Sociable",categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,,,
-21,Demographics,Personality Specific,Tends to Find Fault,categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,,,
-22,Demographics,Personality Specific,Does a Thorough Job,categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,,,
-23,Demographics,Personality Specific,Gets Nervous Easily,categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,,,
-24,Demographics,Personality Specific,Has an Active Imagination,categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,,,
-25,Demographics,Personality Specific,Tendency to Fidget,categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,,,
+15,Demographics,Personality Specific,Reserved Self-Perception,categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,use,use,use
+16,Demographics,Personality Specific,Generally Trusting,categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,use,use,use
+17,Demographics,Personality Specific,Tends to be Lazy,categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,use,use,use
+18,Demographics,Personality Specific,"Relaxed, Handles Stress Well",categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,use,use,use
+19,Demographics,Personality Specific,Has Few Artistic Interests,categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,use,use,use
+20,Demographics,Personality Specific,"Outgoing, Sociable",categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,use,use,use
+21,Demographics,Personality Specific,Tends to Find Fault,categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,use,use,use
+22,Demographics,Personality Specific,Does a Thorough Job,categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,use,use,use
+23,Demographics,Personality Specific,Gets Nervous Easily,categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,use,use,use
+24,Demographics,Personality Specific,Has an Active Imagination,categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,use,use,use
+25,Demographics,Personality Specific,Tendency to Fidget,categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,use,use,use
 26,Demographics,Personality Traits,[DER] Extraversion,numerical,Derived,,,,,,,,,,
 27,Demographics,Personality Traits,[DER]  Agreeableness,numerical,Derived,,,,,,,,,,
 28,Demographics,Personality Traits,[DER] Conscientiousness,numerical,Derived,,,,,,,,,,
 29,Demographics,Personality Traits,[DER] Neuroticism,numerical,Derived,,,,,,,,,,
 30,Demographics,Personality Traits,[DER] Openness,numerical,Derived,,,,,,,,,,
-31,Demographics,Preferences,Emotional Attachment to Objects,categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,,,
-32,Demographics,Preferences,Values Design and Aesthetics,categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,,,
-33,Demographics,Preferences,Non-Functional Personal Objects,categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,,,
+31,Demographics,Preferences,Emotional Attachment to Objects,categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,use,use,use
+32,Demographics,Preferences,Values Design and Aesthetics,categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,use,use,use
+33,Demographics,Preferences,Non-Functional Personal Objects,categorical,Original,"Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree","Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",Single ,5,,,use,use,use,use
 34,Object Identification,,TCO1: Description,open-ended,Original,,,,1,,,,,,
 35,Object Identification,,TCO2: Description,open-ended,Original,,,,1,,,,,,
 36,Object Identification,,TCO3: Description,open-ended,Original,,,,1,,,,,,
@@ -46,7 +46,7 @@ Sno,Block,Subblock,Dimension,Type,Original or Derived,Choices (old),Choices (cle
 41,Object Identification,,TCO8: Description,open-ended,Original,,,,1,,,,,,
 42,Object Identification,,TCO9: Description,open-ended,Original,,,,1,,,,,,
 43,Object Identification,,TCO10: Description,open-ended,Original,,,,1,,,,,,
-44,Object Identification,,Cultural Significance,categorical,Original,"Yes, No, Prefer not to answer","Yes, No, Prefer not to answer",Single ,3,,,use,,,
+44,Object Identification,,Cultural Significance,categorical,Original,"Yes, No, Prefer not to answer","Yes, No, Prefer not to answer",Single ,3,,,use,use,,use
 45,Object Identification,,Cultural Significance: YES Description,open-ended,Original,,,,1,,,,,,
 46,Object Identification,,Anger/Frustration Object: Description,open-ended,Original,,,,1,,,,,,
 47,Object Identification,,Sadness/Despair Object: Description,open-ended,Original,,,,1,,,,,,
@@ -55,17 +55,17 @@ Sno,Block,Subblock,Dimension,Type,Original or Derived,Choices (old),Choices (cle
 50,Object Identification,,Shame/Guilt Object: Description,open-ended,Original,,,,1,,,,,,
 51,Object Identification,,Worry/Anxiety Object: Description,open-ended,Original,,,,1,,,,,,
 52,Object Identification,,Object Identification: Description,open-ended,Original,,,,1,,,,,,
-53,Object Identification,,[DER] Object Category,categorical,Derived,"Bedding, Jewelry & Decoration, Plushies & Stuffed Animals, Toys & Balls, Utility Item, NA","Bedding, Jewelry & Decoration, Plushies & Stuffed Animals, Toys & Balls, Utility Item, NA",Single ,6,,use,use,,,
-54,Object Characteristics,General,Involves Technology,categorical,Original,"Involves technology, Does not involve technology, Prefer not to answer","Involves technology, Does not involve technology, Prefer not to answer",Single ,3,,,use,,,
-55,Object Characteristics,General,Ability to Move,categorical,Original,"Capable of moving, Stationary, Prefer not to answer","Capable of moving, Stationary, Prefer not to answer",Single ,3,,,use,,,
-56,Object Characteristics,General,Device Type,categorical,Original,"Table-top, Hand-held, Wearable (e.g., watch, jewelry), Other, Prefer not to answer","Table-top, Hand-held, Wearable, Other, Prefer not to answer",Single ,5,,use,use,,,
+53,Object Identification,,[DER] Object Category,categorical,Derived,"Bedding, Jewelry & Decoration, Plushies & Stuffed Animals, Toys & Balls, Utility Item, NA","Bedding, Jewelry & Decoration, Plushies & Stuffed Animals, Toys & Balls, Utility Item, NA",Single ,6,,use,use,use,,use
+54,Object Characteristics,General,Involves Technology,categorical,Original,"Involves technology, Does not involve technology, Prefer not to answer","Involves technology, Does not involve technology, Prefer not to answer",Single ,3,,,use,use,,use
+55,Object Characteristics,General,Ability to Move,categorical,Original,"Capable of moving, Stationary, Prefer not to answer","Capable of moving, Stationary, Prefer not to answer",Single ,3,,,use,use,,use
+56,Object Characteristics,General,Device Type,categorical,Original,"Table-top, Hand-held, Wearable (e.g., watch, jewelry), Other, Prefer not to answer","Table-top, Hand-held, Wearable, Other, Prefer not to answer",Single ,5,,use,use,use,,use
 57,Object Characteristics,General,Device Type: Others,open-ended,Original,,,,1,,,,,,
-58,Object Characteristics,General,Appearance,categorical,Original,"Anthropomorphic, Zoomorphic, Neither anthropomorphic nor zoomorphic, Prefer not to answer","Anthropomorphic, Zoomorphic, Neither anthropomorphic nor zoomorphic, Prefer not to answer",Single ,4,,,use,,,
+58,Object Characteristics,General,Appearance,categorical,Original,"Anthropomorphic, Zoomorphic, Neither anthropomorphic nor zoomorphic, Prefer not to answer","Anthropomorphic, Zoomorphic, Neither anthropomorphic nor zoomorphic, Prefer not to answer",Single ,4,,,use,use,,use
 59,Object Characteristics,General,Targeted Body Part,categorical,Original,"Head, Face, Cheek, Neck, Shoulder, Arm, Hand, Wrist, Finger, Chest, Torso, Abdomen, Back, Thigh, Leg/Foot, Full Body, Other, Prefer not to answer","Head, Face, Cheek, Neck, Shoulder, Arm, Hand, Wrist, Finger, Chest, Torso, Abdomen, Back, Thigh, Leg/Foot, Full Body, Other, Prefer not to answer",Multi,18,,use,,,,
 60,Object Characteristics,General,Targeted Body Part,categorical,Derived,"Head, Face, Cheek, Neck, Shoulder, Arm, Hand, Wrist, Finger, Chest, Torso, Abdomen, Back, Thigh, Leg/Foot, Full Body, Other, Prefer not to answer","Head, Face, Mouth, Nose, Ears, Hair, Cheek, Neck, Shoulder, Arm, Hand, Wrist, Finger, Chest, Torso, Abdomen, Back, Thigh, Leg/Foot, Full Body, Other, Prefer not to answer",Multi,22,,use,,,,
 61,Object Characteristics,General,Targeted Body Part: Others,open-ended,Original,,,,1,,,,,,
-62,Object Characteristics,General,Portability,categorical,Original,"Yes, No, Prefer not to answer","Yes, No, Prefer not to answer",Single ,3,,,use,,,
-63,Object Characteristics,General,Collective vs Individual Use,categorical,Original,"Personal, Shared, Other, Prefer not to answer","Personal, Shared, Other, Prefer not to answer",Single ,4,,,use,,,
+62,Object Characteristics,General,Portability,categorical,Original,"Yes, No, Prefer not to answer","Yes, No, Prefer not to answer",Single ,3,,,use,use,,use
+63,Object Characteristics,General,Collective vs Individual Use,categorical,Original,"Personal, Shared, Other, Prefer not to answer","Personal, Shared, Other, Prefer not to answer",Single ,4,,,use,use,,use
 64,Object Characteristics,General,Collective vs Individual Use: Others,open-ended,Original,,,,1,,,,,,
 65,Object Characteristics,Tactile,Texture,categorical,Original,"Smooth, Rough, Soft, Hard, Bumpy, Fuzzy, Slippery, Prickly, Sticky, Fluffy, Slimy, Silky, Ribbed, Metallic, Felted, Gritty, Velvety, Coarse, Other, Prefer not to answer","Smooth, Rough, Soft, Hard, Bumpy, Fuzzy, Slippery, Prickly, Sticky, Fluffy, Slimy, Silky, Ribbed, Metallic, Felted, Gritty, Velvety, Coarse, Other, Prefer not to answer",Multi,20,,use,,,,
 66,Object Characteristics,Tactile,Texture: Others,open-ended,Original,,,,1,,,,,,
@@ -75,38 +75,38 @@ Sno,Block,Subblock,Dimension,Type,Original or Derived,Choices (old),Choices (cle
 70,Object Characteristics,Tactile,Shape: Others,open-ended,Original,,,,1,,,,,,
 71,Object Characteristics,Tactile,Conformability and Compliance,categorical,Original,"Squishy, Moldable, Rigid, Flexible, Powdery, Clicky, Spongy, Elastic, Poppable, Other, Prefer not to answer","Squishy, Moldable, Rigid, Flexible, Powdery, Clicky, Spongy, Elastic, Poppable, Other, Prefer not to answer",Multi,11,,use,,,,
 72,Object Characteristics,Tactile,Conformability and Compliance: Others,open-ended,Original,,,,1,,,,,,
-73,Object Characteristics,Tactile,Softness Rating,categorical,Derived,"0, 1, 2, 3, 4, 5","0, 1, 2, 3, 4, 5",Single ,6,,,use,,,
-74,Object Characteristics,Tactile,Subjective Temperature,categorical,Original,"Warm, Cool, Other, Prefer not to answer","Warm, Cool, Other, Prefer not to answer",Single ,4,,,use,,,
+73,Object Characteristics,Tactile,Softness Rating,categorical,Derived,"0, 1, 2, 3, 4, 5","0, 1, 2, 3, 4, 5",Single ,6,,,use,use,,use
+74,Object Characteristics,Tactile,Subjective Temperature,categorical,Original,"Warm, Cool, Other, Prefer not to answer","Warm, Cool, Other, Prefer not to answer",Single ,4,,,use,use,,use
 75,Object Characteristics,Tactile,Subjective Temperature: Others,open-ended,Original,,,,1,,,,,,
 76,Object Characteristics,Tactile,Other Tactile Characteristics: Description,open-ended,Original,,,,1,,,,,,
-77,Object Characteristics,Tactile,Other Sensory Channel Used,categorical,Original,"Look at it, Listen to it, Smell it, Taste it, Other, Prefer not to answer","Look at it, Listen to it, Smell it, Taste it, Other, Prefer not to answer",Multi,6,,,use,,,
+77,Object Characteristics,Tactile,Other Sensory Channel Used,categorical,Original,"Look at it, Listen to it, Smell it, Taste it, Other, Prefer not to answer","Look at it, Listen to it, Smell it, Taste it, Other, Prefer not to answer",Multi,6,,,use,use,,use
 78,Object Characteristics,Tactile,Look at it: Description,open-ended,Original,,,,1,,,,,,
 79,Object Characteristics,Tactile,Listen to it: Description,open-ended,Original,,,,1,,,,,,
 80,Object Characteristics,Tactile,Smell it: Description,open-ended,Original,,,,1,,,,,,
 81,Object Characteristics,Tactile,Taste it: Description,open-ended,Original,,,,1,,,,,,
 82,Object Characteristics,Tactile,Other: Description,open-ended,Original,,,,1,,,,,,
-83,Object Use,Importance,Functional Value Importance,categorical,Original,"Not at all important, Slightly important, Moderately important, Very important, Extremely important","Not at all important, Slightly important, Moderately important, Very important, Extremely important",Single ,5,,,use,,,
-84,Object Use,Importance,Emotional Significance Importance,categorical,Original,"Not at all important, Slightly important, Moderately important, Very important, Extremely important","Not at all important, Slightly important, Moderately important, Very important, Extremely important",Single ,5,,,use,,,
-85,Object Use,Importance,Physical Soothing Importance,categorical,Original,"Not at all important, Slightly important, Moderately important, Very important, Extremely important","Not at all important, Slightly important, Moderately important, Very important, Extremely important",Single ,5,,,use,,,
+83,Object Use,Importance,Functional Value Importance,categorical,Original,"Not at all important, Slightly important, Moderately important, Very important, Extremely important","Not at all important, Slightly important, Moderately important, Very important, Extremely important",Single ,5,,,use,use,use,use
+84,Object Use,Importance,Emotional Significance Importance,categorical,Original,"Not at all important, Slightly important, Moderately important, Very important, Extremely important","Not at all important, Slightly important, Moderately important, Very important, Extremely important",Single ,5,,,use,use,use,use
+85,Object Use,Importance,Physical Soothing Importance,categorical,Original,"Not at all important, Slightly important, Moderately important, Very important, Extremely important","Not at all important, Slightly important, Moderately important, Very important, Extremely important",Single ,5,,,use,use,use,use
 86,Object Use,General,Usage Context,categorical,Original,"When a situation matters to me, When a situation is not in line with what I want, When a situation is my fault, When it is not clear to me how a situation will evolve, When I am not in control of a situation, Other, Prefer not to answer","When a situation matters to me, When a situation is not in line with what I want, When a situation is my fault, When it is not clear to me how a situation will evolve, When I am not in control of a situation, Other, Prefer not to answer",Multi,7,,use,,,,
 87,Object Use,General,Usage Context: Others,open-ended,Original,,,,1,,,,,,
 88,Object Use,General,Usage Setting,categorical,Original,"Alone in personal space, Alone in public space, Around family, Around friends, In public around strangers, Other, Prefer not to answer","Alone in personal space, Alone in public space, Around family, Around friends, In public around strangers, Other, Prefer not to answer",Multi,7,,use,,,,
 89,Object Use,General,Usage Setting: Others,open-ended,Original,,,,1,,,,,,
-90,Object Use,General,Non-Usage Settings,categorical,Original,"Yes, No, Prefer not to answer","Yes, No, Prefer not to answer",Single ,3,,,use,,,
+90,Object Use,General,Non-Usage Settings,categorical,Original,"Yes, No, Prefer not to answer","Yes, No, Prefer not to answer",Single ,3,,,use,use,,use
 91,Object Use,General,Non-Usage Settings: YES Description,open-ended,Original,,,,1,,,,,,
 92,Object Use,General,Non-Usage Settings: NO Description,open-ended,Original,,,,1,,,,,,
 93,Object Use,General,Physical Interaction,categorical,Original,"Rub, Squish, Hold/grasp, Fidget, Press/Push with hand, Press/push with finger tips, Throw around, Wrap around, Lift up/down, Twist, Glide, Pet, Twirl, Cuddle, Poke, Knead, Other, Prefer not to answer","Rub, Squish, Hold/grasp, Fidget, Press/Push with hand, Press/push with finger tips, Throw around, Wrap around, Lift up/down, Twist, Glide, Pet, Twirl, Cuddle, Poke, Knead, Other, Prefer not to answer",Multi,18,,use,,,,
 94,Object Use,General,Physical Interaction: Others,open-ended,Original,,,,1,,,,,,
-95,Object Use,General,Interaction Type,categorical,Original,"When I need it, Randomly/Spontaneously, Compulsively/Irresistibly, Routinely/as a Ritual, Prefer not to answer","When I need it, Randomly/Spontaneously, Compulsively/Irresistibly, Routinely/as a Ritual, Prefer not to answer",Multi,5,,use,use,,,
+95,Object Use,General,Interaction Type,categorical,Original,"When I need it, Randomly/Spontaneously, Compulsively/Irresistibly, Routinely/as a Ritual, Prefer not to answer","When I need it, Randomly/Spontaneously, Compulsively/Irresistibly, Routinely/as a Ritual, Prefer not to answer",Multi,5,,use,use,use,,use
 96,Object Use,General,When I need it: Description,open-ended,Original,,,,1,,,,,,
 97,Object Use,General,Randomly/Spontaneously: Description,open-ended,Original,,,,1,,,,,,
 98,Object Use,General,Compulsively/Irresistibly: Description,open-ended,Original,,,,1,,,,,,
 99,Object Use,General,Routinely/as a Ritual: Description,open-ended,Original,,,,1,,,,,,
-100,Object Use,General,Usage Frequency,categorical,Original,"Daily or multiple times a day, Several times a week, Several times a month, Once a month or less, Other, Prefer not to answer","Daily or multiple times a day, Several times a week, Several times a month, Once a month or less, Other, Prefer not to answer",Single ,6,,use,use,,,
+100,Object Use,General,Usage Frequency,categorical,Original,"Daily or multiple times a day, Several times a week, Several times a month, Once a month or less, Other, Prefer not to answer","Daily or multiple times a day, Several times a week, Several times a month, Once a month or less, Other, Prefer not to answer",Single ,6,,use,use,use,,use
 101,Object Use,General,Usage Frequency: Others,open-ended,Original,,,,1,,,,,,
-102,Object Use,General,Interaction Duration,categorical,Original,"A few seconds, A few minutes, A few days, A few weeks or more, Other, Prefer not to answer","A few seconds, A few minutes, A few days, A few weeks or more, Other, Prefer not to answer",Single ,6,,use,use,,,
+102,Object Use,General,Interaction Duration,categorical,Original,"A few seconds, A few minutes, A few days, A few weeks or more, Other, Prefer not to answer","A few seconds, A few minutes, A few days, A few weeks or more, Other, Prefer not to answer",Single ,6,,use,use,use,,use
 103,Object Use,General,Interaction Duration: Others,open-ended,Original,,,,1,,,,,,
-104,Object Use,General,Usage Start,categorical,Original,"In the past few days, In the past few weeks, In the past few months, In the past few years, Other, Prefer not to answer","In the past few days, In the past few weeks, In the past few months, In the past few years, Other, Prefer not to answer",Single ,6,,use,use,,,
+104,Object Use,General,Usage Start,categorical,Original,"In the past few days, In the past few weeks, In the past few months, In the past few years, Other, Prefer not to answer","In the past few days, In the past few weeks, In the past few months, In the past few years, Other, Prefer not to answer",Single ,6,,use,use,use,,use
 105,Object Use,General,Usage Start: Others,open-ended,Original,,,,1,,,,,,
 106,Object Context,,Object Origin Story: Description,open-ended,Original,,,,1,,,,,,
 107,Object Context,,Object Acquisition,categorical,Original,"Bought it, Made it, Gifted, Found it, Hand-me-down, Family owned, Other, Prefer not to answer","Bought it, Made it, Gifted, Found it, Hand-me-down, Family owned, Other, Prefer not to answer",Single ,8,,use,,,,
@@ -116,10 +116,10 @@ Sno,Block,Subblock,Dimension,Type,Original or Derived,Choices (old),Choices (cle
 111,Object Context,,Object Meaningfulness,categorical,Original,"It symbolizes something to me, It reminds me of someone, It reminds me of some event or situation, It represents a milestone or achievement, It denotes belonging to a group, community, or culture, It makes me feel a certain way, Not meaningful, Other, Prefer not to answer
 ","It symbolizes something to me, It reminds me of someone, It reminds me of some event or situation, It represents a milestone or achievement, It denotes belonging to a group/community/culture, It makes me feel a certain way, Not meaningful, Other, Prefer not to answer",Multi,9,,use,,,,
 112,Object Context,,Object Meaningfulness: Others,open-ended,Original,,,,1,,,,,,
-113,Object Context,,Object Customization,categorical,Original,"Yes, No, Prefer not to answer","Yes, No, Prefer not to answer",Single ,3,,,use,,,
+113,Object Context,,Object Customization,categorical,Original,"Yes, No, Prefer not to answer","Yes, No, Prefer not to answer",Single ,3,,,use,use,,use
 114,Object Context,,Object Customization: YES Description,open-ended,Original,,,,1,,,,,,
 115,Object Context,,Object Customization: NO Description,open-ended,Original,,,,1,,,,,,
-116,Object Context,,Cultural Influence on Object Significance,categorical,Original,"Yes, No, Prefer not to answer","Yes, No, Prefer not to answer",Single ,3,,,use,,,
+116,Object Context,,Cultural Influence on Object Significance,categorical,Original,"Yes, No, Prefer not to answer","Yes, No, Prefer not to answer",Single ,3,,,use,use,,use
 117,Object Context,,Cultural Influence on Object Significance: YES Description,open-ended,Original,,,,1,,,,,,
 118,Object Impact,,Interaction Expectations: Description,open-ended,Original,,,,1,,,,,,
 119,Object Impact,,Expectation Fulfillment: Description,open-ended,Original,,,,1,,,,,,
@@ -137,15 +137,15 @@ Sno,Block,Subblock,Dimension,Type,Original or Derived,Choices (old),Choices (cle
 131,Technology Design Preferences,,Interactive Behavior: Description,open-ended,Original,,,,1,,,,,,
 132,Technology Design Preferences,,Other Characteristics Type: Description,open-ended,Original,,,,1,,,,,,
 133,Technology Design Preferences,,Other Characteristics: Description,open-ended,Original,,,,1,,,,,,
-134,Technology Design Preferences,,Emotion-aware Interactions,categorical,Original,"Yes, No","Yes, No",Single ,2,,,use,,,
+134,Technology Design Preferences,,Emotion-aware Interactions,categorical,Original,"Yes, No","Yes, No",Single ,2,,,use,use,,use
 135,Technology Design Preferences,,Emotion-aware Interactions: YES Description,open-ended,Original,,,,1,,,,,,
 136,Technology Design Preferences,,Emotion-aware Interactions: NO Description,open-ended,Original,,,,1,,,,,,
-137,Technology Design Preferences,,Social-Emotional Agency,categorical,Original,"Yes, No","Yes, No",Single ,2,,,use,,,
+137,Technology Design Preferences,,Social-Emotional Agency,categorical,Original,"Yes, No","Yes, No",Single ,2,,,use,use,,use
 138,Technology Design Preferences,,Social-Emotional Agency: YES Description,open-ended,Original,,,,1,,,,,,
 139,Technology Design Preferences,,Social-Emotional Agency: NO Description,open-ended,Original,,,,1,,,,,,
-140,Technology Design Preferences,,Communication Facilitation,categorical,Original,"Yes, No","Yes, No",Single ,2,,,use,,,
+140,Technology Design Preferences,,Communication Facilitation,categorical,Original,"Yes, No","Yes, No",Single ,2,,,use,use,,use
 141,Technology Design Preferences,,Communication Facilitation: YES Description,open-ended,Original,,,,1,,,,,,
 142,Technology Design Preferences,,Communication Facilitation: NO Description,open-ended,Original,,,,1,,,,,,
 143,Technology Design Preferences,,Other Technological Aspects: Description,open-ended,Original,,,,1,,,,,,
-144,Meta Data,,Photo Uploaded,categorical,Original,"Yes, No, I did not upload a photo","Yes, No, I did not upload a photo",Single ,3,,,use,,,
-145,Meta Data,,Like to be Contacted,categorical,Original,"Yes, No","Yes, No",Single ,2,,,use,,,
+144,Meta Data,,Photo Uploaded,categorical,Original,"Yes, No, I did not upload a photo","Yes, No, I did not upload a photo",Single ,3,,,use,use,,use
+145,Meta Data,,Like to be Contacted,categorical,Original,"Yes, No","Yes, No",Single ,2,,,use,use,,use

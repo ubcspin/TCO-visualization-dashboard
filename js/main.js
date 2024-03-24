@@ -48,7 +48,20 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json')]).
         }
     }, filteredData, options);
 
-    // charts.push(new RadarPlot());
+    container = document.getElementById("radar-plot-container");
+    charts["radar-plot"] = new RadarPlot({
+        parentElement: "#radar-plot",
+        width: container.clientWidth,
+        height: container.clientHeight,
+        dimensions: ["Tends to be Lazy", "Has Few Artistic Interests", "Outgoing, Sociable", "Does a Thorough Job", "Tendency to Fidget"],
+        layers: [null, null],
+        margin: {
+            top: 100,
+            right: 15,
+            bottom: 50,
+            left: 160
+        }
+    }, filteredData, options);
 
     container = document.getElementById("jitter-plot-container");
     charts["scatter-plot-general"] = new ScatterPlot({
@@ -66,7 +79,19 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json')]).
         }
     }, filteredData, options);
 
-    // charts.push(new SankeyDiagram());
+    container = document.getElementById("sankey-diagram-container");
+    charts["sankey-diagram"] = new SankeyDiagram({
+        parentElement: "#sankey-diagram",
+        width: container.clientWidth,
+        height: container.clientHeight,
+        dimensions: ["Device Type", "Appearance", "Age", "Gender"],
+        margin: {
+            top: 150,
+            right: 10,
+            bottom: 10,
+            left: 10
+        }
+    }, filteredData, options);
 
     container = document.getElementById("word-cloud-container");
     charts["word-cloud"] = new WordCloud({
@@ -193,6 +218,9 @@ Promise.all([d3.json('data/dimensions.json'), d3.json("data/filters.json")]).the
         charts["scatter-plot-general"].ogData = filteredData;
         charts["scatter-plot-general"].updateVis();
 
+        charts["sankey-diagram"].ogData = filteredData;
+        charts["sankey-diagram"].updateVis();
+
         charts["word-cloud"].ogData = filteredData;
         charts["word-cloud"].updateVis();
     });
@@ -212,7 +240,7 @@ Promise.all([d3.json('data/dimensions.json'), d3.json("data/filters.json")]).the
         charts["scatter-plot-general"].updateVis();
     });
     
-    fillHierarchicalSelection("#scatter-plot-dimension-selector", dimensions, o => o["#bar-chart"], "Age", false, (event) => {
+    fillHierarchicalSelection("#scatter-plot-dimension-selector", dimensions, o => o["#scatter-plot"], "Age", false, (event) => {
         const selection = event.explicitOriginalTarget.textContent;
 
         d3.select("#scatter-plot-dimension-selector li a").text(selection);
@@ -221,7 +249,18 @@ Promise.all([d3.json('data/dimensions.json'), d3.json("data/filters.json")]).the
         charts["scatter-plot-softness"].updateVis();
     });
     
-    fillHierarchicalSelection("#jitter-plot-dimension-y-selector", dimensions, o => o["#bar-chart"], "Object Category", false, (event) => {
+    ["Tends to be Lazy", "Has Few Artistic Interests", "Outgoing, Sociable", "Does a Thorough Job", "Tendency to Fidget"].forEach((d, i) => {
+        fillHierarchicalSelection("#radar-plot-dimension-" + (i + 1) + "-selector", dimensions, o => o["#radar-plot"], d, false, (event) => {
+            const selection = event.explicitOriginalTarget.textContent;
+    
+            d3.select("#radar-plot-dimension-" + (i + 1) + "-selector li a").text(selection);
+            
+            charts["radar-plot"].dimensions[i] = selection;
+            charts["radar-plot"].updateVis();
+        });
+    });
+    
+    fillHierarchicalSelection("#jitter-plot-dimension-y-selector", dimensions, o => o["#jitter-plot"], "Object Category", false, (event) => {
         const selection = event.explicitOriginalTarget.textContent;
 
         d3.select("#jitter-plot-dimension-y-selector li a").text(selection);
@@ -230,13 +269,54 @@ Promise.all([d3.json('data/dimensions.json'), d3.json("data/filters.json")]).the
         charts["scatter-plot-general"].updateVis();
     });
     
-    fillHierarchicalSelection("#jitter-plot-dimension-x-selector", dimensions, o => o["#bar-chart"], "Portability", false, (event) => {
+    fillHierarchicalSelection("#jitter-plot-dimension-x-selector", dimensions, o => o["#jitter-plot"], "Portability", false, (event) => {
         const selection = event.explicitOriginalTarget.textContent;
 
         d3.select("#jitter-plot-dimension-x-selector li a").text(selection);
         
         charts["scatter-plot-general"].xDimension = selection;
         charts["scatter-plot-general"].updateVis();
+    });
+    
+    ["Device Type", "Appearance", "Age", "Gender"].forEach((d, i) => {
+        fillHierarchicalSelection("#sankey-diagram-dimension-" + (i + 1) + "-selector", dimensions, o => o["#sankey-diagram"], d, false, (event) => {
+            const selection = event.explicitOriginalTarget.textContent;
+    
+            d3.select("#sankey-diagram-dimension-" + (i + 1) + "-selector li a").text(selection);
+            
+            charts["sankey-diagram"].dimensions[i] = selection;
+            charts["sankey-diagram"].updateVis();
+        });
+    });
+
+    const checkSankeyDimensionCount = (value) => {
+        d3.select("#sankey-diagram-layer-count").text(value);
+        const dimensions = [];
+        [1, 2, 3, 4].forEach(n => {
+            if (n <= value) {
+                d3.select("#sankey-diagram-dimension-" + n + "-selector-container").style("display", "block")
+                d3.select("#sankey-diagram-dimension-" + n + "-selector-container").style("flex", "1")
+                dimensions.push(d3.select("#sankey-diagram-dimension-" + n + "-selector li a").text());
+            } else {
+                d3.select("#sankey-diagram-dimension-" + n + "-selector-container").style("display", "none")
+                d3.select("#sankey-diagram-dimension-" + n + "-selector-container").style("flex", "0")
+            }
+        });
+        console.log(dimensions);
+        charts["sankey-diagram"].dimensions = dimensions;
+        charts["sankey-diagram"].updateVis();
+    };
+
+    d3.select("#sankey-diagram-layer-minus").on("click", () => {
+        let value = +d3.select("#sankey-diagram-layer-count").text();
+        value = d3.max([value - 1, 2]);
+        checkSankeyDimensionCount(value);
+    });
+
+    d3.select("#sankey-diagram-layer-plus").on("click", () => {
+        let value = +d3.select("#sankey-diagram-layer-count").text();
+        value = d3.min([value + 1, 4]);
+        checkSankeyDimensionCount(value);
     });
     
     fillHierarchicalSelection("#word-cloud-dimension-selector", dimensions, o => o["#word-cloud"], "Size", false, (event) => {
