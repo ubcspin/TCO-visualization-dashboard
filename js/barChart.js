@@ -5,9 +5,10 @@ class BarChart extends Chart {
 	 * @param {Object}
 	 */
 	// Todo: Add or remove parameters from the constructor as needed
-	constructor(_config, data) {
+	constructor(_config, data, options) {
 		super(_config, data)
 		this.dimension = _config.dimension;
+		this.options = options;
 		this.initVis();
 	}
 
@@ -78,7 +79,9 @@ class BarChart extends Chart {
 		vis.xValue = d => d[0];
 		vis.yValue = d => d[1];
 
-		vis.rollupData = d3.rollups(vis.data, d => d.length, d => d[vis.dimension]).sort((a, b) => vis.yValue(b) - vis.yValue(a));
+		vis.rollupData = d3.rollups(vis.data, d => d.length, d => d[vis.dimension]).sort((a, b) => {
+			return vis.options[vis.dimension].indexOf(vis.xValue(a).trim()) - vis.options[vis.dimension].indexOf(vis.xValue(b).trim());
+		});
 
 		// Set the scale input domains
 		vis.xScale
@@ -95,15 +98,7 @@ class BarChart extends Chart {
 		let vis = this;
 
 		const colourMap = {}
-		vis.rollupData.sort((a, b) => {
-			if (vis.xValue(a) < vis.xValue(b)) {
-				return -1;
-			}
-			if (vis.xValue(a) > vis.xValue(b)) {
-				return 1;
-			}
-			return 0;
-		}).forEach((d, i) => {
+		vis.rollupData.forEach((d, i) => {
 			colourMap[vis.xValue(d)] = i;
 		});
 

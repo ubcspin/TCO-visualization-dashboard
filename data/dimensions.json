@@ -88,7 +88,7 @@
                 "#sankey-diagram": false
             },
             {
-                "name": "[DER] Education",
+                "name": "Education",
                 "type": "Single ",
                 "#word-cloud": true,
                 "#bar-chart": true,
@@ -273,7 +273,7 @@
                 "#sankey-diagram": false
             },
             {
-                "name": "[DER] Object Category",
+                "name": "Object Category",
                 "type": "Single ",
                 "#word-cloud": true,
                 "#bar-chart": true,

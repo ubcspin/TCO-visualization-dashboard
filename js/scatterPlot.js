@@ -4,11 +4,12 @@ class ScatterPlot extends Chart {
 	 * @param {Object}
 	 */
 	// Todo: Add or remove parameters from the constructor as needed
-	constructor(_config, data) {
+	constructor(_config, data, options) {
 		super(_config, data)
 		this.xDimension = _config.xDimension;
 		this.yDimension = _config.yDimension;
 		this.colourDimension = _config.colourDimension;
+		this.options = options;
 		this.initVis();
 	}
 
@@ -89,14 +90,24 @@ class ScatterPlot extends Chart {
 		vis.yValue = d => d[vis.yDimension];
 		vis.colourValue = d => d[vis.colourDimension];
 
-		vis.colourData = d3.rollups(vis.data, d => d.length, d => vis.colourValue(d));
+		vis.colourData = d3.rollups(vis.data, d => d.length, d => vis.colourValue(d)).sort((a, b) => {
+			return vis.options[vis.colourDimension].indexOf(vis.colourValue(a)) - vis.options[vis.colourDimension].indexOf(vis.colourValue(b));
+		});;
+
+		let xDomain = vis.data.map(d => vis.xValue(d).trim()).sort((a, b) => {
+			return vis.options[vis.xDimension].indexOf(a) - vis.options[vis.xDimension].indexOf(b);
+		});
+
+		let yDomain = vis.data.map(d => vis.yValue(d).trim()).sort((a, b) => {
+			return vis.options[vis.yDimension].indexOf(b) - vis.options[vis.yDimension].indexOf(a);
+		});
 
 		// Set the scale input domains
 		vis.xScale
-			.domain(vis.data.map(vis.xValue).sort())
+			.domain(xDomain)
 			.range([0, vis.config.width]);
 		vis.yScale
-			.domain(vis.data.map(vis.yValue))
+			.domain(yDomain)
 			.range([0, vis.config.height]);
 
 		vis.simulation.force("x").x(d => vis.xScale(vis.xValue(d)) + vis.xScale.bandwidth() / 2);
@@ -109,15 +120,7 @@ class ScatterPlot extends Chart {
 		let vis = this;
 
 		const colourMap = {}
-		vis.colourData.sort((a, b) => {
-			if (a[0] < b[0]) {
-				return -1;
-			}
-			if (a[0] > b[0]) {
-				return 1;
-			}
-			return 0;
-		}).forEach((d, i) => {
+		vis.colourData.forEach((d, i) => {
 			colourMap[d[0]] = i;
 		});
 
@@ -138,6 +141,11 @@ class ScatterPlot extends Chart {
 			vis.nodes
 				.attr('cx', d => d.x)
 				.attr('cy', d => d.y);
+		});
+
+		vis.data.forEach(d => {
+			d.x = vis.config.width / 2;
+			d.y = vis.config.height / 2;
 		});
 
 		vis.simulation.nodes(vis.data);

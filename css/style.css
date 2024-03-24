@@ -234,9 +234,20 @@ ul ul {
     top: 100%;
     left: 0%;
     right: 0%;
-    width: 180%;
     padding: 0;
     text-align: left;
+}
+
+.main-navigation ul {
+    width: 100%;
+}
+
+.selector ul {
+    width: 180%;
+}
+
+.selector ul ul {
+    width: 100%;
 }
 
 ul ul ul {

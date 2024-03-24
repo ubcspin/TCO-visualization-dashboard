@@ -6,7 +6,7 @@ let filteredData;
 /**
  * Load data from CSV file asynchronously and render charts
  */
-d3.csv('data/comfort-objects.csv').then(data => {
+Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json')]).then(([data, options]) => {
     allData = data;
     filteredData = JSON.parse(JSON.stringify(data));
 
@@ -30,7 +30,7 @@ d3.csv('data/comfort-objects.csv').then(data => {
             bottom: 50,
             left: 70
         }
-    }, filteredData);
+    }, filteredData, options);
 
     container = document.getElementById("scatter-plot-container");
     charts["scatter-plot-softness"] = new ScatterPlot({
@@ -46,7 +46,7 @@ d3.csv('data/comfort-objects.csv').then(data => {
             bottom: 50,
             left: 160
         }
-    }, filteredData);
+    }, filteredData, options);
 
     // charts.push(new RadarPlot());
 
@@ -64,7 +64,7 @@ d3.csv('data/comfort-objects.csv').then(data => {
             bottom: 50,
             left: 160
         }
-    }, filteredData);
+    }, filteredData, options);
 
     // charts.push(new SankeyDiagram());
 

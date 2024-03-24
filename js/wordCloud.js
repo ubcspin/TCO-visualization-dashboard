@@ -27,7 +27,7 @@ class WordCloud extends Chart {
 		vis.layout = d3.layout.cloud()
 			.fontSize(d => vis.sizeScale(d.size))
 			.rotate(0)
-			.padding(10);
+			.padding(30);
 
 		vis.updateVis();
 	}
@@ -45,7 +45,10 @@ class WordCloud extends Chart {
 			.attr('width', vis.config.containerWidth)
 			.attr('height', vis.config.containerHeight);
 
-		vis.rollupData = d3.rollups(vis.data, d => d.length, d => d[vis.dimension]);
+		vis.words = [];
+		vis.data.forEach(d => vis.words.push(...d[vis.dimension].split(",")));
+
+		vis.rollupData = d3.rollups(vis.words, d => d.length, d => d);
 		vis.rollupData = vis.rollupData.map(d => { return { text: d[0], size: d[1] } });
 
 		vis.sizeScale
@@ -67,12 +70,32 @@ class WordCloud extends Chart {
 				.data(words)
 				.join("text")
 				.attr("class", "word")
+				.attr("id", d => "word-" + vis.dimension.split(" ").join("-") + "-" + d.text.split(/[\s:\/(\)]+/).join("-"))
 				.attr("font-size", d => d.size)
 				.attr("text-anchor", "middle")
 				.attr("transform", d => {
 					return "translate(" + [d.x + vis.config.width / 2, d.y + vis.config.height / 2] + ")";
 				})
 				.text(d => d.text);
+
+			vis.chartArea.selectAll(".word-backing")
+				.data(words)
+				.join("rect")
+				.attr("class", "word-backing")
+				.attr("width", d => {
+					const word = d3.select("#word-" + vis.dimension.split(" ").join("-") + "-" + d.text.split(/[\s:\/\(\)]+/).join("-")).node().getBBox();
+					return word.width + 10;
+				})
+				.attr("height", d => {
+					const word = d3.select("#word-" + vis.dimension.split(" ").join("-") + "-" + d.text.split(/[\s:\/(\)]+/).join("-")).node().getBBox();
+					return word.height + 10;
+				})
+				.attr("transform", d => {
+					const word = d3.select("#word-" + vis.dimension.split(" ").join("-") + "-" + d.text.split(/[\s:\/(\)]+/).join("-")).node().getBBox();
+					return "translate(" + [d.x + vis.config.width / 2 - 5 - word.width / 2, d.y + vis.config.height / 2 - 5 - 3 * word.height / 4] + ")";
+				})
+				.attr("opacity", 0.2)
+				.attr("fill", "blue");
 		};
 
 		vis.layout.on("end", draw).start();

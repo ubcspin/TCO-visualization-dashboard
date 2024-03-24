@@ -3,10 +3,14 @@ import json
 
 structure = {}
 filters = []
+options = {}
 
 with open("data/data-structure.csv") as csvFile:
     reader = csv.reader(csvFile)
     for row in reader:
+        if row[3].startswith("[DER] "):
+            row[3] = row[3][6:]
+
         if row[2] == "":
             name = row[1]
         else:
@@ -26,6 +30,8 @@ with open("data/data-structure.csv") as csvFile:
                 "#radar-plot": row[14] == "use",
                 "#sankey-diagram": row[15] == "use",
             }]
+
+            options[row[3]] = row[7].split(", ")
         
         if row[10] == "use":
             filters += [{
@@ -45,3 +51,6 @@ with open("data/dimensions.json", "w") as jsonFile:
 
 with open("data/filters.json", "w") as jsonFile:
     jsonFile.write(json.dumps(filters, indent=4))
+
+with open("data/options.json", "w") as jsonFile:
+    jsonFile.write(json.dumps(options, indent=4))
