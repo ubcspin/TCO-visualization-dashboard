@@ -166,6 +166,7 @@ class SankeyDiagram extends Chart {
 			.attr("y", d => (d.y0 + d.y1) / 2)
 			.attr("text-anchor", d => d.layer < vis.dimensions.length / 2 ? "start" : "end")
 			.text(d => d.name.split("///")[1])
-			.attr("x", d => d.layer < vis.dimensions.length / 2 ? d.x1 + 6 : d.x0 - 6);
+			.attr("x", d => d.layer < vis.dimensions.length / 2 ? d.x1 + 6 : d.x0 - 6)
+			.attr("z-index", 1.5);
 	}
 }
