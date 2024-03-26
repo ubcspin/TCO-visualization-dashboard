@@ -25,7 +25,7 @@
 
         <div class="row">
             <div id="bar-chart-container" class="chart-container" style="flex: 10">
-                <ul class="selector dimension" id="bar-chart-dimension-selector">
+                <ul class="selector dimension" id="bar-chart-dimension-selector" style="z-index: 30">
                     <li>
                         <a href="#" class="dropdown-label"></a>
                     </li>
@@ -39,7 +39,7 @@
             <div id="scatter-plot-container" class="chart-container" style="flex: 15">
                 <!-- <a class="vis-lock"><img src="media/lock-image.png"></img></a> -->
                 
-                <ul class="selector dimension" id="scatter-plot-dimension-selector">
+                <ul class="selector dimension" id="scatter-plot-dimension-selector" style="z-index: 29">
                     <li>
                         <a href="#" class="dropdown-label"></a>
                     </li>
@@ -116,7 +116,7 @@
 
         <div class="row">
             <div id="jitter-plot-container" class="chart-container" style="flex: 10">                
-                <ul class="selector preset" id="jitter-plot-preset-selector">
+                <ul class="selector preset" id="jitter-plot-preset-selector" style="z-index: 25">
                     <li>
                         <a href="#" class="dropdown-label"></a>
                     </li>
@@ -124,13 +124,13 @@
                 
                 <!-- <a class="vis-lock"><img src="media/lock-image.png"></img></a> -->
                 
-                <ul class="selector dimension" id="jitter-plot-dimension-x-selector">
+                <ul class="selector dimension" id="jitter-plot-dimension-x-selector" style="z-index: 24">
                     <li>
                         <a href="#" class="dropdown-label"></a>
                     </li>
                 </ul>
                 
-                <ul class="selector dimension" id="jitter-plot-dimension-y-selector">
+                <ul class="selector dimension" id="jitter-plot-dimension-y-selector" style="z-index: 23">
                     <li>
                         <a href="#" class="dropdown-label"></a>
                     </li>
@@ -157,38 +157,30 @@
 
                 <svg class="chart" id="sankey-diagram"></svg>
 
-                <div id="sankey-diagram-dimension-selectors" style="display: flex">
-                    <div id="sankey-diagram-dimension-1-selector-container" style="flex: 1;">
-                        <ul class="selector dimension" id="sankey-diagram-dimension-1-selector" style="z-index: 6; margin: auto">
-                            <li>
-                                <a href="#" class="dropdown-label"></a>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div id="sankey-diagram-dimension-2-selector-container" style="flex: 1">
-                        <ul class="selector dimension" id="sankey-diagram-dimension-2-selector" style="z-index: 5; margin: auto">
-                            <li>
-                                <a href="#" class="dropdown-label"></a>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div id="sankey-diagram-dimension-3-selector-container" style="flex: 1">
-                        <ul class="selector dimension" id="sankey-diagram-dimension-3-selector" style="z-index: 4; margin: auto">
-                            <li>
-                                <a href="#" class="dropdown-label"></a>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div id="sankey-diagram-dimension-4-selector-container" style="flex: 1">
-                        <ul class="selector dimension" id="sankey-diagram-dimension-4-selector" style="z-index: 3; margin: auto">
-                            <li>
-                                <a href="#" class="dropdown-label"></a>
-                            </li>
-                        </ul>
-                    </div>
+                <div id="sankey-diagram-dimension-selectors">
+                    <ul class="selector dimension" id="sankey-diagram-dimension-1-selector" style="z-index: 6">
+                        <li>
+                            <a href="#" class="dropdown-label"></a>
+                        </li>
+                    </ul>
+                
+                    <ul class="selector dimension" id="sankey-diagram-dimension-2-selector" style="z-index: 5">
+                        <li>
+                            <a href="#" class="dropdown-label"></a>
+                        </li>
+                    </ul>
+                
+                    <ul class="selector dimension" id="sankey-diagram-dimension-3-selector" style="z-index: 4">
+                        <li>
+                            <a href="#" class="dropdown-label"></a>
+                        </li>
+                    </ul>
+                
+                    <ul class="selector dimension" id="sankey-diagram-dimension-4-selector" style="z-index: 3">
+                        <li>
+                            <a href="#" class="dropdown-label"></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
 

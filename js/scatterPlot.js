@@ -21,8 +21,7 @@ class ScatterPlot extends Chart {
 
 		// Append group element that will contain our actual chart
 		// and position it according to the given margin config
-		vis.chartArea = vis.svg.append('g')
-			.attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top})`);
+		vis.chartArea = vis.svg.append('g');
 
 		vis.xScale = d3.scaleBand();
 		vis.yScale = d3.scaleBand();
@@ -43,17 +42,14 @@ class ScatterPlot extends Chart {
 
 		// Initialize force simulation
 		vis.simulation = d3.forceSimulation()
-			.force('collision', d3.forceCollide().radius(5))
 			.force('x', vis.xForce)
 			.force('y', vis.yForce);
 
 		vis.xAxisTitle = vis.chartArea.append("text")
-			.attr("font-size", 16)
 			.style("text-anchor", "middle");
 
 		vis.yAxisTitle = vis.chartArea.append("text")
-			.attr("transform", "rotate(-90) translate(0, 10)")
-			.attr("font-size", 16)
+			.attr("transform", "rotate(-90)")
 			.style("text-anchor", "middle");
 
 		vis.updateVis();
@@ -63,6 +59,14 @@ class ScatterPlot extends Chart {
 		let vis = this;
 
 		vis.data = JSON.parse(JSON.stringify(vis.ogData));
+
+		vis.config.margin.left = vis.config.containerWidth * vis.config.marginLeft;
+		vis.config.margin.right = vis.config.containerWidth * vis.config.marginRight;
+		vis.config.margin.top = vis.config.containerHeight * vis.config.marginTop;
+		vis.config.margin.bottom = vis.config.containerHeight * vis.config.marginBottom;
+
+		vis.chartArea
+			.attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top})`);
 
 		// Calculate inner chart size. Margin specifies the space around the actual chart.
 		vis.config.width = vis.config.containerWidth - vis.config.margin.left - vis.config.margin.right;
@@ -76,14 +80,16 @@ class ScatterPlot extends Chart {
 			.attr('transform', `translate(0,${vis.config.height})`);
 
 		vis.yAxisTitle
-			.attr("y", 0 - vis.config.margin.left + 16)
+			.attr("y", 0 - vis.config.margin.left + vis.config.width * 0.04)
 			.attr("x", 0 - (vis.config.height / 2));
 
 		vis.xAxisTitle
 			.attr("x", vis.config.width / 2 )
 			.attr("y",  vis.config.height + vis.config.margin.bottom - 16)
 		
-		vis.simulation.nodes(vis.data);
+		vis.simulation
+			.nodes(vis.data)
+			.force('collision', d3.forceCollide().radius(0.01 * vis.config.height));
 
 		// Specificy x- and y-accessor functions
 		vis.xValue = d => d[vis.xDimension];
@@ -129,13 +135,13 @@ class ScatterPlot extends Chart {
 			.join(
 				(enter) => {
 					return enter.append("circle")
-						.attr('r', 5)
 						.attr('cx', vis.config.width / 2)
 						.attr('cy', vis.config.height / 2)
 						.attr('class', 'point')
 				}
 			)
-			.attr('fill', d => d3.schemeTableau10[colourMap[vis.colourValue(d)]]);
+			.attr('fill', d => d3.schemeTableau10[colourMap[vis.colourValue(d)]])
+			.attr('r', 0.01 * vis.config.height);
 
 		vis.simulation.on("tick", () => {
 			vis.nodes

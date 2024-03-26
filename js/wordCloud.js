@@ -19,8 +19,7 @@ class WordCloud extends Chart {
 
 		// Append group element that will contain our actual chart
 		// and position it according to the given margin config
-		vis.chartArea = vis.svg.append('g')
-			.attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top})`);
+		vis.chartArea = vis.svg.append('g');
 
 		vis.sizeScale = d3.scaleLinear();
 
@@ -36,6 +35,14 @@ class WordCloud extends Chart {
 		let vis = this;
 
 		vis.data = JSON.parse(JSON.stringify(vis.ogData));
+
+		vis.config.margin.left = vis.config.containerWidth * vis.config.marginLeft;
+		vis.config.margin.right = vis.config.containerWidth * vis.config.marginRight;
+		vis.config.margin.top = vis.config.containerHeight * vis.config.marginTop;
+		vis.config.margin.bottom = vis.config.containerHeight * vis.config.marginBottom;
+
+		vis.chartArea
+			.attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top})`);
 
 		// Calculate inner chart size. Margin specifies the space around the actual chart.
 		vis.config.width = vis.config.containerWidth - vis.config.margin.left - vis.config.margin.right;
@@ -53,7 +60,7 @@ class WordCloud extends Chart {
 
 		vis.sizeScale
 			.domain(d3.extent(vis.rollupData.map(d => d.size)))
-			.range([12, 40]);
+			.range([0.03 * vis.config.width, 0.06 * vis.config.width]);
 
 		vis.layout
 			.words(vis.rollupData)

@@ -3,6 +3,26 @@ let filterOptions = [];
 let allData;
 let filteredData;
 
+const resize = () => {
+    const width = d3.max([window.innerWidth, 1920]);
+    let height = d3.max([window.innerHeight, 1080]);
+    if (width / height < 1.6 && width / height > 1.9) {
+        height = width * 9 / 16;
+    }
+
+    document.getElementById("dashboard").setAttribute("style", "width: " + width + "px; height: " + height + "px; font-size: " + (width * 100 / 1920) + "%");
+
+    d3.selectAll("g.tick text").attr("font-size", (width * 100 / 1920) + "%")
+
+    Object.values(charts).forEach(c => {
+        let container = document.getElementById(c.config.parentElement.substring(1) + "-container");
+        c.config.containerWidth = container.clientWidth;
+        c.config.containerHeight = container.clientHeight;
+        c.updateVis();
+    });
+};
+window.onresize = resize;
+
 /**
  * Load data from CSV file asynchronously and render charts
  */
@@ -25,10 +45,10 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json')]).
         height: container.clientHeight,
         dimension: "Gender",
         margin: {
-            top: 75,
-            right: 15,
-            bottom: 50,
-            left: 70
+            top: 0.08,
+            right: 0.01,
+            bottom: 0.10,
+            left: 0.08
         }
     }, filteredData, options);
 
@@ -41,10 +61,10 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json')]).
         xDimension: "Softness Rating",
         colourDimension: "Gender",
         margin: {
-            top: 100,
-            right: 15,
-            bottom: 50,
-            left: 160
+            top: 0.08,
+            right: 0.01,
+            bottom: 0.10,
+            left: 0.08
         }
     }, filteredData, options);
 
@@ -56,10 +76,10 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json')]).
         dimensions: ["Tends to be Lazy", "Has Few Artistic Interests", "Outgoing, Sociable", "Does a Thorough Job", "Tendency to Fidget"],
         layers: [null, null],
         margin: {
-            top: 100,
-            right: 15,
-            bottom: 50,
-            left: 160
+            top: 0.08,
+            right: 0.01,
+            bottom: 0.06,
+            left: 0.08
         }
     }, filteredData, options);
 
@@ -72,10 +92,10 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json')]).
         xDimension: "Portability",
         colourDimension: "Gender",
         margin: {
-            top: 150,
-            right: 15,
-            bottom: 50,
-            left: 160
+            top: 0.16,
+            right: 0.01,
+            bottom: 0.10,
+            left: 0.25
         }
     }, filteredData, options);
 
@@ -86,10 +106,10 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json')]).
         height: container.clientHeight,
         dimensions: ["Device Type", "Appearance", "Age", "Gender"],
         margin: {
-            top: 150,
-            right: 10,
-            bottom: 10,
-            left: 10
+            top: 0.18,
+            right: 0.01,
+            bottom: 0.01,
+            left: 0.01
         }
     }, filteredData, options);
 
@@ -100,30 +120,15 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json')]).
         height: container.clientHeight,
         dimension: "Size",
         margin: {
-            top: 100,
-            right: 15,
-            bottom: 20,
-            left: 40
+            top: 0.08,
+            right: 0.01,
+            bottom: 0.01,
+            left: 0.01
         }
     }, filteredData);
+
+    resize();
 });
-
-window.onresize = () => {
-    const width = d3.max([window.innerWidth, 1920]);
-    let height = d3.max([window.innerHeight, 1080]);
-    if (width / height < 1.6 && width / height > 1.9) {
-        height = width * 9 / 16;
-    }
-
-    document.getElementById("dashboard").setAttribute("style", "width: " + width + "px; height: " + height + "px");
-
-    Object.values(charts).forEach(c => {
-        let container = document.getElementById(c.config.parentElement.substring(1) + "-container");
-        c.config.containerWidth = container.clientWidth;
-        c.config.containerHeight = container.clientHeight;
-        c.updateVis();
-    });
-};
 
 const fillHierarchicalSelection = (dropdown, options, filter, defaultOption, checkbox, onchange) => {
     d3.select(dropdown + " li a").text(defaultOption);
@@ -226,7 +231,12 @@ Promise.all([d3.json('data/dimensions.json'), d3.json("data/filters.json")]).the
     });
 
     fillHierarchicalSelection("#bar-chart-dimension-selector", dimensions, o => o["#bar-chart"], "Gender", false, (event) => {
-        const selection = event.explicitOriginalTarget.textContent;
+        let selection;
+        if (event.explicitOriginalTarget) {
+            selection = event.explicitOriginalTarget.textContent;
+        } else {
+            selection = event.srcElement.innerText;
+        }
 
         d3.select("#bar-chart-dimension-selector li a").text(selection);
 
@@ -241,7 +251,12 @@ Promise.all([d3.json('data/dimensions.json'), d3.json("data/filters.json")]).the
     });
     
     fillHierarchicalSelection("#scatter-plot-dimension-selector", dimensions, o => o["#scatter-plot"], "Age", false, (event) => {
-        const selection = event.explicitOriginalTarget.textContent;
+        let selection;
+        if (event.explicitOriginalTarget) {
+            selection = event.explicitOriginalTarget.textContent;
+        } else {
+            selection = event.srcElement.innerText;
+        }
 
         d3.select("#scatter-plot-dimension-selector li a").text(selection);
 
@@ -251,7 +266,12 @@ Promise.all([d3.json('data/dimensions.json'), d3.json("data/filters.json")]).the
     
     ["Tends to be Lazy", "Has Few Artistic Interests", "Outgoing, Sociable", "Does a Thorough Job", "Tendency to Fidget"].forEach((d, i) => {
         fillHierarchicalSelection("#radar-plot-dimension-" + (i + 1) + "-selector", dimensions, o => o["#radar-plot"], d, false, (event) => {
-            const selection = event.explicitOriginalTarget.textContent;
+            let selection;
+            if (event.explicitOriginalTarget) {
+                selection = event.explicitOriginalTarget.textContent;
+            } else {
+                selection = event.srcElement.innerText;
+            }
     
             d3.select("#radar-plot-dimension-" + (i + 1) + "-selector li a").text(selection);
             
@@ -261,7 +281,12 @@ Promise.all([d3.json('data/dimensions.json'), d3.json("data/filters.json")]).the
     });
     
     fillHierarchicalSelection("#jitter-plot-dimension-y-selector", dimensions, o => o["#jitter-plot"], "Object Category", false, (event) => {
-        const selection = event.explicitOriginalTarget.textContent;
+        let selection;
+        if (event.explicitOriginalTarget) {
+            selection = event.explicitOriginalTarget.textContent;
+        } else {
+            selection = event.srcElement.innerText;
+        }
 
         d3.select("#jitter-plot-dimension-y-selector li a").text(selection);
         
@@ -270,7 +295,12 @@ Promise.all([d3.json('data/dimensions.json'), d3.json("data/filters.json")]).the
     });
     
     fillHierarchicalSelection("#jitter-plot-dimension-x-selector", dimensions, o => o["#jitter-plot"], "Portability", false, (event) => {
-        const selection = event.explicitOriginalTarget.textContent;
+        let selection;
+        if (event.explicitOriginalTarget) {
+            selection = event.explicitOriginalTarget.textContent;
+        } else {
+            selection = event.srcElement.innerText;
+        }
 
         d3.select("#jitter-plot-dimension-x-selector li a").text(selection);
         
@@ -280,7 +310,12 @@ Promise.all([d3.json('data/dimensions.json'), d3.json("data/filters.json")]).the
     
     ["Device Type", "Appearance", "Age", "Gender"].forEach((d, i) => {
         fillHierarchicalSelection("#sankey-diagram-dimension-" + (i + 1) + "-selector", dimensions, o => o["#sankey-diagram"], d, false, (event) => {
-            const selection = event.explicitOriginalTarget.textContent;
+            let selection;
+            if (event.explicitOriginalTarget) {
+                selection = event.explicitOriginalTarget.textContent;
+            } else {
+                selection = event.srcElement.innerText;
+            }
     
             d3.select("#sankey-diagram-dimension-" + (i + 1) + "-selector li a").text(selection);
             
@@ -292,17 +327,22 @@ Promise.all([d3.json('data/dimensions.json'), d3.json("data/filters.json")]).the
     const checkSankeyDimensionCount = (value) => {
         d3.select("#sankey-diagram-layer-count").text(value);
         const dimensions = [];
-        [1, 2, 3, 4].forEach(n => {
+        const lefts = {
+            2: [0, 81],
+            3: [0, 41, 81],
+            4: [0, 25.5, 56, 81]
+        };
+        [1, 2, 3, 4].forEach((n, i) => {
             if (n <= value) {
-                d3.select("#sankey-diagram-dimension-" + n + "-selector-container").style("display", "block")
-                d3.select("#sankey-diagram-dimension-" + n + "-selector-container").style("flex", "1")
+                d3.select("#sankey-diagram-dimension-" + n + "-selector")
+                    .style("display", "block")
+                    .style("left", lefts[value][i] + "%");
                 dimensions.push(d3.select("#sankey-diagram-dimension-" + n + "-selector li a").text());
             } else {
-                d3.select("#sankey-diagram-dimension-" + n + "-selector-container").style("display", "none")
-                d3.select("#sankey-diagram-dimension-" + n + "-selector-container").style("flex", "0")
+                d3.select("#sankey-diagram-dimension-" + n + "-selector")
+                    .style("display", "none");
             }
         });
-        console.log(dimensions);
         charts["sankey-diagram"].dimensions = dimensions;
         charts["sankey-diagram"].updateVis();
     };
@@ -320,7 +360,14 @@ Promise.all([d3.json('data/dimensions.json'), d3.json("data/filters.json")]).the
     });
     
     fillHierarchicalSelection("#word-cloud-dimension-selector", dimensions, o => o["#word-cloud"], "Size", false, (event) => {
-        const selection = event.explicitOriginalTarget.textContent;
+        let selection;
+        if (event.explicitOriginalTarget) {
+            selection = event.explicitOriginalTarget.textContent;
+        } else {
+            selection = event.srcElement.innerText;
+        }
+
+        console.log(selection);
 
         d3.select("#word-cloud-dimension-selector li a").text(selection);
         

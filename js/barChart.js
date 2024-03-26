@@ -20,8 +20,7 @@ class BarChart extends Chart {
 
 		// Append group element that will contain our actual chart
 		// and position it according to the given margin config
-		vis.chartArea = vis.svg.append('g')
-			.attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top})`);
+		vis.chartArea = vis.svg.append('g');
 
 		vis.xScale = d3.scaleBand();
 		vis.yScale = d3.scaleLinear();
@@ -38,13 +37,9 @@ class BarChart extends Chart {
 			.attr('class', 'axis y-axis');
 
 		vis.xAxisTitle = vis.chartArea.append("text")
-			.attr("font-size", 16)
-			.attr("y", 0 - vis.config.margin.left + 16)
 			.style("text-anchor", "middle");
 
 		vis.yAxisTitle = vis.chartArea.append("text")
-			.attr("transform", "rotate(-90) translate(0, 10)")
-			.attr("font-size", 16)
 			.style("text-anchor", "middle")
 			.text("Count"); 
 
@@ -55,6 +50,17 @@ class BarChart extends Chart {
 		let vis = this;
 
 		vis.data = JSON.parse(JSON.stringify(vis.ogData));
+
+		vis.config.margin.left = vis.config.containerWidth * vis.config.marginLeft;
+		vis.config.margin.right = vis.config.containerWidth * vis.config.marginRight;
+		vis.config.margin.top = vis.config.containerHeight * vis.config.marginTop;
+		vis.config.margin.bottom = vis.config.containerHeight * vis.config.marginLeft;
+
+		vis.chartArea
+			.attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top})`);
+
+		vis.xAxisTitle
+			.attr("y", 0 - vis.config.margin.left + 16);
 
 		// Calculate inner chart size. Margin specifies the space around the actual chart.
 		vis.config.width = vis.config.containerWidth - vis.config.margin.left - vis.config.margin.right;
@@ -68,8 +74,9 @@ class BarChart extends Chart {
 			.attr('transform', `translate(0,${vis.config.height})`);
 
 		vis.yAxisTitle
-			.attr("y", 0 - vis.config.margin.left + 16)
-			.attr("x", 0 - (vis.config.height / 2));
+		.attr("y", 0 - vis.config.margin.left + vis.config.width * 0.04)
+			.attr("x", 0 - (vis.config.height / 2))
+			.attr("transform", "rotate(-90)");
 
 		vis.xAxisTitle
 			.attr("x", vis.config.width / 2 )

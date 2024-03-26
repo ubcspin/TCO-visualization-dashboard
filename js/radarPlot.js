@@ -21,14 +21,21 @@ class RadarPlot extends Chart {
 
 		// Append group element that will contain our actual chart
 		// and position it according to the given margin config
-		vis.chartArea = vis.svg.append('g')
-			.attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top})`);
+		vis.chartArea = vis.svg.append('g');
 
 		// Todo: initialize scales, axes, static elements, etc.
 	}
 
 	updateVis() {
 		let vis = this;
+
+		vis.config.margin.left = vis.config.containerWidth * vis.config.marginLeft;
+		vis.config.margin.right = vis.config.containerWidth * vis.config.marginRight;
+		vis.config.margin.top = vis.config.containerHeight * vis.config.marginTop;
+		vis.config.margin.bottom = vis.config.containerHeight * vis.config.marginLeft;
+
+		vis.chartArea
+			.attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top})`);
 
 		// Calculate inner chart size. Margin specifies the space around the actual chart.
 		vis.config.width = vis.config.containerWidth - vis.config.margin.left - vis.config.margin.right;

@@ -20,15 +20,10 @@ class SankeyDiagram extends Chart {
 
 		// Append group element that will contain our actual chart
 		// and position it according to the given margin config
-		vis.chartArea = vis.svg.append('g')
-			.attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top})`);
+		vis.chartArea = vis.svg.append('g');
 
 		// Todo: initialize scales, axes, static elements, etc.
-
-		// Set the sankey diagram properties
-		vis.sankey = d3.sankey()
-			.nodeWidth(36)
-			.nodePadding(10);
+		vis.sankey = d3.sankey();
 
 		vis.defs = vis.chartArea.append("defs");
 
@@ -40,9 +35,22 @@ class SankeyDiagram extends Chart {
 
 		vis.data = JSON.parse(JSON.stringify(vis.ogData));
 
+		vis.config.margin.left = vis.config.containerWidth * vis.config.marginLeft;
+		vis.config.margin.right = vis.config.containerWidth * vis.config.marginRight;
+		vis.config.margin.top = vis.config.containerHeight * vis.config.marginTop;
+		vis.config.margin.bottom = vis.config.containerHeight * vis.config.marginBottom;
+
+		vis.chartArea
+			.attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top})`);
+
 		// Calculate inner chart size. Margin specifies the space around the actual chart.
 		vis.config.width = vis.config.containerWidth - vis.config.margin.left - vis.config.margin.right;
 		vis.config.height = vis.config.containerHeight - vis.config.margin.top - vis.config.margin.bottom;
+
+		// Set the sankey diagram properties
+		vis.sankey
+			.nodeWidth(vis.config.width * 0.04)
+			.nodePadding(vis.config.width * 0.01);
 
 		vis.svg
 			.attr('width', vis.config.containerWidth)

@@ -2,6 +2,7 @@ html, body {
     padding: 0;
     margin: 0;
     font-family: "Open Sans", sans-serif;
+    font-size: 90%;
     color: #fefadf;
 }
 
@@ -23,7 +24,7 @@ html, body {
 #header h1 {
     flex: 3;
     padding: 0;
-    margin: 10px;
+    margin: 4%;
 }
 
 .header-selector {
@@ -38,65 +39,45 @@ html, body {
     color: #fefadf;
 }
 
+ul.header-selector {
+    padding: 8.5px;
+    z-index: 100;
+}
+
 /* General Dashboard */
 .row {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 45%;
-    margin-top: 20px;
+    margin-top: 1%;
 }
 
 .chart-container {
-    margin: 10px;
+    margin: 0 0.5% 0 0.5%;
     height: 100%;
     background-color: #f8ecde;
     border-radius: 10px;
     position: relative;
 }
 
-.vis-lock {
-    position: absolute;
-    top: 10px;
-    right: 0%;
-    width: 40px;
-    cursor: pointer;
-}
-
-.vis-lock img {
-    width: 100%;
-}
-
 .selector {
     background-color: #bc6c23;
-    margin-top: 10px;
-    margin-left: 10px;
-    padding: 10px;
+    margin: 1%;
+    padding: 1%;
     border: 0;
     border-radius: 10px;
-    width: 200px;
-    height: 40px;
+    width: 28%;
+    height: 3%;
     position: absolute;
     z-index: 1;
 }
 
-select.selector {
-    width: 200px;
-    height: 40px;
-    color: #fefadf;
-}
-
 div.selector {
-    width: 180px;
-    height: 20px;
-    position: relative;
     display: flex;
 }
 
 ul.selector {
-    width: 180px;
-    height: 20px;
-    position: relative;
     display: flex;
 }
 
@@ -133,60 +114,60 @@ div.selector a {
 /* Radar Plot */
 
 #radar-plot-vertex-count-selector {
-    top: -56px;
+    top: 0;
     left: 0;
 }
 
 #radar-plot-preset-selector {
     top: 0;
-    left: 220px;
+    left: 32%;
 }
 
 #radar-plot-dimension-1-selector {
-    top: 0;
+    top: 6%;
     left: 0;
 }
 
 #radar-plot-dimension-2-selector {
-    top: 0;
+    top: 12%;
     left: 0;
 }
 
 #radar-plot-dimension-3-selector {
-    top: 0;
+    top: 18%;
     left: 0;
 }
 
 #radar-plot-dimension-4-selector {
-    top: 0;
+    top: 24%;
     left: 0;
 }
 
 #radar-plot-dimension-5-selector {
-    top: 0;
+    top: 30%;
     left: 0;
 }
 
 #radar-plot-layer-1-selector {
-    top: 30px;
+    top: 42%;
     left: 0;
 }
 
 #radar-plot-layer-2-selector {
-    top: 30px;
+    top: 48%;
     left: 0;
 }
 
 /* Scatter Plot - General */
 
 #jitter-plot-dimension-x-selector {
-    top: 0px;
-    left: 220px;
+    top: 6%;
+    left: 0;
 }
 
 #jitter-plot-dimension-y-selector {
-    top: -56px;
-    left: 0;
+    top: 6%;
+    left: 32%;
 }
 
 #jitter-plot-preset-selector {
@@ -198,32 +179,36 @@ div.selector a {
 
 #sankey-diagram-preset-selector {
     top: 0;
-    left: 220px;
-}
-
-#sankey-diagram-vertex-count-selector {
-    top: -56px;
     left: 0;
 }
 
+#sankey-diagram-vertex-count-selector {
+    top: 0;
+    left: 32%;
+}
+
 #sankey-diagram-dimension-1-selector {
-    top: -41px;
+    width: 15%;
+    top: 8%;
     left: 0;
 }
 
 #sankey-diagram-dimension-2-selector {
-    top: -41px;
-    left: 0;
+    width: 15%;
+    top: 8%;
+    left: 25.5%;
 }
 
 #sankey-diagram-dimension-3-selector {
-    top: -41px;
-    left: 0;
+    width: 15%;
+    top: 8%;
+    left: 56%;
 }
 
 #sankey-diagram-dimension-4-selector {
-    top: -41px;
-    left: 0;
+    width: 15%;
+    top: 8%;
+    left: 81%;
 }
 
 /* Word Cloud */
@@ -274,11 +259,11 @@ ul li a {
 }
 
 ul ul li a {
-    padding: 6px;
+    padding: 2%;
 }
 
 .selector ul ul li {
-    padding: 6px;
+    padding: 2%;
 }
 
 li:hover > ul {
@@ -319,7 +304,15 @@ ul ul {
 }
 
 .selector ul {
-    width: 180%;
+    width: 160%;
+}
+
+#sankey-diagram-dimension-selectors .selector ul {
+    width: 200%;
+}
+
+#sankey-diagram-dimension-selectors .selector ul ul {
+    width: 100%;
 }
 
 .selector ul ul {
