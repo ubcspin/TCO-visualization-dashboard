@@ -16,14 +16,14 @@
         "Facebook Group",
         "Word of mouth",
         "Other",
-        "Prefer not to answer"
+        "Prefer not to answer  "
     ],
     "Gender": [
         "Male",
         "Female",
         "Non-binary",
         "Prefer not to disclose",
-        "Prefer to self-describe"
+        "Prefer to self-describe  "
     ],
     "Cultural Background": [
         "Black/African Canadian",
@@ -35,7 +35,7 @@
         "European/White",
         "Middle Eastern",
         "Prefer not to disclose",
-        "Prefer to self-describe"
+        "Prefer to self-describe  "
     ],
     "Age": [
         "18-24",
@@ -199,7 +199,9 @@
     "Device Type": [
         "Table-top",
         "Hand-held",
-        "Wearable",
+        "Wearable (e.g.",
+        "watch",
+        "jewelry)",
         "Other",
         "Prefer not to answer"
     ],
@@ -212,10 +214,6 @@
     "Targeted Body Part": [
         "Head",
         "Face",
-        "Mouth",
-        "Nose",
-        "Ears",
-        "Hair",
         "Cheek",
         "Neck",
         "Shoulder",
@@ -267,11 +265,16 @@
         "Prefer not to answer"
     ],
     "Size": [
-        "Miniature",
-        "Small",
-        "Medium",
-        "Large",
-        "Extra large",
+        "Miniature (e.g.",
+        "ring)",
+        "Small (e.g.",
+        "stress ball)",
+        "Medium (e.g.",
+        "basketball)",
+        "Large (e.g.",
+        "pillow)",
+        "Extra large (e.g.",
+        "body pillow)",
         "Other",
         "Prefer not to answer"
     ],
@@ -320,21 +323,21 @@
         "Other",
         "Prefer not to answer"
     ],
-    "Functional Value Importance": [
+    "Functional Value": [
         "Not at all important",
         "Slightly important",
         "Moderately important",
         "Very important",
         "Extremely important"
     ],
-    "Emotional Significance Importance": [
+    "Emotional Significance": [
         "Not at all important",
         "Slightly important",
         "Moderately important",
         "Very important",
         "Extremely important"
     ],
-    "Physical Soothing Importance": [
+    "Physical Soothing": [
         "Not at all important",
         "Slightly important",
         "Moderately important",
@@ -415,7 +418,7 @@
         "Other",
         "Prefer not to answer"
     ],
-    "Object Acquisition": [
+    "Acquisition": [
         "Bought it",
         "Made it",
         "Gifted",
@@ -425,32 +428,34 @@
         "Other",
         "Prefer not to answer"
     ],
-    "Object Attachment": [
+    "Attachment": [
         "Not significant at all (okay if I lose it)",
         "Slightly significant",
         "Moderately significant",
         "Very significant",
         "Extremely significant (devastated if I lose it)",
         "Other",
-        "Prefer not to answer5"
+        "Prefer not to answer"
     ],
-    "Object Meaningfulness": [
+    "Meaningfulness": [
         "It symbolizes something to me",
         "It reminds me of someone",
         "It reminds me of some event or situation",
         "It represents a milestone or achievement",
-        "It denotes belonging to a group/community/culture",
+        "It denotes belonging to a group",
+        "community",
+        "or culture",
         "It makes me feel a certain way",
         "Not meaningful",
         "Other",
-        "Prefer not to answer"
+        "Prefer not to answer\n"
     ],
-    "Object Customization": [
+    "Customization": [
         "Yes",
         "No",
         "Prefer not to answer"
     ],
-    "Cultural Influence on Object Significance": [
+    "Cultural Influence": [
         "Yes",
         "No",
         "Prefer not to answer"

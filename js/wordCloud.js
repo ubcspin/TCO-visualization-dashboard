@@ -21,12 +21,15 @@ class WordCloud extends Chart {
 		// and position it according to the given margin config
 		vis.chartArea = vis.svg.append('g');
 
-		vis.sizeScale = d3.scaleLinear();
+		vis.sizeScale = d3.scaleSqrt();
 
-		vis.layout = d3.layout.cloud()
-			.fontSize(d => vis.sizeScale(d.size))
-			.rotate(0)
-			.padding(30);
+		vis.xForce = d3.forceX();
+		vis.yForce = d3.forceY();
+
+		vis.simulation = d3.forceSimulation()
+			.force('x', vis.xForce)
+			.force('y', vis.yForce)
+			.force("collide", d3.forceCollide(d => 1.1 * vis.sizeScale(d.size)));
 
 		vis.updateVis();
 	}
@@ -56,15 +59,17 @@ class WordCloud extends Chart {
 		vis.data.forEach(d => vis.words.push(...d[vis.dimension].split(",")));
 
 		vis.rollupData = d3.rollups(vis.words, d => d.length, d => d);
-		vis.rollupData = vis.rollupData.map(d => { return { text: d[0], size: d[1] } });
+		vis.rollupData = vis.rollupData.map(d => { return { text: d[0], size: d[1], x: vis.config.width / 2 + Math.random(), y: vis.config.height / 2 + Math.random() } });
+		
+		vis.simulation
+			.nodes(vis.rollupData);
 
 		vis.sizeScale
 			.domain(d3.extent(vis.rollupData.map(d => d.size)))
-			.range([0.03 * vis.config.width, 0.06 * vis.config.width]);
+			.range([0.05 * vis.config.width, 0.15 * vis.config.width]);
 
-		vis.layout
-			.words(vis.rollupData)
-			.size([vis.config.width, vis.config.height]);
+		vis.simulation.force("x").x(vis.config.width / 2);
+		vis.simulation.force("y").y(vis.config.height / 2);
 
 		vis.renderVis();
 	}
@@ -72,39 +77,42 @@ class WordCloud extends Chart {
 	renderVis() {
 		let vis = this;
 
-		const draw = (words) => {
-			vis.chartArea.selectAll(".word")
-				.data(words)
-				.join("text")
-				.attr("class", "word")
-				.attr("id", d => "word-" + vis.dimension.split(" ").join("-") + "-" + d.text.split(/[\s:\/(\)]+/).join("-"))
-				.attr("font-size", d => d.size)
-				.attr("text-anchor", "middle")
-				.attr("transform", d => {
-					return "translate(" + [d.x + vis.config.width / 2, d.y + vis.config.height / 2] + ")";
-				})
-				.text(d => d.text);
+		vis.nodes = vis.chartArea.selectAll(".word-group")
+			.data(vis.rollupData)
+			.join("g")
+			.attr("class", "word-group")
+			.attr("transform", d => "translate(" + d.x + ", " + d.y + ")");
 
-			vis.chartArea.selectAll(".word-backing")
-				.data(words)
-				.join("rect")
-				.attr("class", "word-backing")
-				.attr("width", d => {
-					const word = d3.select("#word-" + vis.dimension.split(" ").join("-") + "-" + d.text.split(/[\s:\/\(\)]+/).join("-")).node().getBBox();
-					return word.width + 10;
-				})
-				.attr("height", d => {
-					const word = d3.select("#word-" + vis.dimension.split(" ").join("-") + "-" + d.text.split(/[\s:\/(\)]+/).join("-")).node().getBBox();
-					return word.height + 10;
-				})
-				.attr("transform", d => {
-					const word = d3.select("#word-" + vis.dimension.split(" ").join("-") + "-" + d.text.split(/[\s:\/(\)]+/).join("-")).node().getBBox();
-					return "translate(" + [d.x + vis.config.width / 2 - 5 - word.width / 2, d.y + vis.config.height / 2 - 5 - 3 * word.height / 4] + ")";
-				})
-				.attr("opacity", 0.2)
-				.attr("fill", "blue");
-		};
+		console.log(vis.rollupData)
 
-		vis.layout.on("end", draw).start();
+		vis.nodes.selectAll(".word-circle")
+			.data(d => {
+				console.log(d)
+				return [d]
+			})
+			.join("circle")
+			.attr("class", "word-circle")
+			.attr("r", d => vis.sizeScale(d.size))
+			.attr("fill", "lightgrey");
+
+		vis.nodes.selectAll(".word-text")
+			.data(d => [d])
+			.join("text")
+			.attr("text-anchor", "middle")
+			.attr("class", "word-text")
+			.text(d => d.text);
+
+		vis.simulation.on("tick", () => {
+			vis.nodes
+				.attr("transform", d => "translate(" + d.x + ", " + d.y + ")");
+		});
+
+		vis.data.forEach(d => {
+			d.x = vis.config.width / 2;
+			d.y = vis.config.height / 2;
+		});
+
+		vis.simulation.nodes(vis.rollupData);
+		vis.simulation.alpha(1).alphaTarget(0.1).restart();
 	}
 }

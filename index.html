@@ -19,27 +19,24 @@
                 </li>
             </ul>
 
+            <button type="button" id="clear-filter-button" class="header-selector">Clear Filter</a>
             <button type="button" id="photo-gallery-button" class="header-selector">Photo Gallery</a>
             <button type="button" id="schema-link" href="" class="header-selector">Schema</a>
         </div>
 
-        <div class="row">
-            <div id="bar-chart-container" class="chart-container" style="flex: 10">
-                <ul class="selector dimension" id="bar-chart-dimension-selector" style="z-index: 30">
+        <div class="row" style="height: 40%">
+            <div id="bar-chart-container" class="chart-container" style="flex: 8">
+                <ul class="selector dimension" id="bar-chart-dimension-selector">
                     <li>
                         <a href="#" class="dropdown-label"></a>
                     </li>
                 </ul>
 
-                <!-- <a class="vis-lock"><img src="media/lock-image.png"></img></a> -->
-
                 <svg class="chart" id="bar-chart"></svg>
             </div>
 
-            <div id="scatter-plot-container" class="chart-container" style="flex: 15">
-                <!-- <a class="vis-lock"><img src="media/lock-image.png"></img></a> -->
-                
-                <ul class="selector dimension" id="scatter-plot-dimension-selector" style="z-index: 29">
+            <div id="scatter-plot-container" class="chart-container" style="flex: 15">                
+                <ul class="selector dimension" id="scatter-plot-dimension-selector">
                     <li>
                         <a href="#" class="dropdown-label"></a>
                     </li>
@@ -48,89 +45,26 @@
                 <svg class="chart" id="scatter-plot"></svg>
             </div>
 
-            <div id="radar-plot-container" class="chart-container" style="flex: 12">
-                <ul class="selector preset" id="radar-plot-preset-selector" style="z-index: 7">
+            <div id="radar-plot-container" class="chart-container" style="flex: 14">
+                <ul class="selector preset" id="radar-plot-preset-selector">
                     <li>
                         <a href="#" class="dropdown-label"></a>
                     </li>
                 </ul>
-
-                <div class="selector" id="radar-plot-vertex-count-selector">
-                    <p style="flex: 3">vertices</p>
-                    <a id="radar-plot-layer-minus" style="flex: 1">-</a>
-                    <p style="flex: 1" id="radar-plot-vertex-count">5</p>
-                    <a id="radar-plot-layer-plus" style="flex: 1">+</a>
-                </div>
-
-                <!-- <a class="vis-lock"><img src="media/lock-image.png"></img></a> -->
-
-                <div id="radar-plot-dimension-selectors">
-                    <ul class="selector dimension" id="radar-plot-dimension-1-selector" style="z-index: 6">
-                        <li>
-                            <a href="#" class="dropdown-label"></a>
-                        </li>
-                    </ul>
-
-                    <ul class="selector dimension" id="radar-plot-dimension-2-selector" style="z-index: 5">
-                        <li>
-                            <a href="#" class="dropdown-label"></a>
-                        </li>
-                    </ul>
-
-                    <ul class="selector dimension" id="radar-plot-dimension-3-selector" style="z-index: 4">
-                        <li>
-                            <a href="#" class="dropdown-label"></a>
-                        </li>
-                    </ul>
-
-                    <ul class="selector dimension" id="radar-plot-dimension-4-selector" style="z-index: 3">
-                        <li>
-                            <a href="#" class="dropdown-label"></a>
-                        </li>
-                    </ul>
-
-                    <ul class="selector dimension" id="radar-plot-dimension-5-selector" style="z-index: 2">
-                        <li>
-                            <a href="#" class="dropdown-label"></a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div id="radar-plot-layer-selectors">
-                    <ul class="selector layer" id="radar-plot-layer-1-selector">
-                        <li>
-                            <a href="#" class="dropdown-label"></a>
-                        </li>
-                    </ul>
-                
-                    <ul class="selector layer" id="radar-plot-layer-2-selector">
-                        <li>
-                            <a href="#" class="dropdown-label"></a>
-                        </li>
-                    </ul>
-                </div>
 
                 <svg class="chart" id="radar-plot"></svg>
             </div>
         </div>
 
-        <div class="row">
+        <div class="row" style="height: 49%">
             <div id="jitter-plot-container" class="chart-container" style="flex: 10">                
-                <ul class="selector preset" id="jitter-plot-preset-selector" style="z-index: 25">
+                <ul class="selector dimension" id="jitter-plot-dimension-x-selector">
                     <li>
                         <a href="#" class="dropdown-label"></a>
                     </li>
                 </ul>
                 
-                <!-- <a class="vis-lock"><img src="media/lock-image.png"></img></a> -->
-                
-                <ul class="selector dimension" id="jitter-plot-dimension-x-selector" style="z-index: 24">
-                    <li>
-                        <a href="#" class="dropdown-label"></a>
-                    </li>
-                </ul>
-                
-                <ul class="selector dimension" id="jitter-plot-dimension-y-selector" style="z-index: 23">
+                <ul class="selector dimension" id="jitter-plot-dimension-y-selector">
                     <li>
                         <a href="#" class="dropdown-label"></a>
                     </li>
@@ -140,7 +74,7 @@
             </div>
 
             <div id="sankey-diagram-container" class="chart-container" style="flex: 15">
-                <ul class="selector dimension" id="sankey-diagram-preset-selector" style="z-index: 7">
+                <ul class="selector dimension" id="sankey-diagram-preset-selector">
                     <li>
                         <a href="#" class="dropdown-label"></a>
                     </li>
@@ -148,35 +82,33 @@
 
                 <div class="selector" id="sankey-diagram-vertex-count-selector">
                     <p style="flex: 3">layers</p>
-                    <a id="sankey-diagram-layer-minus" style="flex: 1">-</a>
+                    <a id="sankey-diagram-layer-minus" style="flex: 1; z-index: 5">-</a>
                     <p style="flex: 1" id="sankey-diagram-layer-count">4</p>
-                    <a id="sankey-diagram-layer-plus" style="flex: 1">+</a>
+                    <a id="sankey-diagram-layer-plus" style="flex: 1; z-index: 5">+</a>
                 </div>
-
-                <!-- <a class="vis-lock"><img src="media/lock-image.png"></img></a> -->
 
                 <svg class="chart" id="sankey-diagram"></svg>
 
                 <div id="sankey-diagram-dimension-selectors">
-                    <ul class="selector dimension" id="sankey-diagram-dimension-1-selector" style="z-index: 6">
+                    <ul class="selector dimension" id="sankey-diagram-dimension-1-selector">
                         <li>
                             <a href="#" class="dropdown-label"></a>
                         </li>
                     </ul>
                 
-                    <ul class="selector dimension" id="sankey-diagram-dimension-2-selector" style="z-index: 5">
+                    <ul class="selector dimension" id="sankey-diagram-dimension-2-selector">
                         <li>
                             <a href="#" class="dropdown-label"></a>
                         </li>
                     </ul>
                 
-                    <ul class="selector dimension" id="sankey-diagram-dimension-3-selector" style="z-index: 4">
+                    <ul class="selector dimension" id="sankey-diagram-dimension-3-selector">
                         <li>
                             <a href="#" class="dropdown-label"></a>
                         </li>
                     </ul>
                 
-                    <ul class="selector dimension" id="sankey-diagram-dimension-4-selector" style="z-index: 3">
+                    <ul class="selector dimension" id="sankey-diagram-dimension-4-selector">
                         <li>
                             <a href="#" class="dropdown-label"></a>
                         </li>
@@ -190,8 +122,6 @@
                         <a href="#" class="dropdown-label"></a>
                     </li>
                 </ul>
-
-                <!-- <a class="vis-lock"><img src="media/lock-image.png"></img></a> -->
 
                 <svg class="chart" id="word-cloud"></svg>
             </div>

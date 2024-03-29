@@ -54,7 +54,7 @@ class BarChart extends Chart {
 		vis.config.margin.left = vis.config.containerWidth * vis.config.marginLeft;
 		vis.config.margin.right = vis.config.containerWidth * vis.config.marginRight;
 		vis.config.margin.top = vis.config.containerHeight * vis.config.marginTop;
-		vis.config.margin.bottom = vis.config.containerHeight * vis.config.marginLeft;
+		vis.config.margin.bottom = vis.config.containerHeight * vis.config.marginBottom;
 
 		vis.chartArea
 			.attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top})`);

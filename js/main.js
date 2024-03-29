@@ -4,13 +4,22 @@ let allData;
 let filteredData;
 
 const resize = () => {
-    const width = d3.max([window.innerWidth, 1920]);
-    let height = d3.max([window.innerHeight, 1080]);
+    const width = d3.max([window.innerWidth, 1600]);
+    let height = d3.max([window.innerHeight, 900]);
     if (width / height < 1.6 && width / height > 1.9) {
         height = width * 9 / 16;
     }
 
     document.getElementById("dashboard").setAttribute("style", "width: " + width + "px; height: " + height + "px; font-size: " + (width * 100 / 1920) + "%");
+    const selectors = document.getElementsByClassName("selector");
+    for (let i = 0; i < selectors.length; i++) {
+        selectors.item(i).setAttribute("style", "height: " + (height * 0.015) + "px; margin: " + (height * 0.004) + "px; padding: " + (height * 0.006) + "px")
+    }
+
+    const dropdowns = document.querySelectorAll(".selector ul");
+    for (let i = 0; i < dropdowns.length; i++) {
+        dropdowns.item(i).setAttribute("style", "width: " + (width * 0.13) + "px")
+    }
 
     d3.selectAll("g.tick text").attr("font-size", (width * 100 / 1920) + "%")
 
@@ -45,7 +54,7 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json')]).
         height: container.clientHeight,
         dimension: "Gender",
         margin: {
-            top: 0.08,
+            top: 0.10,
             right: 0.01,
             bottom: 0.10,
             left: 0.08
@@ -61,7 +70,7 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json')]).
         xDimension: "Softness Rating",
         colourDimension: "Gender",
         margin: {
-            top: 0.08,
+            top: 0.10,
             right: 0.01,
             bottom: 0.10,
             left: 0.08
@@ -92,9 +101,9 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json')]).
         xDimension: "Portability",
         colourDimension: "Gender",
         margin: {
-            top: 0.16,
+            top: 0.08,
             right: 0.01,
-            bottom: 0.10,
+            bottom: 0.08,
             left: 0.25
         }
     }, filteredData, options);
@@ -106,7 +115,7 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json')]).
         height: container.clientHeight,
         dimensions: ["Device Type", "Appearance", "Age", "Gender"],
         margin: {
-            top: 0.18,
+            top: 0.14,
             right: 0.01,
             bottom: 0.01,
             left: 0.01
@@ -229,6 +238,29 @@ Promise.all([d3.json('data/dimensions.json'), d3.json("data/filters.json")]).the
         charts["word-cloud"].ogData = filteredData;
         charts["word-cloud"].updateVis();
     });
+
+    document.getElementById("clear-filter-button").onclick = () => {
+        filteredData = JSON.parse(JSON.stringify(allData));
+
+        filterOptions.forEach(d => {
+            d3.select("#" + d.id).property("checked", false);
+        });
+
+        charts["bar-chart"].ogData = filteredData;
+        charts["bar-chart"].updateVis();
+
+        charts["scatter-plot-softness"].ogData = filteredData;
+        charts["scatter-plot-softness"].updateVis();
+
+        charts["scatter-plot-general"].ogData = filteredData;
+        charts["scatter-plot-general"].updateVis();
+
+        charts["sankey-diagram"].ogData = filteredData;
+        charts["sankey-diagram"].updateVis();
+
+        charts["word-cloud"].ogData = filteredData;
+        charts["word-cloud"].updateVis();
+    };
 
     fillHierarchicalSelection("#bar-chart-dimension-selector", dimensions, o => o["#bar-chart"], "Gender", false, (event) => {
         let selection;
@@ -374,4 +406,9 @@ Promise.all([d3.json('data/dimensions.json'), d3.json("data/filters.json")]).the
         charts["word-cloud"].dimension = selection;
         charts["word-cloud"].updateVis();
     });
+
+    const dropdowns = document.querySelectorAll(".selector ul");
+    for (let i = 0; i < dropdowns.length; i++) {
+        dropdowns.item(i).setAttribute("style", "width: " + (d3.max([window.innerWidth, 1600]) * 0.13) + "px")
+    }
 });

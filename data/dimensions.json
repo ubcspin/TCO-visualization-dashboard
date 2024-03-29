@@ -4,8 +4,8 @@
         "dimensions": [
             {
                 "name": "Recruitment Channel",
-                "type": "Single ",
-                "#word-cloud": true,
+                "type": "UBC, OUTUBC, CLOSECIRCLES, LOCAL, LOCAL-NEW, ONLINE, ONLINE-NEW",
+                "#word-cloud": false,
                 "#bar-chart": false,
                 "#scatter-plot": false,
                 "#jitter-plot": false,
@@ -14,8 +14,18 @@
             },
             {
                 "name": "Recruitment Category",
-                "type": "Single ",
+                "type": "Email, Slack, Flyer, Instagram, Facebook Group, Word of mouth",
                 "#word-cloud": true,
+                "#bar-chart": true,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": false,
+                "#sankey-diagram": true
+            },
+            {
+                "name": "Photo Uploaded",
+                "type": "Yes, No, I did not upload a photo",
+                "#word-cloud": false,
                 "#bar-chart": false,
                 "#scatter-plot": false,
                 "#jitter-plot": false,
@@ -23,24 +33,14 @@
                 "#sankey-diagram": false
             },
             {
-                "name": "Photo Uploaded",
-                "type": "Single ",
-                "#word-cloud": false,
-                "#bar-chart": true,
-                "#scatter-plot": true,
-                "#jitter-plot": true,
-                "#radar-plot": false,
-                "#sankey-diagram": true
-            },
-            {
                 "name": "Like to be Contacted",
-                "type": "Single ",
+                "type": "Yes, No",
                 "#word-cloud": false,
-                "#bar-chart": true,
-                "#scatter-plot": true,
-                "#jitter-plot": true,
+                "#bar-chart": false,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": false
             }
         ]
     },
@@ -49,7 +49,7 @@
         "dimensions": [
             {
                 "name": "Gender",
-                "type": "Single ",
+                "type": "Male, Female, Non-binary, Prefer not to disclose, Prefer to self-describe",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -59,17 +59,17 @@
             },
             {
                 "name": "Cultural Background",
-                "type": "Multi",
+                "type": "Black/African Canadian, East Asian, Hispanic/Latinx, First Nations or Indigenous (please specify), Pacific Islander, South Asian, European/White, Middle Eastern, Prefer not to disclose, Prefer to self-describe",
                 "#word-cloud": true,
                 "#bar-chart": false,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Age",
-                "type": "Single ",
+                "type": "18-24, 25-35, 36-45, 45-65, Over 65, Prefer not to disclose",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -79,8 +79,8 @@
             },
             {
                 "name": "Education",
-                "type": "Single ",
-                "#word-cloud": true,
+                "type": "No schooling completed, High School Diploma, Some college credit, 1 or more years of college credit, Trade/technical/vocational training, Associates degree, Bachelor's degree, Master's degree, Professional degree beyond bachelor's degree, Doctorate degree, Others, Prefer not to disclose",
+                "#word-cloud": false,
                 "#bar-chart": false,
                 "#scatter-plot": false,
                 "#jitter-plot": false,
@@ -89,7 +89,7 @@
             },
             {
                 "name": "Education",
-                "type": "Single ",
+                "type": "No schooling completed, High School Diploma, Bachelor's degree or equivalent, Master's degree or equivalent, Doctorate degree",
                 "#word-cloud": true,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -99,13 +99,13 @@
             },
             {
                 "name": "Lived Experiences",
-                "type": "Multi",
+                "type": "LGBTQIA+, Neurodivergent, Person of Colour, Person of a Marginalised Gender Identity, Indigenous/Native/First Nations, Person of a Minority Religion or Faith, Immigrant or Foreign-Born, Refugee or Asylum Seeker, Person from a Low-Income Background, Survivor of Domestic Violence or Abuse, Survivor of Violence or Abuse, Veteran or Active Duty Military Personnel, Person who has Experienced Homelessness, Person with Chronic Illness or Medical Condition, Caregiver (Caring for a family member or loved one), Person from a Rural or Remote Area, Student, Parent, Not Applicable, Prefer to self-describe, Prefer not to disclose\n\n",
                 "#word-cloud": true,
                 "#bar-chart": false,
                 "#scatter-plot": false,
                 "#jitter-plot": false,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             }
         ]
     },
@@ -114,7 +114,7 @@
         "dimensions": [
             {
                 "name": "Reserved Self-Perception",
-                "type": "Single ",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -124,7 +124,7 @@
             },
             {
                 "name": "Generally Trusting",
-                "type": "Single ",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -134,7 +134,7 @@
             },
             {
                 "name": "Tends to be Lazy",
-                "type": "Single ",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -144,7 +144,7 @@
             },
             {
                 "name": "Relaxed, Handles Stress Well",
-                "type": "Single ",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -154,7 +154,7 @@
             },
             {
                 "name": "Has Few Artistic Interests",
-                "type": "Single ",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -164,7 +164,7 @@
             },
             {
                 "name": "Outgoing, Sociable",
-                "type": "Single ",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -174,7 +174,7 @@
             },
             {
                 "name": "Tends to Find Fault",
-                "type": "Single ",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -184,7 +184,7 @@
             },
             {
                 "name": "Does a Thorough Job",
-                "type": "Single ",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -194,7 +194,7 @@
             },
             {
                 "name": "Gets Nervous Easily",
-                "type": "Single ",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -204,17 +204,7 @@
             },
             {
                 "name": "Has an Active Imagination",
-                "type": "Single ",
-                "#word-cloud": false,
-                "#bar-chart": true,
-                "#scatter-plot": true,
-                "#jitter-plot": true,
-                "#radar-plot": true,
-                "#sankey-diagram": true
-            },
-            {
-                "name": "Tendency to Fidget",
-                "type": "Single ",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -228,8 +218,18 @@
         "block": "Demographics: Preferences",
         "dimensions": [
             {
+                "name": "Tendency to Fidget",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true
+            },
+            {
                 "name": "Emotional Attachment to Objects",
-                "type": "Single ",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -239,7 +239,7 @@
             },
             {
                 "name": "Values Design and Aesthetics",
-                "type": "Single ",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -249,7 +249,7 @@
             },
             {
                 "name": "Non-Functional Personal Objects",
-                "type": "Single ",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -264,7 +264,7 @@
         "dimensions": [
             {
                 "name": "Cultural Significance",
-                "type": "Single ",
+                "type": "Yes, No, Prefer not to answer",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -274,9 +274,9 @@
             },
             {
                 "name": "Object Category",
-                "type": "Single ",
+                "type": "Plushies, Toy, Utility Object, Jewelry, Ball, Non Utility Object, Bedding, NA",
                 "#word-cloud": true,
-                "#bar-chart": true,
+                "#bar-chart": false,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
@@ -289,7 +289,7 @@
         "dimensions": [
             {
                 "name": "Involves Technology",
-                "type": "Single ",
+                "type": "Yes, No, Prefer not to answer, ",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -299,7 +299,7 @@
             },
             {
                 "name": "Ability to Move",
-                "type": "Single ",
+                "type": "Capable of moving, Stationary, Prefer not to answer",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -309,7 +309,7 @@
             },
             {
                 "name": "Device Type",
-                "type": "Single ",
+                "type": "Table-top, Hand-held, Wearable",
                 "#word-cloud": true,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -319,7 +319,7 @@
             },
             {
                 "name": "Appearance",
-                "type": "Single ",
+                "type": "Anthropomorphic, Zoomorphic, Neither, Prefer not to answer",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -329,8 +329,8 @@
             },
             {
                 "name": "Targeted Body Part",
-                "type": "Multi",
-                "#word-cloud": true,
+                "type": "Head, Face, Cheek, Neck, Shoulder, Arm, Hand, Wrist, Finger, Chest, Torso, Abdomen, Back, Thigh, Full Body, Other",
+                "#word-cloud": false,
                 "#bar-chart": false,
                 "#scatter-plot": false,
                 "#jitter-plot": false,
@@ -339,17 +339,17 @@
             },
             {
                 "name": "Targeted Body Part",
-                "type": "Multi",
+                "type": "Head, Face, Mouth, Nose, Ears, Hair, Cheek, Neck, Shoulder, Arm, Hand, Wrist, Finger, Chest, Torso, Abdomen, Back, Thigh, Leg/Foot, Full Body, Other, Prefer not to answer",
                 "#word-cloud": true,
                 "#bar-chart": false,
                 "#scatter-plot": false,
                 "#jitter-plot": false,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Portability",
-                "type": "Single ",
+                "type": "Yes, No, Prefer not to answer",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -359,7 +359,7 @@
             },
             {
                 "name": "Collective vs Individual Use",
-                "type": "Single ",
+                "type": "Personal, Shared, Other",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -374,57 +374,57 @@
         "dimensions": [
             {
                 "name": "Texture",
-                "type": "Multi",
+                "type": "Smooth, Rough, Soft, Hard, Bumpy, Fuzzy, Slippery, Prickly, Sticky, Fluffy, Slimy, Silky, Ribbed, Metallic, Felted, Gritty, Velvety, Coarse, Other, Prefer not to answer",
                 "#word-cloud": true,
                 "#bar-chart": false,
                 "#scatter-plot": false,
                 "#jitter-plot": false,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Size",
-                "type": "Single ",
+                "type": "Miniature, Small, Medium, Large, Extra large, Other",
                 "#word-cloud": true,
                 "#bar-chart": false,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
-                "#radar-plot": false,
-                "#sankey-diagram": false
-            },
-            {
-                "name": "Shape",
-                "type": "Multi",
-                "#word-cloud": true,
-                "#bar-chart": false,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
-                "#radar-plot": false,
-                "#sankey-diagram": false
-            },
-            {
-                "name": "Conformability and Compliance",
-                "type": "Multi",
-                "#word-cloud": true,
-                "#bar-chart": false,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
-                "#radar-plot": false,
-                "#sankey-diagram": false
-            },
-            {
-                "name": "Softness Rating",
-                "type": "Single ",
-                "#word-cloud": false,
-                "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
                 "#sankey-diagram": true
             },
             {
+                "name": "Shape",
+                "type": "Symmetrical, Asymmetrical, Flat, Spherical, Angular, Rounded, Prefer not to answer",
+                "#word-cloud": true,
+                "#bar-chart": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": false,
+                "#sankey-diagram": true
+            },
+            {
+                "name": "Conformability and Compliance",
+                "type": "Squishy, Moldable, Rigid, Flexible, Powdery, Clicky, Spongy, Elastic, Poppable, Prefer not to answer",
+                "#word-cloud": true,
+                "#bar-chart": false,
+                "#scatter-plot": false,
+                "#jitter-plot": false,
+                "#radar-plot": false,
+                "#sankey-diagram": true
+            },
+            {
+                "name": "Softness Rating",
+                "type": "0, 1, 2, 3, 4, 5",
+                "#word-cloud": false,
+                "#bar-chart": false,
+                "#scatter-plot": false,
+                "#jitter-plot": true,
+                "#radar-plot": false,
+                "#sankey-diagram": true
+            },
+            {
                 "name": "Subjective Temperature",
-                "type": "Single ",
+                "type": "Warm, Cool, Neither, Prefer not to answer",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -434,7 +434,7 @@
             },
             {
                 "name": "Other Sensory Channel Used",
-                "type": "Multi",
+                "type": "Look at it, Listen to it, Smell it, Taste it, Other, Prefer not to answer",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -445,11 +445,11 @@
         ]
     },
     {
-        "block": "Object Use: Importance",
+        "block": "Object Identification: Importance",
         "dimensions": [
             {
-                "name": "Functional Value Importance",
-                "type": "Single ",
+                "name": "Functional Value",
+                "type": "1, 2, 3, 4, 5",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -458,8 +458,8 @@
                 "#sankey-diagram": true
             },
             {
-                "name": "Emotional Significance Importance",
-                "type": "Single ",
+                "name": "Emotional Significance",
+                "type": "1, 2, 3, 4, 5",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -468,8 +468,8 @@
                 "#sankey-diagram": true
             },
             {
-                "name": "Physical Soothing Importance",
-                "type": "Single ",
+                "name": "Physical Soothing",
+                "type": "1, 2, 3, 4, 5",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -484,27 +484,27 @@
         "dimensions": [
             {
                 "name": "Usage Context",
-                "type": "Multi",
+                "type": "Personal relevance, Misalignment with desires, Self-blame, Uncertain outcome, Lack of control, Other, Prefer not to answer",
                 "#word-cloud": true,
                 "#bar-chart": false,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Usage Setting",
-                "type": "Multi",
+                "type": "Personal alone, Public alone, Around family, Around friends, Around strangers, Other",
                 "#word-cloud": true,
                 "#bar-chart": false,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Non-Usage Settings",
-                "type": "Single ",
+                "type": "Yes, No, Prefer not to answer",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -514,17 +514,17 @@
             },
             {
                 "name": "Physical Interaction",
-                "type": "Multi",
+                "type": "Rub, Squish, Hold, Fidget, Press with hand, Press with finger tips, Throw around, Wrap around, Lift, Twist, Glide, Pet, Twirl, Cuddle, Poke, Knead, Other, Prefer not to answer",
                 "#word-cloud": true,
                 "#bar-chart": false,
                 "#scatter-plot": false,
                 "#jitter-plot": false,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Interaction Type",
-                "type": "Multi",
+                "type": "When I need it, Randomly, Compulsively Routinely, Prefer not to answer",
                 "#word-cloud": true,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -534,7 +534,7 @@
             },
             {
                 "name": "Usage Frequency",
-                "type": "Single ",
+                "type": "Several times a day, Several times a week, Several times a month, Once a month or less, Other, Prefer not to answer",
                 "#word-cloud": true,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -544,7 +544,7 @@
             },
             {
                 "name": "Interaction Duration",
-                "type": "Single ",
+                "type": "A few seconds, A few minutes, A few days, A few weeks or more, Other, Prefer not to answer",
                 "#word-cloud": true,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -554,7 +554,7 @@
             },
             {
                 "name": "Usage Start",
-                "type": "Single ",
+                "type": "Past few days, Past few weeks, Past few months, Past few years",
                 "#word-cloud": true,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -569,37 +569,37 @@
         "dimensions": [
             {
                 "name": "Object Acquisition",
-                "type": "Single ",
+                "type": "Bought it, Made it, Gifted, Found it, Hand-me-down, Family owned",
                 "#word-cloud": true,
                 "#bar-chart": false,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Object Attachment",
-                "type": "Single ",
+                "type": "1, 2, 3, 4, 5",
                 "#word-cloud": true,
                 "#bar-chart": false,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Object Meaningfulness",
-                "type": "Multi",
+                "type": "Symbolic, Reminder of someone, Reminder of event, Milestone, Belonging to a group, Emotional attachment, Not meaningful, Other, Prefer not to answer",
                 "#word-cloud": true,
                 "#bar-chart": false,
-                "#scatter-plot": false,
-                "#jitter-plot": false,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": true
             },
             {
                 "name": "Object Customization",
-                "type": "Single ",
+                "type": "Yes, No, Prefer not to answer",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -609,7 +609,7 @@
             },
             {
                 "name": "Cultural Influence on Object Significance",
-                "type": "Single ",
+                "type": "Yes, No, Prefer not to answer",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -620,11 +620,11 @@
         ]
     },
     {
-        "block": "Technology Design Preferences",
+        "block": "Interaction Preferences",
         "dimensions": [
             {
                 "name": "Emotion-aware Interactions",
-                "type": "Single ",
+                "type": "Yes, No",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -634,7 +634,7 @@
             },
             {
                 "name": "Social-Emotional Agency",
-                "type": "Single ",
+                "type": "Yes, No",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
@@ -644,7 +644,7 @@
             },
             {
                 "name": "Communication Facilitation",
-                "type": "Single ",
+                "type": "Yes, No",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,

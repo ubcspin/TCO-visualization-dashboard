@@ -49,8 +49,8 @@ ul.header-selector {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 45%;
     margin-top: 1%;
+    z-index: -3;
 }
 
 .chart-container {
@@ -61,16 +61,24 @@ ul.header-selector {
     position: relative;
 }
 
+.selector li {
+    z-index: 2;
+}
+
+.selector li a {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 .selector {
     background-color: #bc6c23;
-    margin: 1%;
-    padding: 1%;
+    margin: 10px;
+    padding: 10px;
     border: 0;
     border-radius: 10px;
     width: 28%;
-    height: 3%;
     position: absolute;
-    z-index: 1;
 }
 
 div.selector {
@@ -113,66 +121,21 @@ div.selector a {
 
 /* Radar Plot */
 
-#radar-plot-vertex-count-selector {
-    top: 0;
-    left: 0;
-}
-
 #radar-plot-preset-selector {
     top: 0;
-    left: 32%;
-}
-
-#radar-plot-dimension-1-selector {
-    top: 6%;
-    left: 0;
-}
-
-#radar-plot-dimension-2-selector {
-    top: 12%;
-    left: 0;
-}
-
-#radar-plot-dimension-3-selector {
-    top: 18%;
-    left: 0;
-}
-
-#radar-plot-dimension-4-selector {
-    top: 24%;
-    left: 0;
-}
-
-#radar-plot-dimension-5-selector {
-    top: 30%;
-    left: 0;
-}
-
-#radar-plot-layer-1-selector {
-    top: 42%;
-    left: 0;
-}
-
-#radar-plot-layer-2-selector {
-    top: 48%;
     left: 0;
 }
 
 /* Scatter Plot - General */
 
 #jitter-plot-dimension-x-selector {
-    top: 6%;
+    top: 0;
     left: 0;
 }
 
 #jitter-plot-dimension-y-selector {
-    top: 6%;
-    left: 32%;
-}
-
-#jitter-plot-preset-selector {
     top: 0;
-    left: 0;
+    left: 32%;
 }
 
 /* Sankey Diagram */
@@ -189,25 +152,25 @@ div.selector a {
 
 #sankey-diagram-dimension-1-selector {
     width: 15%;
-    top: 8%;
+    top: 6%;
     left: 0;
 }
 
 #sankey-diagram-dimension-2-selector {
     width: 15%;
-    top: 8%;
+    top: 6%;
     left: 25.5%;
 }
 
 #sankey-diagram-dimension-3-selector {
     width: 15%;
-    top: 8%;
+    top: 6%;
     left: 56%;
 }
 
 #sankey-diagram-dimension-4-selector {
     width: 15%;
-    top: 8%;
+    top: 6%;
     left: 81%;
 }
 
@@ -303,16 +266,12 @@ ul ul {
     width: 100%;
 }
 
-.selector ul {
-    width: 160%;
+.selector ul li {
+    z-index: 60;
 }
 
-#sankey-diagram-dimension-selectors .selector ul {
-    width: 200%;
-}
-
-#sankey-diagram-dimension-selectors .selector ul ul {
-    width: 100%;
+.selector ul ul li {
+    z-index: 70;
 }
 
 .selector ul ul {

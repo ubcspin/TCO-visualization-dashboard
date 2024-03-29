@@ -120,10 +120,10 @@ class SankeyDiagram extends Chart {
 	renderVis() {
 		let vis = this;
 		
-		const palette = d3.schemeTableau10;
+		const palette = d3.schemePaired;
 		
 		const getGradID = d => "linkGrad-" + d.source.name.replaceAll(/[\s\(\)\\\/\-,\.]/g, "") + d.target.name.replaceAll(/[\s\(\)\\\/\-,\.]/g, "");
-		const nodeColour = d => { return d.color = palette[d.index % 10] };
+		const nodeColour = d => { return d.color = palette[d.index % 12] };
 
 		const grads = vis.defs.selectAll("linearGradient")
             .data(vis.graph.links, d => d.index)
@@ -151,7 +151,7 @@ class SankeyDiagram extends Chart {
 			.attr("class", "link")
 			.attr("d", d3.sankeyLinkHorizontal())
 			.style("stroke-width", d => d.width)
-			.attr("stroke", d => d3.scaleLinear().domain([-1, 1]).range([palette[d.source.index % 10], palette[d.target.index % 10]])(0))
+			.attr("stroke", d => palette[d.source.index % 12])
 			.attr("opacity", 0.3)
 			.attr("fill", "none")
 	
@@ -160,7 +160,7 @@ class SankeyDiagram extends Chart {
 			.data(vis.graph.nodes)
 			.join("rect")
 			.attr("class", "node")
-			.attr("fill", d => palette[d.index % 10])
+			.attr("fill", d => palette[d.index % 12])
 			.attr("x", d => d.x0)
 			.attr("y", d => d.y0)
 			.attr("height", d => d.y1 - d.y0)
