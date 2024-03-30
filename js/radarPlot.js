@@ -68,7 +68,7 @@ class RadarPlot extends Chart {
 		vis.config.margin.bottom = vis.config.containerHeight * vis.config.marginBottom;
 
 		vis.chartArea
-			.attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top})`);
+			.attr('transform', `translate(${vis.config.margin.left},0)`);
 
 		// Calculate inner chart size. Margin specifies the space around the actual chart.
 		vis.config.width = vis.config.containerWidth - vis.config.margin.left - vis.config.margin.right;
@@ -76,7 +76,8 @@ class RadarPlot extends Chart {
 
 		vis.svg
 			.attr('width', vis.config.containerWidth)
-			.attr('height', vis.config.containerHeight);
+			.attr('height', vis.config.containerHeight - vis.config.margin.top)
+			.attr("transform", "translate(0, " + vis.config.margin.top + ")");
 
 		vis.xAxisG
 			.attr('transform', `translate(0,${vis.config.height})`);

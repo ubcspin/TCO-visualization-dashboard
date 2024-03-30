@@ -124,7 +124,7 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json'), d
         margin: {
             top: 0.10,
             right: 0.01,
-            bottom: 0.25,
+            bottom: 0.20,
             left: 0.10
         }
     }, filteredData, options, dispatch);
@@ -497,7 +497,6 @@ dispatch.on("specifyIndividual", i => {
 });
 
 dispatch.on("specifyGroup", (g, home) => {
-    console.log(home)
     if (g) {
         const filteredData = allData.filter(d => g.every(k => d[k.dimension] === k.option));
 
@@ -548,6 +547,7 @@ dispatch.on("specifyGroup", (g, home) => {
         charts["scatter-plot-softness"].emphasized = [];
         charts["scatter-plot-softness"].renderVis();
         
+        charts["radar-plot"].emphasized = [];
         charts["radar-plot"].ogData = allData;
         charts["radar-plot"].updateVis();
         
@@ -562,6 +562,7 @@ dispatch.on("specifyGroup", (g, home) => {
             charts["word-cloud"].emphasized = [];
             charts["word-cloud"].renderVis();
         } else {
+            charts["word-cloud"].emphasized = [];
             charts["word-cloud"].ogData = allData;
             charts["word-cloud"].updateVis();
         }

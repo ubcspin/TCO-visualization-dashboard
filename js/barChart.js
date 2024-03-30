@@ -55,7 +55,7 @@ class BarChart extends Chart {
 		vis.config.margin.bottom = vis.config.containerHeight * vis.config.marginBottom;
 
 		vis.chartArea
-			.attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top})`);
+			.attr('transform', `translate(${vis.config.margin.left},0)`);
 
 		vis.xAxisTitle
 			.attr("y", 0 - vis.config.margin.left + 16);
@@ -66,13 +66,14 @@ class BarChart extends Chart {
 
 		vis.svg
 			.attr('width', vis.config.containerWidth)
-			.attr('height', vis.config.containerHeight);
+			.attr('height', vis.config.containerHeight - vis.config.margin.top)
+			.attr("transform", "translate(0, " + vis.config.margin.top + ")");
 
 		vis.xAxisG
 			.attr('transform', `translate(0,${vis.config.height})`);
 
 		vis.yAxisTitle
-		.attr("y", 0 - vis.config.margin.left + vis.config.width * 0.04)
+			.attr("y", 0 - vis.config.margin.left + vis.config.width * 0.04)
 			.attr("x", 0 - (vis.config.height / 2))
 			.attr("transform", "rotate(-90)");
 

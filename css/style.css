@@ -69,6 +69,7 @@ ul.header-selector {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    z-index: 10;
 }
 
 .selector {
