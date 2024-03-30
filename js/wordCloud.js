@@ -30,8 +30,6 @@ class WordCloud extends Chart {
 			.force('x', vis.xForce)
 			.force('y', vis.yForce)
 			.force("collide", d3.forceCollide(d => 1.1 * vis.sizeScale(d.size)));
-
-		vis.updateVis();
 	}
 
 	updateVis() {
@@ -66,7 +64,7 @@ class WordCloud extends Chart {
 
 		vis.sizeScale
 			.domain(d3.extent(vis.rollupData.map(d => d.size)))
-			.range([0.05 * vis.config.width, 0.15 * vis.config.width]);
+			.range([0.07 * vis.config.width, 0.12 * vis.config.width]);
 
 		vis.simulation.force("x").x(vis.config.width / 2);
 		vis.simulation.force("y").y(vis.config.height / 2);
@@ -77,17 +75,23 @@ class WordCloud extends Chart {
 	renderVis() {
 		let vis = this;
 
+		let fontSize = 1;
+
+		vis.rollupData.forEach(d => {
+			const text = vis.chartArea.append("text").text(d.text);
+			d.lines = Math.ceil(text.node().getBBox().width / (2 * vis.sizeScale(d.size)));
+			fontSize = d3.max([text.node().getBBox().height, fontSize]);
+			text.remove();
+		});
+
 		vis.nodes = vis.chartArea.selectAll(".word-group")
 			.data(vis.rollupData)
 			.join("g")
 			.attr("class", "word-group")
 			.attr("transform", d => "translate(" + d.x + ", " + d.y + ")");
 
-		console.log(vis.rollupData)
-
 		vis.nodes.selectAll(".word-circle")
 			.data(d => {
-				console.log(d)
 				return [d]
 			})
 			.join("circle")
@@ -96,10 +100,24 @@ class WordCloud extends Chart {
 			.attr("fill", "lightgrey");
 
 		vis.nodes.selectAll(".word-text")
-			.data(d => [d])
+			.data(d => {
+				const chunks = [];
+				for (let i = 0; i < d.lines; i++) {
+					chunks.push({
+						text: d.text.substring(i * d.text.length / d.lines, (i + 1) * d.text.length / d.lines).trim() + (i < d.lines - 1 ? "-" : ""),
+						line: i,
+						lines: d.lines
+					});
+				}
+				return chunks;
+			})
 			.join("text")
 			.attr("text-anchor", "middle")
 			.attr("class", "word-text")
+			.attr("transform", d => {
+				const textBoxSize = fontSize * d.lines;
+				return "translate(0, " + ((d.line + 1) * fontSize - textBoxSize / 2) + ")";
+			})
 			.text(d => d.text);
 
 		vis.simulation.on("tick", () => {

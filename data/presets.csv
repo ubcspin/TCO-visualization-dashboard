@@ -1,0 +1,9 @@
+Plot Name,Preset Name,Dimensions
+Radar,Object Use: Importance,"Functional Value, Emotional Significance, Physical Soothing"
+Radar,Preferences,"Tendency to Fidget, Emotional Attachment to Objects, Values Design and Aesthetics, Non-Functional Personal Objects"
+Radar,Personality Traits,"Extraversion, Agreeableness, Conscientiousness, Neuroticism, Openness"
+Sankey,Object Use: Time,"Usage Context, Usage Frequency, Interaction Duration"
+Sankey,Object Use: Type,"Interaction Type, Physical Interaction, Usage Setting"
+Sankey,Object Use: Importance,"Functional Value, Emotional Significance, Physical Soothing"
+Sankey,Preferences,"Tendency to Fidget, Emotional Attachment to Objects, Values Design and Aesthetics, Non-Functional Personal Objects"
+Sankey,Personality Traits,"Extraversion, Agreeableness, Conscientiousness, Neuroticism, Openness"

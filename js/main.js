@@ -3,6 +3,8 @@ let filterOptions = [];
 let allData;
 let filteredData;
 
+let globalFontSize;
+
 const resize = () => {
     const width = d3.max([window.innerWidth, 1600]);
     let height = d3.max([window.innerHeight, 900]);
@@ -21,7 +23,14 @@ const resize = () => {
         dropdowns.item(i).setAttribute("style", "width: " + (width * 0.13) + "px")
     }
 
-    d3.selectAll("g.tick text").attr("font-size", (width * 100 / 1920) + "%")
+    const presets = document.querySelectorAll(".preset ul li");
+    for (let i = 0; i < presets.length; i++) {
+        presets.item(i).setAttribute("style", "height: " + (height * 0.014) + "px; padding: " + (height * 0.006) + "px")
+    }
+
+    globalFontSize = width * 100 / 1920;
+
+    d3.selectAll("g.tick text").attr("font-size", globalFontSize + "%");
 
     Object.values(charts).forEach(c => {
         let container = document.getElementById(c.config.parentElement.substring(1) + "-container");
@@ -32,10 +41,67 @@ const resize = () => {
 };
 window.onresize = resize;
 
+const fillFlatSelection = (dropdown, options, defaultOption, onchange) => {
+    d3.select(dropdown + " li a").text(defaultOption["name"]);
+    let topLevel = d3.select(dropdown + " li").append("ul");
+    options.forEach(o => {
+        topLevel.append("li").text(o["name"]).on("click", onchange);
+    });
+};
+
+const fillHierarchicalSelection = (dropdown, options, filter, defaultOption, checkbox, onchange) => {
+    d3.select(dropdown + " li a").text(defaultOption);
+    let topLevel = d3.select(dropdown + " li").append("ul");
+    options.forEach(o => {
+        const midLevelLi = topLevel.append("li");
+        midLevelLi.append("a").attr("href", "#").text(o["block"]);
+        const midLevel = midLevelLi.append("ul").attr("class", "level-2");
+        if (checkbox) {
+            o["options"].forEach(d => {
+                const id = "checkbox-" + o["block"].split(/[\s\,\(\)\/]+/).join("-") + "-" + d.split(/[\s\,\(\)\/]+/).join("-");
+                filterOptions.push({
+                    id: id,
+                    dimension: o["block"],
+                    option: d
+                });
+                const option = midLevel.append("li").on("click", () => {
+                    console.log("clicked");
+                    const status = d3.select("#" + id).property("checked");
+                    d3.select("#" + id).property("checked", !status);
+                    onchange();
+                });
+                option.append("input")
+                    .attr("type", "checkbox")
+                    .attr("id", id)
+                    .attr("name", o["block"] + " /// " + d)
+                    .attr("value", o["block"] + " /// " + d)
+                    .on("click", () => {
+                        console.log("clicked");
+                        const status = d3.select("#" + id).property("checked")
+                        d3.select("#" + id).property("checked", !status);
+                    })
+                option.append("label")
+                    .attr("for", d)
+                    .text(d);
+            });
+        } else {
+            o["dimensions"].forEach(d => {
+                if (filter(d)) {
+                    midLevel.append("li").text(d["name"]).on("click", onchange);
+                }
+            });
+        }
+
+        if (midLevel.selectAll("li").size() == 0) {
+            midLevelLi.remove();
+        }
+    });
+};
+
 /**
  * Load data from CSV file asynchronously and render charts
  */
-Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json')]).then(([data, options]) => {
+Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json'), d3.json('data/dimensions.json'), d3.json("data/filters.json"), d3.json("data/presets.json")]).then(([data, options, dimensions, filters, presets]) => {
     allData = data;
     filteredData = JSON.parse(JSON.stringify(data));
 
@@ -56,8 +122,8 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json')]).
         margin: {
             top: 0.10,
             right: 0.01,
-            bottom: 0.10,
-            left: 0.08
+            bottom: 0.25,
+            left: 0.10
         }
     }, filteredData, options);
 
@@ -73,7 +139,7 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json')]).
             top: 0.10,
             right: 0.01,
             bottom: 0.10,
-            left: 0.08
+            left: 0.15
         }
     }, filteredData, options);
 
@@ -82,13 +148,12 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json')]).
         parentElement: "#radar-plot",
         width: container.clientWidth,
         height: container.clientHeight,
-        dimensions: ["Tends to be Lazy", "Has Few Artistic Interests", "Outgoing, Sociable", "Does a Thorough Job", "Tendency to Fidget"],
-        layers: [null, null],
+        dimensions: ["Tendency to Fidget", "Emotional Attachment to Objects", "Values Design and Aesthetics", "Non-Functional Personal Objects"],
         margin: {
-            top: 0.08,
+            top: 0.10,
             right: 0.01,
-            bottom: 0.06,
-            left: 0.08
+            bottom: 0.20,
+            left: 0.04
         }
     }, filteredData, options);
 
@@ -103,7 +168,7 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json')]).
         margin: {
             top: 0.08,
             right: 0.01,
-            bottom: 0.08,
+            bottom: 0.20,
             left: 0.25
         }
     }, filteredData, options);
@@ -113,7 +178,7 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json')]).
         parentElement: "#sankey-diagram",
         width: container.clientWidth,
         height: container.clientHeight,
-        dimensions: ["Device Type", "Appearance", "Age", "Gender"],
+        dimensions: ["Device Type", "Appearance", "Age", "Gender", "Education"],
         margin: {
             top: 0.14,
             right: 0.01,
@@ -136,59 +201,6 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json')]).
         }
     }, filteredData);
 
-    resize();
-});
-
-const fillHierarchicalSelection = (dropdown, options, filter, defaultOption, checkbox, onchange) => {
-    d3.select(dropdown + " li a").text(defaultOption);
-    let topLevel = d3.select(dropdown + " li").append("ul");
-    options.forEach(o => {
-        const midLevelLi = topLevel.append("li");
-        midLevelLi.append("a").attr("href", "#").text(o["block"])
-        const midLevel = midLevelLi.append("ul").attr("class", "level-2");
-        if (checkbox) {
-            o["options"].forEach(d => {
-                const id = "checkbox-" + o["block"].split(/[\s\,\(\)\/]+/).join("-") + "-" + d.split(/[\s\,\(\)\/]+/).join("-")
-                filterOptions.push({
-                    id: id,
-                    dimension: o["block"],
-                    option: d
-                });
-                const option = midLevel.append("li").on("click", () => {
-                    console.log("clicked");
-                    const status = d3.select("#" + id).property("checked")
-                    d3.select("#" + id).property("checked", !status);
-                    onchange();
-                });
-                option.append("input")
-                    .attr("type", "checkbox")
-                    .attr("id", id)
-                    .attr("name", o["block"] + " /// " + d)
-                    .attr("value", o["block"] + " /// " + d)
-                    .on("click", () => {
-                        console.log("clicked");
-                        const status = d3.select("#" + id).property("checked")
-                        d3.select("#" + id).property("checked", !status);
-                    })
-                option.append("label")
-                    .attr("for", d)
-                    .text(d);
-            });
-        } else {
-            o["dimensions"].forEach(d => {
-                if (filter(d)) {
-                    const option = midLevel.append("li").text(d["name"]).on("click", onchange);
-                }
-            });
-        }
-
-        if (midLevel.selectAll("li").size() == 0) {
-            midLevelLi.remove();
-        }
-    });
-};
-
-Promise.all([d3.json('data/dimensions.json'), d3.json("data/filters.json")]).then(([dimensions, filters]) => {
     fillHierarchicalSelection("#global-filter", filters, o => true, "Filter", true, (event) => {
         filteredData = JSON.parse(JSON.stringify(allData));
 
@@ -229,6 +241,9 @@ Promise.all([d3.json('data/dimensions.json'), d3.json("data/filters.json")]).the
         charts["scatter-plot-softness"].ogData = filteredData;
         charts["scatter-plot-softness"].updateVis();
 
+        charts["radar-plot"].ogData = filteredData;
+        charts["radar-plot"].updateVis();
+
         charts["scatter-plot-general"].ogData = filteredData;
         charts["scatter-plot-general"].updateVis();
 
@@ -251,6 +266,9 @@ Promise.all([d3.json('data/dimensions.json'), d3.json("data/filters.json")]).the
 
         charts["scatter-plot-softness"].ogData = filteredData;
         charts["scatter-plot-softness"].updateVis();
+
+        charts["radar-plot"].ogData = filteredData;
+        charts["radar-plot"].updateVis();
 
         charts["scatter-plot-general"].ogData = filteredData;
         charts["scatter-plot-general"].updateVis();
@@ -295,21 +313,19 @@ Promise.all([d3.json('data/dimensions.json'), d3.json("data/filters.json")]).the
         charts["scatter-plot-softness"].yDimension = selection;
         charts["scatter-plot-softness"].updateVis();
     });
-    
-    ["Tends to be Lazy", "Has Few Artistic Interests", "Outgoing, Sociable", "Does a Thorough Job", "Tendency to Fidget"].forEach((d, i) => {
-        fillHierarchicalSelection("#radar-plot-dimension-" + (i + 1) + "-selector", dimensions, o => o["#radar-plot"], d, false, (event) => {
-            let selection;
-            if (event.explicitOriginalTarget) {
-                selection = event.explicitOriginalTarget.textContent;
-            } else {
-                selection = event.srcElement.innerText;
-            }
-    
-            d3.select("#radar-plot-dimension-" + (i + 1) + "-selector li a").text(selection);
-            
-            charts["radar-plot"].dimensions[i] = selection;
-            charts["radar-plot"].updateVis();
-        });
+
+    fillFlatSelection("#radar-plot-preset-selector", presets["Radar"], presets["Radar"][1], (event) => {
+        let selection;
+        if (event.explicitOriginalTarget) {
+            selection = event.explicitOriginalTarget.textContent;
+        } else {
+            selection = event.srcElement.innerText;
+        }
+
+        d3.select("#radar-plot-preset-selector li a").text(selection);
+        
+        charts["radar-plot"].dimensions = presets["Radar"].find(p => p["name"] === selection)["dimensions"];
+        charts["radar-plot"].updateVis();
     });
     
     fillHierarchicalSelection("#jitter-plot-dimension-y-selector", dimensions, o => o["#jitter-plot"], "Object Category", false, (event) => {
@@ -340,7 +356,7 @@ Promise.all([d3.json('data/dimensions.json'), d3.json("data/filters.json")]).the
         charts["scatter-plot-general"].updateVis();
     });
     
-    ["Device Type", "Appearance", "Age", "Gender"].forEach((d, i) => {
+    ["Device Type", "Appearance", "Age", "Gender", "Education"].forEach((d, i) => {
         fillHierarchicalSelection("#sankey-diagram-dimension-" + (i + 1) + "-selector", dimensions, o => o["#sankey-diagram"], d, false, (event) => {
             let selection;
             if (event.explicitOriginalTarget) {
@@ -356,15 +372,40 @@ Promise.all([d3.json('data/dimensions.json'), d3.json("data/filters.json")]).the
         });
     });
 
+    fillFlatSelection("#sankey-diagram-preset-selector", presets["Sankey"], presets["Sankey"][1], (event) => {
+        let selection;
+        if (event.explicitOriginalTarget) {
+            selection = event.explicitOriginalTarget.textContent;
+        } else {
+            selection = event.srcElement.innerText;
+        }
+
+        d3.select("#sankey-diagram-preset-selector li a").text(selection);
+
+        const dimensions = presets["Sankey"].find(p => p["name"] === selection)["dimensions"];
+
+        dimensions.forEach((d, i) => {
+            d3.select("#sankey-diagram-dimension-" + (i + 1) + "-selector li a").text(d);
+        });
+        
+        checkSankeyDimensionCount(dimensions.length);
+        
+        console.log(charts["sankey-diagram"].dimensions)
+        charts["sankey-diagram"].dimensions = dimensions;
+        console.log(charts["sankey-diagram"].dimensions)
+        charts["sankey-diagram"].updateVis();
+    });
+
     const checkSankeyDimensionCount = (value) => {
         d3.select("#sankey-diagram-layer-count").text(value);
         const dimensions = [];
         const lefts = {
-            2: [0, 81],
-            3: [0, 41, 81],
-            4: [0, 25.5, 56, 81]
+            2: [0, 82],
+            3: [0, 41, 82],
+            4: [0, 25.5, 56, 82],
+            5: [0, 17.5, 41, 64.5, 82]
         };
-        [1, 2, 3, 4].forEach((n, i) => {
+        [1, 2, 3, 4, 5].forEach((n, i) => {
             if (n <= value) {
                 d3.select("#sankey-diagram-dimension-" + n + "-selector")
                     .style("display", "block")
@@ -387,7 +428,7 @@ Promise.all([d3.json('data/dimensions.json'), d3.json("data/filters.json")]).the
 
     d3.select("#sankey-diagram-layer-plus").on("click", () => {
         let value = +d3.select("#sankey-diagram-layer-count").text();
-        value = d3.min([value + 1, 4]);
+        value = d3.min([value + 1, 5]);
         checkSankeyDimensionCount(value);
     });
     
@@ -399,16 +440,11 @@ Promise.all([d3.json('data/dimensions.json'), d3.json("data/filters.json")]).the
             selection = event.srcElement.innerText;
         }
 
-        console.log(selection);
-
         d3.select("#word-cloud-dimension-selector li a").text(selection);
         
         charts["word-cloud"].dimension = selection;
         charts["word-cloud"].updateVis();
     });
 
-    const dropdowns = document.querySelectorAll(".selector ul");
-    for (let i = 0; i < dropdowns.length; i++) {
-        dropdowns.item(i).setAttribute("style", "width: " + (d3.max([window.innerWidth, 1600]) * 0.13) + "px")
-    }
+    resize();
 });

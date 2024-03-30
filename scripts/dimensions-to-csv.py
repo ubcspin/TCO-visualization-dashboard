@@ -8,7 +8,6 @@ options = {}
 with open("data/data-structure.csv") as csvFile:
     reader = csv.reader(csvFile)
     for row in reader:
-        print(row)
         if row[4].startswith("[DER] "):
             row[4] = row[4][6:]
 
@@ -17,7 +16,7 @@ with open("data/data-structure.csv") as csvFile:
         else:
             name = row[1] + ": " + row[2]
 
-        if row[5] == "categorical":
+        if row[5] == "categorical" or row[5] == "numerical":
             if name not in structure:
                 structure[name] = []
 
@@ -32,15 +31,27 @@ with open("data/data-structure.csv") as csvFile:
                 "#sankey-diagram": row[17] == "use",
             }]
 
-            options[row[4]] = row[7].split(", ")
+            options[row[4]] = list(map(lambda d: d.strip(), row[8].split(", ")))
         
         if row[11] == "use":
             filters += [{
                 "block": row[4],
-                "options": row[7].split(", ")
+                "options": row[8].split(", ")
             }]
 
-print(structure)
+presets = {}
+
+with open("data/presets.csv") as csvFile:
+    reader = csv.reader(csvFile)
+    next(reader, None)
+    for row in reader:
+        if row[0] not in presets:
+            presets[row[0]] = []
+        
+        presets[row[0]] += [{
+            "name": row[1],
+            "dimensions": list(map(lambda d: d.strip(), row[2].split(", ")))
+        }]
 
 listemizedStructure = []
 for k in list(structure.keys()):
@@ -57,3 +68,6 @@ with open("data/filters.json", "w") as jsonFile:
 
 with open("data/options.json", "w") as jsonFile:
     jsonFile.write(json.dumps(options, indent=4))
+
+with open("data/presets.json", "w") as jsonFile:
+    jsonFile.write(json.dumps(presets, indent=4))

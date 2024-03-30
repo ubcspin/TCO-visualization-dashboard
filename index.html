@@ -10,6 +10,10 @@
 </head>
 <body>
     <div id="dashboard">
+        <div>
+            
+        </div>
+
         <div id="header">
             <h1>Touchable Comfort Object (TCO) Repository</h1>
 
@@ -19,9 +23,10 @@
                 </li>
             </ul>
 
-            <button type="button" id="clear-filter-button" class="header-selector">Clear Filter</a>
-            <button type="button" id="photo-gallery-button" class="header-selector">Photo Gallery</a>
-            <button type="button" id="schema-link" href="" class="header-selector">Schema</a>
+            <button type="button" id="clear-filter-button" class="header-selector">Clear Filter</button>
+            <button type="button" id="photo-gallery-button" class="header-selector">Photo Gallery</button>
+            <button type="button" id="schema-link" href="" class="header-selector">Schema</button>
+            <button type="button" id="photo-gallery-button" class="header-selector">Provide Feedback</button>
         </div>
 
         <div class="row" style="height: 40%">
@@ -74,16 +79,16 @@
             </div>
 
             <div id="sankey-diagram-container" class="chart-container" style="flex: 15">
-                <ul class="selector dimension" id="sankey-diagram-preset-selector">
+                <ul class="selector preset" id="sankey-diagram-preset-selector">
                     <li>
                         <a href="#" class="dropdown-label"></a>
                     </li>
                 </ul>
 
                 <div class="selector" id="sankey-diagram-vertex-count-selector">
-                    <p style="flex: 3">layers</p>
+                    <p style="flex: 3">Layers</p>
                     <a id="sankey-diagram-layer-minus" style="flex: 1; z-index: 5">-</a>
-                    <p style="flex: 1" id="sankey-diagram-layer-count">4</p>
+                    <p style="flex: 1" id="sankey-diagram-layer-count">5</p>
                     <a id="sankey-diagram-layer-plus" style="flex: 1; z-index: 5">+</a>
                 </div>
 
@@ -109,6 +114,12 @@
                     </ul>
                 
                     <ul class="selector dimension" id="sankey-diagram-dimension-4-selector">
+                        <li>
+                            <a href="#" class="dropdown-label"></a>
+                        </li>
+                    </ul>
+                
+                    <ul class="selector dimension" id="sankey-diagram-dimension-5-selector">
                         <li>
                             <a href="#" class="dropdown-label"></a>
                         </li>

@@ -41,9 +41,7 @@ class BarChart extends Chart {
 
 		vis.yAxisTitle = vis.chartArea.append("text")
 			.style("text-anchor", "middle")
-			.text("Count"); 
-
-		vis.updateVis();
+			.text("Count");
 	}
 
 	updateVis() {
@@ -86,9 +84,7 @@ class BarChart extends Chart {
 		vis.xValue = d => d[0];
 		vis.yValue = d => d[1];
 
-		vis.rollupData = d3.rollups(vis.data, d => d.length, d => d[vis.dimension]).sort((a, b) => {
-			return vis.options[vis.dimension].indexOf(vis.xValue(a).trim()) - vis.options[vis.dimension].indexOf(vis.xValue(b).trim());
-		});
+		vis.rollupData = vis.options[vis.dimension].map(o => [o, vis.data.map(d => d[vis.dimension]).filter(d => d === o).length]);
 
 		// Set the scale input domains
 		vis.xScale
@@ -121,15 +117,22 @@ class BarChart extends Chart {
 			.attr('y', d => vis.yScale(vis.yValue(d)));
 
 		// Update the axes because the underlying scales might have changed
-		vis.xAxisG.call(vis.xAxis)
-			// .selectAll("text")  
-			//     .style("text-anchor", "end")
-			//     .attr("dx", "-.8em")
-			//     .attr("dy", ".15em")
-			//     .attr("transform", "rotate(-45)" );
+
+		if (d3.max(vis.xScale.domain().map(d => d.length)) > 6) {
+			vis.xAxisG.call(vis.xAxis)
+				.selectAll("text")  
+					.style("text-anchor", "end")
+					.attr("dx", "-.8em")
+					.attr("dy", ".15em")
+					.attr("transform", "rotate(-25)");
+		} else {
+			vis.xAxisG.call(vis.xAxis);
+		}
 
 		vis.yAxisG.call(vis.yAxis);
 
 		vis.xAxisTitle.text(vis.dimension);
+
+		d3.selectAll("g.tick text").attr("font-size", globalFontSize + "%");
 	}
 }

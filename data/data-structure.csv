@@ -75,7 +75,7 @@ Sno,Block,Subblock,Dimension,Dimension,Type,Original or Derived,Choices (old),Ch
 70,Object Characteristics,Tactile,Shape: Others,Shape: Others,open-ended,Original,,,,1,,,,,,,,
 71,Object Characteristics,Tactile,Conformability and Compliance,Conformability and Compliance,categorical,Original,"Squishy, Moldable, Rigid, Flexible, Powdery, Clicky, Spongy, Elastic, Poppable, Other, Prefer not to answer","Squishy, Moldable, Rigid, Flexible, Powdery, Clicky, Spongy, Elastic, Poppable, Prefer not to answer",Multi,10,,use,,,,,use,
 72,Object Characteristics,Tactile,Conformability and Compliance: Others,Conformability and Compliance: Others,open-ended,Original,,,,1,,,,,,,,
-73,Object Characteristics,Tactile,Softness Rating,Softness Rating,categorical,Derived,"0, 1, 2, 3, 4, 5","0, 1, 2, 3, 4, 5",Single ,6,,,,,use,,use,
+73,Object Characteristics,Tactile,Softness Rating,Softness Rating,categorical,Derived,"0, 1, 2, 3, 4, 5","NA, 0, 1, 2, 3, 4, 5",Single ,6,,,,,use,,use,
 74,Object Characteristics,Tactile,Subjective Temperature,Subjective Temperature,categorical,Original,"Warm, Cool, Other, Prefer not to answer","Warm, Cool, Neither, Prefer not to answer",Single ,4,,,use,use,use,,use,
 75,Object Characteristics,Tactile,Subjective Temperature: Others,Subjective Temperature: Others,open-ended,Original,,,,1,,,,,,,,
 76,Object Characteristics,Tactile,Other Tactile Characteristics: Description,Other Tactile Characteristics: Description,open-ended,Original,,,,1,,,,,,,,

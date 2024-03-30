@@ -1,0 +1,76 @@
+{
+    "Radar": [
+        {
+            "name": "Object Use: Importance",
+            "dimensions": [
+                "Functional Value",
+                "Emotional Significance",
+                "Physical Soothing"
+            ]
+        },
+        {
+            "name": "Preferences",
+            "dimensions": [
+                "Tendency to Fidget",
+                "Emotional Attachment to Objects",
+                "Values Design and Aesthetics",
+                "Non-Functional Personal Objects"
+            ]
+        },
+        {
+            "name": "Personality Traits",
+            "dimensions": [
+                "Extraversion",
+                "Agreeableness",
+                "Conscientiousness",
+                "Neuroticism",
+                "Openness"
+            ]
+        }
+    ],
+    "Sankey": [
+        {
+            "name": "Object Use: Time",
+            "dimensions": [
+                "Usage Context",
+                "Usage Frequency",
+                "Interaction Duration"
+            ]
+        },
+        {
+            "name": "Object Use: Type",
+            "dimensions": [
+                "Interaction Type",
+                "Physical Interaction",
+                "Usage Setting"
+            ]
+        },
+        {
+            "name": "Object Use: Importance",
+            "dimensions": [
+                "Functional Value",
+                "Emotional Significance",
+                "Physical Soothing"
+            ]
+        },
+        {
+            "name": "Preferences",
+            "dimensions": [
+                "Tendency to Fidget",
+                "Emotional Attachment to Objects",
+                "Values Design and Aesthetics",
+                "Non-Functional Personal Objects"
+            ]
+        },
+        {
+            "name": "Personality Traits",
+            "dimensions": [
+                "Extraversion",
+                "Agreeableness",
+                "Conscientiousness",
+                "Neuroticism",
+                "Openness"
+            ]
+        }
+    ]
+}

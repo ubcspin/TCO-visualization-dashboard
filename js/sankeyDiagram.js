@@ -24,10 +24,6 @@ class SankeyDiagram extends Chart {
 
 		// Todo: initialize scales, axes, static elements, etc.
 		vis.sankey = d3.sankey();
-
-		vis.defs = vis.chartArea.append("defs");
-
-		vis.updateVis();
 	}
 
 	updateVis() {
@@ -64,12 +60,10 @@ class SankeyDiagram extends Chart {
 			links: []
 		};
 
-		const onlyUnique = (v, i, a) => a.indexOf(v) == i;
-
 		const nodeOptions = [];
 
 		vis.dimensions.forEach(d => {
-			const uniqueOptions = vis.data.map(k => d + "///" + k[d]).filter(onlyUnique);
+			const uniqueOptions = vis.options[d].map(k => d + "///" + k);
 			vis.graph.nodes.push(...uniqueOptions);
 			nodeOptions.push(uniqueOptions);
 		});
@@ -99,7 +93,17 @@ class SankeyDiagram extends Chart {
 
 		const linksList = [];
 		vis.data.forEach(d => {
-			linksList.push(...dimensionPairs.map(([d0, d1]) => [d0, d[d0], d1, d[d1]]));
+			const allCombinations = [];
+			dimensionPairs.forEach(([d0, d1]) => {
+				const combinations = [];
+				d[d0].split(",").forEach(j => {
+					d[d1].split(",").forEach(k => {
+						combinations.push([d0, j, d1, k]);
+					});
+				});
+				allCombinations.push(...combinations);
+			});
+			linksList.push(...allCombinations);
 		});
 
 		linksList.forEach(link => {
@@ -121,28 +125,6 @@ class SankeyDiagram extends Chart {
 		let vis = this;
 		
 		const palette = d3.schemePaired;
-		
-		const getGradID = d => "linkGrad-" + d.source.name.replaceAll(/[\s\(\)\\\/\-,\.]/g, "") + d.target.name.replaceAll(/[\s\(\)\\\/\-,\.]/g, "");
-		const nodeColour = d => { return d.color = palette[d.index % 12] };
-
-		const grads = vis.defs.selectAll("linearGradient")
-            .data(vis.graph.links, d => d.index)
-			.join("linearGradient")
-			.attr("id", getGradID)
-			.attr("gradientUnits", "userSpaceOnUse")
-			.attr("x1", d => d.source.x)
-			.attr("y1", d => d.source.y)
-			.attr("x2", d => d.target.x)
-			.attr("y2", d => d.target.y);
-
-		grads.html("") //erase any existing <stop> elements on update
-			.append("stop")
-			.attr("offset", "0%")
-			.attr("stop-color", d => nodeColour(d.source));
-
-		grads.append("stop")
-			.attr("offset", "100%")
-			.attr("stop-color", d => nodeColour(d.target));
 
 		// add in the links
 		vis.chartArea.selectAll(".link")

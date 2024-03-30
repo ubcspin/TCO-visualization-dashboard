@@ -61,7 +61,7 @@ ul.header-selector {
     position: relative;
 }
 
-.selector li {
+.preset li {
     z-index: 2;
 }
 
@@ -159,19 +159,25 @@ div.selector a {
 #sankey-diagram-dimension-2-selector {
     width: 15%;
     top: 6%;
-    left: 25.5%;
+    left: 17.5%;
 }
 
 #sankey-diagram-dimension-3-selector {
     width: 15%;
     top: 6%;
-    left: 56%;
+    left: 41%;
 }
 
 #sankey-diagram-dimension-4-selector {
     width: 15%;
     top: 6%;
-    left: 81%;
+    left: 64.5%;
+}
+
+#sankey-diagram-dimension-5-selector {
+    width: 15%;
+    top: 6%;
+    left: 82%;
 }
 
 /* Word Cloud */

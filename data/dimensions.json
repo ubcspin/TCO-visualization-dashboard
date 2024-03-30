@@ -215,6 +215,61 @@
         ]
     },
     {
+        "block": "Demographics: Personality Traits",
+        "dimensions": [
+            {
+                "name": "Extraversion",
+                "type": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true
+            },
+            {
+                "name": "Agreeableness",
+                "type": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true
+            },
+            {
+                "name": "Conscientiousness",
+                "type": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true
+            },
+            {
+                "name": "Neuroticism",
+                "type": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true
+            },
+            {
+                "name": "Openness",
+                "type": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true
+            }
+        ]
+    },
+    {
         "block": "Demographics: Preferences",
         "dimensions": [
             {
@@ -414,7 +469,7 @@
             },
             {
                 "name": "Softness Rating",
-                "type": "0, 1, 2, 3, 4, 5",
+                "type": "NA, 0, 1, 2, 3, 4, 5",
                 "#word-cloud": false,
                 "#bar-chart": false,
                 "#scatter-plot": false,

@@ -51,8 +51,6 @@ class ScatterPlot extends Chart {
 		vis.yAxisTitle = vis.chartArea.append("text")
 			.attr("transform", "rotate(-90)")
 			.style("text-anchor", "middle");
-
-		vis.updateVis();
 	}
 
 	updateVis() {
@@ -96,21 +94,12 @@ class ScatterPlot extends Chart {
 		vis.yValue = d => d[vis.yDimension];
 		vis.colourValue = d => d[vis.colourDimension];
 
-		vis.colourData = d3.rollups(vis.data, d => d.length, d => vis.colourValue(d)).sort((a, b) => {
-			return vis.options[vis.colourDimension].indexOf(vis.colourValue(a)) - vis.options[vis.colourDimension].indexOf(vis.colourValue(b));
-		});;
-
-		let xDomain = vis.data.map(d => vis.xValue(d).trim()).sort((a, b) => {
-			return vis.options[vis.xDimension].indexOf(a) - vis.options[vis.xDimension].indexOf(b);
-		});
-
-		let yDomain = vis.data.map(d => vis.yValue(d).trim()).sort((a, b) => {
-			return vis.options[vis.yDimension].indexOf(b) - vis.options[vis.yDimension].indexOf(a);
-		});
+		vis.colourData = vis.options[vis.colourDimension];
+		const yDomain = vis.options[vis.yDimension].toReversed();
 
 		// Set the scale input domains
 		vis.xScale
-			.domain(xDomain)
+			.domain(vis.options[vis.xDimension])
 			.range([0, vis.config.width]);
 		vis.yScale
 			.domain(yDomain)
@@ -127,7 +116,7 @@ class ScatterPlot extends Chart {
 
 		const colourMap = {}
 		vis.colourData.forEach((d, i) => {
-			colourMap[d[0]] = i;
+			colourMap[d] = i;
 		});
 
 		vis.nodes = vis.chartArea.selectAll('.point')
@@ -160,8 +149,28 @@ class ScatterPlot extends Chart {
 		vis.simulation.force("x").initialize(vis.data);
 
 		// Update the axes because the underlying scales might have changed
-		vis.xAxisG.call(vis.xAxis)
-		vis.yAxisG.call(vis.yAxis);
+
+		if (d3.max(vis.xScale.domain().map(d => d.length)) > 6) {
+			vis.xAxisG.call(vis.xAxis)
+				.selectAll("text")  
+					.style("text-anchor", "end")
+					.attr("dx", "-.8em")
+					.attr("dy", ".15em")
+					.attr("transform", "rotate(-25)");
+		} else {
+			vis.xAxisG.call(vis.xAxis);
+		}
+
+		if (d3.max(vis.yScale.domain().map(d => d.length)) > 6) {
+			vis.yAxisG.call(vis.yAxis)
+				.selectAll("text")  
+					.style("text-anchor", "end")
+					.attr("dx", "-.8em")
+					.attr("dy", ".15em")
+					.attr("transform", "rotate(-25)");
+		} else {
+			vis.yAxisG.call(vis.yAxis);
+		}
 
 		vis.xAxisTitle.text(vis.xDimension);
 		vis.yAxisTitle.text(vis.yDimension);

@@ -14,16 +14,14 @@
         "Flyer",
         "Instagram",
         "Facebook Group",
-        "Word of mouth",
-        "Other",
-        "Prefer not to answer  "
+        "Word of mouth"
     ],
     "Gender": [
         "Male",
         "Female",
         "Non-binary",
         "Prefer not to disclose",
-        "Prefer to self-describe  "
+        "Prefer to self-describe"
     ],
     "Cultural Background": [
         "Black/African Canadian",
@@ -35,7 +33,7 @@
         "European/White",
         "Middle Eastern",
         "Prefer not to disclose",
-        "Prefer to self-describe  "
+        "Prefer to self-describe"
     ],
     "Age": [
         "18-24",
@@ -73,7 +71,7 @@
         "Parent",
         "Not Applicable",
         "Prefer to self-describe",
-        "Prefer not to disclose\n\n"
+        "Prefer not to disclose"
     ],
     "Reserved Self-Perception": [
         "Strongly agree",
@@ -145,6 +143,66 @@
         "Somewhat disagree",
         "Strongly disagree"
     ],
+    "Extraversion": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+    ],
+    "Agreeableness": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+    ],
+    "Conscientiousness": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+    ],
+    "Neuroticism": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+    ],
+    "Openness": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+    ],
     "Tendency to Fidget": [
         "Strongly agree",
         "Somewhat agree",
@@ -179,17 +237,20 @@
         "Prefer not to answer"
     ],
     "Object Category": [
+        "Plushies",
+        "Toy",
+        "Utility Object",
+        "Jewelry",
+        "Ball",
+        "Non Utility Object",
         "Bedding",
-        "Jewelry & Decoration",
-        "Plushies & Stuffed Animals",
-        "Toys & Balls",
-        "Utility Item",
         "NA"
     ],
     "Involves Technology": [
-        "Involves technology",
-        "Does not involve technology",
-        "Prefer not to answer"
+        "Yes",
+        "No",
+        "Prefer not to answer",
+        ""
     ],
     "Ability to Move": [
         "Capable of moving",
@@ -199,21 +260,21 @@
     "Device Type": [
         "Table-top",
         "Hand-held",
-        "Wearable (e.g.",
-        "watch",
-        "jewelry)",
-        "Other",
-        "Prefer not to answer"
+        "Wearable"
     ],
     "Appearance": [
         "Anthropomorphic",
         "Zoomorphic",
-        "Neither anthropomorphic nor zoomorphic",
+        "Neither",
         "Prefer not to answer"
     ],
     "Targeted Body Part": [
         "Head",
         "Face",
+        "Mouth",
+        "Nose",
+        "Ears",
+        "Hair",
         "Cheek",
         "Neck",
         "Shoulder",
@@ -239,8 +300,7 @@
     "Collective vs Individual Use": [
         "Personal",
         "Shared",
-        "Other",
-        "Prefer not to answer"
+        "Other"
     ],
     "Texture": [
         "Smooth",
@@ -265,27 +325,20 @@
         "Prefer not to answer"
     ],
     "Size": [
-        "Miniature (e.g.",
-        "ring)",
-        "Small (e.g.",
-        "stress ball)",
-        "Medium (e.g.",
-        "basketball)",
-        "Large (e.g.",
-        "pillow)",
-        "Extra large (e.g.",
-        "body pillow)",
-        "Other",
-        "Prefer not to answer"
+        "Miniature",
+        "Small",
+        "Medium",
+        "Large",
+        "Extra large",
+        "Other"
     ],
     "Shape": [
         "Symmetrical",
         "Asymmetrical",
         "Flat",
         "Spherical",
-        "Angular/edgy",
-        "Rounded/curved",
-        "Other",
+        "Angular",
+        "Rounded",
         "Prefer not to answer"
     ],
     "Conformability and Compliance": [
@@ -298,10 +351,10 @@
         "Spongy",
         "Elastic",
         "Poppable",
-        "Other",
         "Prefer not to answer"
     ],
     "Softness Rating": [
+        "NA",
         "0",
         "1",
         "2",
@@ -312,7 +365,7 @@
     "Subjective Temperature": [
         "Warm",
         "Cool",
-        "Other",
+        "Neither",
         "Prefer not to answer"
     ],
     "Other Sensory Channel Used": [
@@ -324,43 +377,42 @@
         "Prefer not to answer"
     ],
     "Functional Value": [
-        "Not at all important",
-        "Slightly important",
-        "Moderately important",
-        "Very important",
-        "Extremely important"
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
     ],
     "Emotional Significance": [
-        "Not at all important",
-        "Slightly important",
-        "Moderately important",
-        "Very important",
-        "Extremely important"
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
     ],
     "Physical Soothing": [
-        "Not at all important",
-        "Slightly important",
-        "Moderately important",
-        "Very important",
-        "Extremely important"
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
     ],
     "Usage Context": [
-        "When a situation matters to me",
-        "When a situation is not in line with what I want",
-        "When a situation is my fault",
-        "When it is not clear to me how a situation will evolve",
-        "When I am not in control of a situation",
+        "Personal relevance",
+        "Misalignment with desires",
+        "Self-blame",
+        "Uncertain outcome",
+        "Lack of control",
         "Other",
         "Prefer not to answer"
     ],
     "Usage Setting": [
-        "Alone in personal space",
-        "Alone in public space",
+        "Personal alone",
+        "Public alone",
         "Around family",
         "Around friends",
-        "In public around strangers",
-        "Other",
-        "Prefer not to answer"
+        "Around strangers",
+        "Other"
     ],
     "Non-Usage Settings": [
         "Yes",
@@ -370,13 +422,13 @@
     "Physical Interaction": [
         "Rub",
         "Squish",
-        "Hold/grasp",
+        "Hold",
         "Fidget",
-        "Press/Push with hand",
-        "Press/push with finger tips",
+        "Press with hand",
+        "Press with finger tips",
         "Throw around",
         "Wrap around",
-        "Lift up/down",
+        "Lift",
         "Twist",
         "Glide",
         "Pet",
@@ -389,13 +441,12 @@
     ],
     "Interaction Type": [
         "When I need it",
-        "Randomly/Spontaneously",
-        "Compulsively/Irresistibly",
-        "Routinely/as a Ritual",
+        "Randomly",
+        "Compulsively Routinely",
         "Prefer not to answer"
     ],
     "Usage Frequency": [
-        "Daily or multiple times a day",
+        "Several times a day",
         "Several times a week",
         "Several times a month",
         "Once a month or less",
@@ -411,12 +462,10 @@
         "Prefer not to answer"
     ],
     "Usage Start": [
-        "In the past few days",
-        "In the past few weeks",
-        "In the past few months",
-        "In the past few years",
-        "Other",
-        "Prefer not to answer"
+        "Past few days",
+        "Past few weeks",
+        "Past few months",
+        "Past few years"
     ],
     "Acquisition": [
         "Bought it",
@@ -424,31 +473,25 @@
         "Gifted",
         "Found it",
         "Hand-me-down",
-        "Family owned",
-        "Other",
-        "Prefer not to answer"
+        "Family owned"
     ],
     "Attachment": [
-        "Not significant at all (okay if I lose it)",
-        "Slightly significant",
-        "Moderately significant",
-        "Very significant",
-        "Extremely significant (devastated if I lose it)",
-        "Other",
-        "Prefer not to answer"
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
     ],
     "Meaningfulness": [
-        "It symbolizes something to me",
-        "It reminds me of someone",
-        "It reminds me of some event or situation",
-        "It represents a milestone or achievement",
-        "It denotes belonging to a group",
-        "community",
-        "or culture",
-        "It makes me feel a certain way",
+        "Symbolic",
+        "Reminder of someone",
+        "Reminder of event",
+        "Milestone",
+        "Belonging to a group",
+        "Emotional attachment",
         "Not meaningful",
         "Other",
-        "Prefer not to answer\n"
+        "Prefer not to answer"
     ],
     "Customization": [
         "Yes",
