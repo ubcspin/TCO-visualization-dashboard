@@ -203,6 +203,10 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json'), d
         }
     }, filteredData, dispatch);
 
+    document.getElementById("photo-gallery-button").onclick = () => {
+        location.href = "gallery.html"
+    }
+
     fillHierarchicalSelection("#global-filter", filters, o => true, "Filter", true, (event) => {
         filteredData = JSON.parse(JSON.stringify(allData));
 

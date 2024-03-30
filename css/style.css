@@ -307,3 +307,13 @@ ul:before, ul:after {
 ul:after { 
     clear: both; 
 }
+
+
+
+
+
+/* Gallery */
+
+#gallery-container img {
+    width: auto;
+}

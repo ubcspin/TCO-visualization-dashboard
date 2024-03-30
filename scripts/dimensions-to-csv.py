@@ -1,5 +1,6 @@
 import csv
 import json
+import os
 
 structure = {}
 filters = []
@@ -71,3 +72,9 @@ with open("data/options.json", "w") as jsonFile:
 
 with open("data/presets.json", "w") as jsonFile:
     jsonFile.write(json.dumps(presets, indent=4))
+
+with open("data/photos.json", "w") as jsonFile:
+    path = "media/object-photos"
+    photos = os.listdir(path)
+    photos = list(map(lambda p: { "path": path + "/" + p, "reproduced": "(rep)" in p }, photos))
+    jsonFile.write(json.dumps(photos, indent=4))
