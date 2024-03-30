@@ -5,8 +5,8 @@ class RadarPlot extends Chart {
 	 * @param {Object}
 	 */
 	// Todo: Add or remove parameters from the constructor as needed
-	constructor(_config, data, options) {
-		super(_config, data)
+	constructor(_config, data, options, dispatch) {
+		super(_config, data, dispatch)
 		this.dimensions = _config.dimensions;
 		this.options = options;
 		this.likertMap = {
@@ -89,9 +89,9 @@ class RadarPlot extends Chart {
 			.attr("x", vis.config.width / 2 )
 			.attr("y",  vis.config.height + vis.config.margin.bottom - 16)
 
-		const toNumber = d => d in vis.likertMap ? vis.likertMap[d] : +d;
+		vis.toNumber = d => d in vis.likertMap ? vis.likertMap[d] : +d;
 
-		let yDomain = vis.options[vis.dimensions[0]].map(toNumber).toSorted((a, b) => a - b);
+		let yDomain = vis.options[vis.dimensions[0]].map(vis.toNumber).toSorted((a, b) => a - b);
 
 		// Todo: Prepare data and scales
 		vis.xScale
@@ -101,9 +101,9 @@ class RadarPlot extends Chart {
 		vis.yScale
 			.domain(yDomain)
 			.range([vis.config.height, 0])
-			.paddingInner(0.01);
+			.paddingInner(0.02);
 		
-		vis.histograms = vis.dimensions.map(d => { return { dimension: d, options: yDomain.map(o => [o, vis.data.filter(k => toNumber(k[d]) === o).length]) }; });
+		vis.histograms = vis.dimensions.map(d => { return { dimension: d, options: yDomain.map(o => [o, vis.data.filter(k => vis.toNumber(k[d]) === o).length, d]) }; });
 	
 		// What is the biggest number of value in a bin? We need it cause this value will have a width of 100% of the bandwidth.
 		let max = 0;
@@ -139,7 +139,14 @@ class RadarPlot extends Chart {
 			.attr("x", d => vis.xScale.bandwidth() / 2 - vis.violinWidth(d[1]))
 			.attr("y", d => vis.yScale(d[0]))
 			.attr("width", d => 2 * vis.violinWidth(d[1]))
-			.attr("height", vis.yScale.bandwidth());
+			.attr("height", vis.yScale.bandwidth())
+			.attr("stroke-width", d => {
+				if (vis.emphasized.find(e => e[0] === d[2])) {
+					return vis.toNumber(vis.emphasized.find(e => e[0] === d[2])[1]) === d[0] ? 2 : 0;
+				}
+				return 0;
+			})
+			.attr("stroke", "black");
 
 		// Update the axes because the underlying scales might have changed
 		if (d3.max(vis.xScale.domain().map(d => d.length)) > 6) {

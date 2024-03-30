@@ -5,8 +5,8 @@ class WordCloud extends Chart {
 	 * @param {Object}
 	 */
 	// Todo: Add or remove parameters from the constructor as needed
-	constructor(_config, data) {
-		super(_config, data);
+	constructor(_config, data, dispatch) {
+		super(_config, data, dispatch);
 		this.dimension = _config.dimension;
 		this.initVis();
 	}
@@ -70,6 +70,9 @@ class WordCloud extends Chart {
 		vis.simulation.force("y").y(vis.config.height / 2);
 
 		vis.renderVis();
+
+		vis.simulation.nodes(vis.rollupData);
+		vis.simulation.alpha(1).alphaTarget(0.1).restart();
 	}
 
 	renderVis() {
@@ -97,8 +100,12 @@ class WordCloud extends Chart {
 			.join("circle")
 			.attr("class", "word-circle")
 			.attr("r", d => vis.sizeScale(d.size))
-			.attr("fill", "lightgrey");
-
+			.attr("fill", "lightgrey")
+			.attr("stroke-width", d => vis.emphasized.includes(d.text) ? 2 : 0)
+			.attr("stroke", "black")
+			.on("mouseover", (_, d) => vis.dispatch.call("specifyGroup", null, [{ dimension: vis.dimension, option: d.text }], "word-cloud"))
+			.on("mouseout", _ => vis.dispatch.call("specifyGroup", null, null, "word-cloud"));
+			
 		vis.nodes.selectAll(".word-text")
 			.data(d => {
 				const chunks = [];
@@ -106,7 +113,8 @@ class WordCloud extends Chart {
 					chunks.push({
 						text: d.text.substring(i * d.text.length / d.lines, (i + 1) * d.text.length / d.lines).trim() + (i < d.lines - 1 ? "-" : ""),
 						line: i,
-						lines: d.lines
+						lines: d.lines,
+						fullText: d.text
 					});
 				}
 				return chunks;
@@ -118,19 +126,13 @@ class WordCloud extends Chart {
 				const textBoxSize = fontSize * d.lines;
 				return "translate(0, " + ((d.line + 1) * fontSize - textBoxSize / 2) + ")";
 			})
-			.text(d => d.text);
+			.text(d => d.text)
+			.on("mouseover", (_, d) => vis.dispatch.call("specifyGroup", null, [{ dimension: vis.dimension, option: d.fullText }], "word-cloud"))
+			.on("mouseout", _ => vis.dispatch.call("specifyGroup", null, null, "word-cloud"));
 
 		vis.simulation.on("tick", () => {
 			vis.nodes
 				.attr("transform", d => "translate(" + d.x + ", " + d.y + ")");
 		});
-
-		vis.data.forEach(d => {
-			d.x = vis.config.width / 2;
-			d.y = vis.config.height / 2;
-		});
-
-		vis.simulation.nodes(vis.rollupData);
-		vis.simulation.alpha(1).alphaTarget(0.1).restart();
 	}
 }

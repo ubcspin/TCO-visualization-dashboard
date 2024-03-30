@@ -4,8 +4,8 @@ class ScatterPlot extends Chart {
 	 * @param {Object}
 	 */
 	// Todo: Add or remove parameters from the constructor as needed
-	constructor(_config, data, options) {
-		super(_config, data)
+	constructor(_config, data, options, dispatch) {
+		super(_config, data, dispatch)
 		this.xDimension = _config.xDimension;
 		this.yDimension = _config.yDimension;
 		this.colourDimension = _config.colourDimension;
@@ -109,6 +109,9 @@ class ScatterPlot extends Chart {
 		vis.simulation.force("y").y(d => vis.yScale(vis.yValue(d)) + vis.yScale.bandwidth() / 2);
 
 		vis.renderVis();
+
+		vis.simulation.nodes(vis.data);
+		vis.simulation.alpha(1).alphaTarget(0.1).restart();
 	}
 
 	renderVis() {
@@ -126,27 +129,23 @@ class ScatterPlot extends Chart {
 					return enter.append("circle")
 						.attr('cx', vis.config.width / 2)
 						.attr('cy', vis.config.height / 2)
-						.attr('class', 'point')
+						.attr('class', 'point');
 				}
 			)
 			.attr('fill', d => d3.schemeTableau10[colourMap[vis.colourValue(d)]])
-			.attr('r', 0.01 * vis.config.height);
+			.attr('r', 0.01 * vis.config.height)
+			.attr("stroke-width", d => vis.emphasized.includes(d["SNo"]) ? 2 : 0)
+			.attr("stroke", "black")
+			.on("mouseover", (_, d) => vis.dispatch.call("specifyIndividual", null, d))
+			.on("mouseout", _ => vis.dispatch.call("specifyIndividual", null, null));
+
+		vis.nodes.filter(d => vis.emphasized.includes(d["SNo"])).raise();
 
 		vis.simulation.on("tick", () => {
 			vis.nodes
 				.attr('cx', d => d.x)
 				.attr('cy', d => d.y);
 		});
-
-		vis.data.forEach(d => {
-			d.x = vis.config.width / 2;
-			d.y = vis.config.height / 2;
-		});
-
-		vis.simulation.nodes(vis.data);
-		vis.simulation.alpha(1).alphaTarget(0.1).restart();
-
-		vis.simulation.force("x").initialize(vis.data);
 
 		// Update the axes because the underlying scales might have changed
 

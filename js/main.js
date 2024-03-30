@@ -5,6 +5,8 @@ let filteredData;
 
 let globalFontSize;
 
+const dispatch = d3.dispatch("specifyIndividual", "specifyGroup");
+
 const resize = () => {
     const width = d3.max([window.innerWidth, 1600]);
     let height = d3.max([window.innerHeight, 900]);
@@ -125,7 +127,7 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json'), d
             bottom: 0.25,
             left: 0.10
         }
-    }, filteredData, options);
+    }, filteredData, options, dispatch);
 
     container = document.getElementById("scatter-plot-container");
     charts["scatter-plot-softness"] = new ScatterPlot({
@@ -141,7 +143,7 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json'), d
             bottom: 0.10,
             left: 0.15
         }
-    }, filteredData, options);
+    }, filteredData, options, dispatch);
 
     container = document.getElementById("radar-plot-container");
     charts["radar-plot"] = new RadarPlot({
@@ -155,7 +157,7 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json'), d
             bottom: 0.20,
             left: 0.04
         }
-    }, filteredData, options);
+    }, filteredData, options, dispatch);
 
     container = document.getElementById("jitter-plot-container");
     charts["scatter-plot-general"] = new ScatterPlot({
@@ -171,7 +173,7 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json'), d
             bottom: 0.20,
             left: 0.25
         }
-    }, filteredData, options);
+    }, filteredData, options, dispatch);
 
     container = document.getElementById("sankey-diagram-container");
     charts["sankey-diagram"] = new SankeyDiagram({
@@ -185,7 +187,7 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json'), d
             bottom: 0.01,
             left: 0.01
         }
-    }, filteredData, options);
+    }, filteredData, options, dispatch);
 
     container = document.getElementById("word-cloud-container");
     charts["word-cloud"] = new WordCloud({
@@ -199,7 +201,7 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json'), d
             bottom: 0.01,
             left: 0.01
         }
-    }, filteredData);
+    }, filteredData, dispatch);
 
     fillHierarchicalSelection("#global-filter", filters, o => true, "Filter", true, (event) => {
         filteredData = JSON.parse(JSON.stringify(allData));
@@ -447,4 +449,117 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json'), d
     });
 
     resize();
+});
+
+dispatch.on("specifyIndividual", i => {
+    if (i) {
+        charts["bar-chart"].emphasized = [i[charts["bar-chart"].dimension]];
+        charts["bar-chart"].renderVis();
+        
+        charts["scatter-plot-softness"].emphasized = [i["SNo"]];
+        charts["scatter-plot-softness"].renderVis();
+        
+        charts["radar-plot"].emphasized = charts["radar-plot"].dimensions.map(d => [d, i[d]]);
+        charts["radar-plot"].renderVis();
+        
+        charts["scatter-plot-general"].emphasized = [i["SNo"]];
+        charts["scatter-plot-general"].renderVis();
+        
+        charts["sankey-diagram"].emphasized = charts["sankey-diagram"].dimensions.map(d => [d, i[d]]);
+        charts["sankey-diagram"].renderVis();
+        
+        charts["word-cloud"].emphasized = i[charts["word-cloud"].dimension].split(",");
+        charts["word-cloud"].renderVis();
+
+    } else {
+        charts["bar-chart"].emphasized = [];
+        charts["bar-chart"].renderVis();
+        
+        charts["scatter-plot-softness"].emphasized = [];
+        charts["scatter-plot-softness"].renderVis();
+        
+        charts["radar-plot"].emphasized = [];
+        charts["radar-plot"].renderVis();
+        
+        charts["scatter-plot-general"].emphasized = [];
+        charts["scatter-plot-general"].renderVis();
+        
+        charts["sankey-diagram"].emphasized = [];
+        charts["sankey-diagram"].renderVis();
+        
+        charts["word-cloud"].emphasized = [];
+        charts["word-cloud"].renderVis();
+    }
+});
+
+dispatch.on("specifyGroup", (g, home) => {
+    console.log(home)
+    if (g) {
+        const filteredData = allData.filter(d => g.every(k => d[k.dimension] === k.option));
+
+        if (home === "bar-chart") {
+            charts["bar-chart"].emphasized = [g[0].option];
+            charts["bar-chart"].renderVis();
+        } else {
+            charts["bar-chart"].ogData = filteredData;
+            charts["bar-chart"].updateVis();
+        }
+
+        charts["scatter-plot-softness"].emphasized = allData.filter(d => g.every(o => d[o.dimension] === o.option)).map(d => d["SNo"]);
+        charts["scatter-plot-softness"].renderVis();
+        
+        charts["radar-plot"].ogData = filteredData;
+        charts["radar-plot"].updateVis();
+        
+        charts["scatter-plot-general"].emphasized = allData.filter(d => g.every(o => d[o.dimension] === o.option)).map(d => d["SNo"]);
+        charts["scatter-plot-general"].renderVis();
+        
+        if (home === "sankey-diagram") {
+            const emphasizeFilters = [];
+            charts["sankey-diagram"].dimensions.forEach(d => {
+                if (g.find(k => k.dimension === d)) {
+                    emphasizeFilters.push([d, g.find(k => k.dimension === d).option])
+                }
+            });
+            charts["sankey-diagram"].emphasized = emphasizeFilters;
+            charts["sankey-diagram"].renderVis();
+        } else {
+            charts["sankey-diagram"].ogData = filteredData;
+            charts["sankey-diagram"].updateVis();
+        }
+        
+        if (home === "word-cloud") {
+            charts["word-cloud"].emphasized = [g[0].option];
+            charts["word-cloud"].renderVis();
+        } else {
+            charts["word-cloud"].ogData = filteredData;
+            charts["word-cloud"].updateVis();
+        }
+
+    } else {   
+        charts["bar-chart"].emphasized = [];
+        charts["bar-chart"].ogData = allData;
+        charts["bar-chart"].updateVis();
+             
+        charts["scatter-plot-softness"].emphasized = [];
+        charts["scatter-plot-softness"].renderVis();
+        
+        charts["radar-plot"].ogData = allData;
+        charts["radar-plot"].updateVis();
+        
+        charts["scatter-plot-general"].emphasized = [];
+        charts["scatter-plot-general"].renderVis();
+        
+        charts["sankey-diagram"].emphasized = [];
+        charts["sankey-diagram"].ogData = allData;
+        charts["sankey-diagram"].updateVis();
+        
+        if (home === "word-cloud") {
+            charts["word-cloud"].emphasized = [];
+            charts["word-cloud"].renderVis();
+        } else {
+            charts["word-cloud"].ogData = allData;
+            charts["word-cloud"].updateVis();
+        }
+    }
 });

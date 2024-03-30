@@ -5,8 +5,8 @@ class SankeyDiagram extends Chart {
 	 * @param {Object}
 	 */
 	// Todo: Add or remove parameters from the constructor as needed
-	constructor(_config, data, options) {
-		super(_config, data);
+	constructor(_config, data, options, dispatch) {
+		super(_config, data, dispatch);
 		this.dimensions = _config.dimensions;
 		this.options = options;
 		this.initVis();
@@ -136,6 +136,10 @@ class SankeyDiagram extends Chart {
 			.attr("stroke", d => palette[d.source.index % 12])
 			.attr("opacity", 0.3)
 			.attr("fill", "none")
+			.on("mouseover", (_, d) => vis.dispatch.call("specifyGroup", null, 
+				[{ dimension: d.source.name.split("///")[0], option: d.source.name.split("///")[1] }, { dimension: d.target.name.split("///")[0], option: d.target.name.split("///")[1] }], 
+				"sankey-diagram"))
+			.on("mouseout", _ => vis.dispatch.call("specifyGroup", null, null, "sankey-diagram"));
 	
 		// add in the nodes
 		vis.chartArea.selectAll(".node")
@@ -147,6 +151,15 @@ class SankeyDiagram extends Chart {
 			.attr("y", d => d.y0)
 			.attr("height", d => d.y1 - d.y0)
 			.attr("width", vis.sankey.nodeWidth())
+			.attr("stroke-width", d => {
+				if (vis.emphasized.find(e => e[0] === d.name.split("///")[0])) {
+					return vis.emphasized.find(e => e[0] === d.name.split("///")[0])[1] === d.name.split("///")[1] ? 2 : 0;
+				}
+				return 0;
+			})
+			.attr("stroke", "black")
+			.on("mouseover", (_, d) => vis.dispatch.call("specifyGroup", null, [{ dimension: d.name.split("///")[0], option: d.name.split("///")[1] }], "sankey-diagram"))
+			.on("mouseout", _ => vis.dispatch.call("specifyGroup", null, null, "sankey-diagram"));
 	
 		// add in the title for the nodes
 		vis.chartArea.selectAll(".node-text")

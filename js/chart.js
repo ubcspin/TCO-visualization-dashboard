@@ -1,7 +1,7 @@
 class Chart {
     locked = false;
 
-    constructor(_config, data) {
+    constructor(_config, data, dispatch) {
 		this.config = {
 			parentElement: _config.parentElement,
 			containerWidth: _config.width,
@@ -13,6 +13,8 @@ class Chart {
 			margin: {}
 		}
 		this.ogData = data;
+		this.dispatch = dispatch;
+		this.emphasized = [];
     }
 
     isLocked() {

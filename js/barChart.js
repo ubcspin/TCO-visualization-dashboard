@@ -5,8 +5,8 @@ class BarChart extends Chart {
 	 * @param {Object}
 	 */
 	// Todo: Add or remove parameters from the constructor as needed
-	constructor(_config, data, options) {
-		super(_config, data)
+	constructor(_config, data, options, dispatch) {
+		super(_config, data, dispatch)
 		this.dimension = _config.dimension;
 		this.options = options;
 		this.initVis();
@@ -106,7 +106,7 @@ class BarChart extends Chart {
 		});
 
 		// Add rectangles
-		vis.chartArea.selectAll('.bar')
+		vis.bars = vis.chartArea.selectAll('.bar')
 			.data(vis.rollupData)
 			.join('rect')
 			.attr('class', 'bar')
@@ -114,10 +114,13 @@ class BarChart extends Chart {
 			.attr('width', vis.xScale.bandwidth() * 0.8)
 			.attr('height', d => vis.config.height - vis.yScale(vis.yValue(d)))
 			.attr('x', d => vis.xScale(vis.xValue(d)) + vis.xScale.bandwidth() * 0.1)
-			.attr('y', d => vis.yScale(vis.yValue(d)));
+			.attr('y', d => vis.yScale(vis.yValue(d)))
+			.attr("stroke-width", d => vis.emphasized.includes(vis.xValue(d)) ? 2 : 0)
+			.attr("stroke", "black")
+			.on("mouseover", (_, d) => vis.dispatch.call("specifyGroup", null, [{ dimension: vis.dimension, option: d[0] }], "bar-chart"))
+			.on("mouseout", _ => vis.dispatch.call("specifyGroup", null, null, "bar-chart"));
 
 		// Update the axes because the underlying scales might have changed
-
 		if (d3.max(vis.xScale.domain().map(d => d.length)) > 6) {
 			vis.xAxisG.call(vis.xAxis)
 				.selectAll("text")  
