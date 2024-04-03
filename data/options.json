@@ -9,253 +9,221 @@
         "ONLINE-NEW"
     ],
     "Recruitment Category": [
+        "Discord",
         "Email",
         "Slack",
         "Flyer",
         "Instagram",
-        "Facebook Group",
-        "Word of mouth"
+        "Facebook",
+        "Word of mouth",
+        "Not answered"
     ],
     "Gender": [
         "Male",
         "Female",
         "Non-binary",
-        "Prefer not to disclose",
-        "Prefer to self-describe"
+        "Not disclosed",
+        "Self-described"
     ],
     "Cultural Background": [
         "Black/African Canadian",
         "East Asian",
         "Hispanic/Latinx",
-        "First Nations or Indigenous (please specify)",
+        "Indigenous",
         "Pacific Islander",
         "South Asian",
         "European/White",
         "Middle Eastern",
-        "Prefer not to disclose",
-        "Prefer to self-describe"
+        "Not disclosed",
+        "Self-described"
     ],
     "Age": [
         "18-24",
         "25-35",
         "36-45",
         "45-65",
-        "Over 65",
-        "Prefer not to disclose"
+        "Over 65"
+    ],
+    "Education [OLD]": [
+        "No schooling completed",
+        "High School Diploma",
+        "Some college credit",
+        "1 or more years of college credit",
+        "Trade/technical/vocational training",
+        "Associates degree",
+        "Bachelor's degree",
+        "Master's degree",
+        "Professional degree beyond bachelor's degree",
+        "Doctorate degree",
+        "Others",
+        "Not answered"
     ],
     "Education": [
         "No schooling completed",
-        "High School Diploma",
-        "Bachelor's degree or equivalent",
-        "Master's degree or equivalent",
-        "Doctorate degree"
+        "High School",
+        "Bachelors",
+        "Masters",
+        "Doctorate"
     ],
     "Lived Experiences": [
         "LGBTQIA+",
         "Neurodivergent",
         "Person of Colour",
-        "Person of a Marginalised Gender Identity",
-        "Indigenous/Native/First Nations",
-        "Person of a Minority Religion or Faith",
-        "Immigrant or Foreign-Born",
-        "Refugee or Asylum Seeker",
-        "Person from a Low-Income Background",
-        "Survivor of Domestic Violence or Abuse",
-        "Survivor of Violence or Abuse",
-        "Veteran or Active Duty Military Personnel",
-        "Person who has Experienced Homelessness",
-        "Person with Chronic Illness or Medical Condition",
-        "Caregiver (Caring for a family member or loved one)",
-        "Person from a Rural or Remote Area",
+        "Marginalised Gender Identity",
+        "Indigenous",
+        "Minority Religion",
+        "Immigrant",
+        "Refugee",
+        "Low-Income",
+        "Domestic Violence Survivor",
+        "Violence Survivor",
+        "Veteran",
+        "Homelessness",
+        "Medical Condition",
+        "Caregiver",
+        "From Rural Area",
         "Student",
         "Parent",
         "Not Applicable",
-        "Prefer to self-describe",
-        "Prefer not to disclose"
+        "Self-described",
+        "Not disclosed"
     ],
     "Reserved Self-Perception": [
         "Strongly agree",
         "Somewhat agree",
         "Neither agree nor disagree",
         "Somewhat disagree",
-        "Strongly disagree"
+        "Strongly disagree",
+        "Not answered"
     ],
     "Generally Trusting": [
         "Strongly agree",
         "Somewhat agree",
         "Neither agree nor disagree",
         "Somewhat disagree",
-        "Strongly disagree"
+        "Strongly disagree",
+        "Not answered"
     ],
     "Tends to be Lazy": [
         "Strongly agree",
         "Somewhat agree",
         "Neither agree nor disagree",
         "Somewhat disagree",
-        "Strongly disagree"
+        "Strongly disagree",
+        "Not answered"
     ],
     "Relaxed, Handles Stress Well": [
         "Strongly agree",
         "Somewhat agree",
         "Neither agree nor disagree",
         "Somewhat disagree",
-        "Strongly disagree"
+        "Strongly disagree",
+        "Not answered"
     ],
     "Has Few Artistic Interests": [
         "Strongly agree",
         "Somewhat agree",
         "Neither agree nor disagree",
         "Somewhat disagree",
-        "Strongly disagree"
+        "Strongly disagree",
+        "Not answered"
     ],
     "Outgoing, Sociable": [
         "Strongly agree",
         "Somewhat agree",
         "Neither agree nor disagree",
         "Somewhat disagree",
-        "Strongly disagree"
+        "Strongly disagree",
+        "Not answered"
     ],
     "Tends to Find Fault": [
         "Strongly agree",
         "Somewhat agree",
         "Neither agree nor disagree",
         "Somewhat disagree",
-        "Strongly disagree"
+        "Strongly disagree",
+        "Not answered"
     ],
     "Does a Thorough Job": [
         "Strongly agree",
         "Somewhat agree",
         "Neither agree nor disagree",
         "Somewhat disagree",
-        "Strongly disagree"
+        "Strongly disagree",
+        "Not answered"
     ],
     "Gets Nervous Easily": [
         "Strongly agree",
         "Somewhat agree",
         "Neither agree nor disagree",
         "Somewhat disagree",
-        "Strongly disagree"
+        "Strongly disagree",
+        "Not answered"
     ],
     "Has an Active Imagination": [
         "Strongly agree",
         "Somewhat agree",
         "Neither agree nor disagree",
         "Somewhat disagree",
-        "Strongly disagree"
-    ],
-    "Extraversion": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "10"
-    ],
-    "Agreeableness": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "10"
-    ],
-    "Conscientiousness": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "10"
-    ],
-    "Neuroticism": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "10"
-    ],
-    "Openness": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "10"
+        "Strongly disagree",
+        "Not answered"
     ],
     "Tendency to Fidget": [
         "Strongly agree",
         "Somewhat agree",
         "Neither agree nor disagree",
         "Somewhat disagree",
-        "Strongly disagree"
+        "Strongly disagree",
+        "Not answered"
     ],
     "Emotional Attachment to Objects": [
         "Strongly agree",
         "Somewhat agree",
         "Neither agree nor disagree",
         "Somewhat disagree",
-        "Strongly disagree"
+        "Strongly disagree",
+        "Not answered"
     ],
     "Values Design and Aesthetics": [
         "Strongly agree",
         "Somewhat agree",
         "Neither agree nor disagree",
         "Somewhat disagree",
-        "Strongly disagree"
+        "Strongly disagree",
+        "Not answered"
     ],
     "Non-Functional Personal Objects": [
         "Strongly agree",
         "Somewhat agree",
         "Neither agree nor disagree",
         "Somewhat disagree",
-        "Strongly disagree"
+        "Strongly disagree",
+        "Not answered"
     ],
     "Cultural Significance": [
         "Yes",
         "No",
-        "Prefer not to answer"
+        "Not answered"
     ],
     "Object Category": [
-        "Plushies",
-        "Toy",
-        "Utility Object",
-        "Jewelry",
         "Ball",
-        "Non Utility Object",
+        "Toy",
+        "Utility",
+        "Jewelry",
+        "Plushies",
+        "Non-utility",
         "Bedding",
-        "NA"
+        "Not applicable"
     ],
     "Involves Technology": [
         "Yes",
         "No",
-        "Prefer not to answer",
-        ""
+        "Not answered"
     ],
     "Ability to Move": [
         "Capable of moving",
         "Stationary",
-        "Prefer not to answer"
+        "Not answered"
     ],
     "Device Type": [
         "Table-top",
@@ -266,7 +234,26 @@
         "Anthropomorphic",
         "Zoomorphic",
         "Neither",
-        "Prefer not to answer"
+        "Not answered"
+    ],
+    "Targeted Body Part [OLD]": [
+        "Head",
+        "Face",
+        "Cheek",
+        "Neck",
+        "Shoulder",
+        "Arm",
+        "Hand",
+        "Wrist",
+        "Finger",
+        "Chest",
+        "Torso",
+        "Abdomen",
+        "Back",
+        "Thigh",
+        "Full Body",
+        "Other",
+        "Not answered"
     ],
     "Targeted Body Part": [
         "Head",
@@ -289,13 +276,12 @@
         "Thigh",
         "Leg/Foot",
         "Full Body",
-        "Other",
-        "Prefer not to answer"
+        "Not answered"
     ],
     "Portability": [
         "Yes",
         "No",
-        "Prefer not to answer"
+        "Not answered"
     ],
     "Collective vs Individual Use": [
         "Personal",
@@ -321,8 +307,7 @@
         "Gritty",
         "Velvety",
         "Coarse",
-        "Other",
-        "Prefer not to answer"
+        "Other"
     ],
     "Size": [
         "Miniature",
@@ -339,7 +324,8 @@
         "Spherical",
         "Angular",
         "Rounded",
-        "Prefer not to answer"
+        "Not answered",
+        "Other"
     ],
     "Conformability and Compliance": [
         "Squishy",
@@ -351,22 +337,22 @@
         "Spongy",
         "Elastic",
         "Poppable",
-        "Prefer not to answer"
+        "Not answered",
+        "Other"
     ],
     "Softness Rating": [
-        "NA",
-        "0",
         "1",
         "2",
         "3",
         "4",
-        "5"
+        "5",
+        "Not applicable"
     ],
     "Subjective Temperature": [
         "Warm",
         "Cool",
         "Neither",
-        "Prefer not to answer"
+        "Not answered"
     ],
     "Other Sensory Channel Used": [
         "Look at it",
@@ -374,28 +360,28 @@
         "Smell it",
         "Taste it",
         "Other",
-        "Prefer not to answer"
+        "Not answered"
     ],
     "Functional Value": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5"
+        "Not at all important",
+        "Slightly important",
+        "Moderately important",
+        "Very important",
+        "Extremely important"
     ],
     "Emotional Significance": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5"
+        "Not at all important",
+        "Slightly important",
+        "Moderately important",
+        "Very important",
+        "Extremely important"
     ],
     "Physical Soothing": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5"
+        "Not at all important",
+        "Slightly important",
+        "Moderately important",
+        "Very important",
+        "Extremely important"
     ],
     "Usage Context": [
         "Personal relevance",
@@ -404,7 +390,7 @@
         "Uncertain outcome",
         "Lack of control",
         "Other",
-        "Prefer not to answer"
+        "Not answered"
     ],
     "Usage Setting": [
         "Personal alone",
@@ -417,7 +403,7 @@
     "Non-Usage Settings": [
         "Yes",
         "No",
-        "Prefer not to answer"
+        "Not answered"
     ],
     "Physical Interaction": [
         "Rub",
@@ -426,8 +412,8 @@
         "Fidget",
         "Press with hand",
         "Press with finger tips",
-        "Throw around",
-        "Wrap around",
+        "Throw",
+        "Wrap",
         "Lift",
         "Twist",
         "Glide",
@@ -436,14 +422,14 @@
         "Cuddle",
         "Poke",
         "Knead",
-        "Other",
-        "Prefer not to answer"
+        "Other"
     ],
     "Interaction Type": [
-        "When I need it",
-        "Randomly",
-        "Compulsively Routinely",
-        "Prefer not to answer"
+        "Need-driven",
+        "Random",
+        "Compulsive",
+        "Routine",
+        "Not answered"
     ],
     "Usage Frequency": [
         "Several times a day",
@@ -451,15 +437,16 @@
         "Several times a month",
         "Once a month or less",
         "Other",
-        "Prefer not to answer"
+        "Not answered"
     ],
     "Interaction Duration": [
         "A few seconds",
         "A few minutes",
         "A few days",
-        "A few weeks or more",
+        "A few hours",
+        "A few weeks",
         "Other",
-        "Prefer not to answer"
+        "Not answered"
     ],
     "Usage Start": [
         "Past few days",
@@ -476,11 +463,11 @@
         "Family owned"
     ],
     "Attachment": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5"
+        "Not significant",
+        "Slightly significant",
+        "Moderately significant",
+        "Very significant",
+        "Extremely significant"
     ],
     "Meaningfulness": [
         "Symbolic",
@@ -490,30 +477,32 @@
         "Belonging to a group",
         "Emotional attachment",
         "Not meaningful",
-        "Other",
-        "Prefer not to answer"
+        "Other"
     ],
     "Customization": [
         "Yes",
         "No",
-        "Prefer not to answer"
+        "Not answered"
     ],
     "Cultural Influence": [
         "Yes",
         "No",
-        "Prefer not to answer"
+        "Not answered"
     ],
     "Emotion-aware Interactions": [
         "Yes",
-        "No"
+        "No",
+        "Not answered"
     ],
     "Social-Emotional Agency": [
         "Yes",
-        "No"
+        "No",
+        "Not answered"
     ],
     "Communication Facilitation": [
         "Yes",
-        "No"
+        "No",
+        "Not answered"
     ],
     "Photo Uploaded": [
         "Yes",
@@ -523,5 +512,70 @@
     "Like to be Contacted": [
         "Yes",
         "No"
+    ],
+    "Extraversion": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "Not applicable"
+    ],
+    "Agreeableness": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "Not applicable"
+    ],
+    "Conscientiousness": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "Not applicable"
+    ],
+    "Neuroticism": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "Not applicable"
+    ],
+    "Openness": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "Not applicable"
     ]
 }

@@ -1,5 +1,5 @@
 const resize = () => {
-    const width = d3.max([window.innerWidth, 1600]);
+    const width = d3.max([window.innerWidth * 0.993, 1600]);
     let height = d3.max([window.innerHeight, 900]);
     if (width / height < 1.6 && width / height > 1.9) {
         height = width * 9 / 16;

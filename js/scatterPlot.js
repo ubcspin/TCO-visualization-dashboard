@@ -138,7 +138,8 @@ class ScatterPlot extends Chart {
 			.attr("stroke-width", d => vis.emphasized.includes(d["SNo"]) ? 2 : 0)
 			.attr("stroke", "black")
 			.on("mouseover", (_, d) => vis.dispatch.call("specifyIndividual", null, d))
-			.on("mouseout", _ => vis.dispatch.call("specifyIndividual", null, null));
+			.on("mouseout", _ => vis.dispatch.call("specifyIndividual", null, null))
+			.on("click", (_, d) => dispatch.call("popUpProfile", null, d));
 
 		vis.nodes.filter(d => vis.emphasized.includes(d["SNo"])).raise();
 
@@ -146,6 +147,14 @@ class ScatterPlot extends Chart {
 			vis.nodes
 				.attr('cx', d => d.x)
 				.attr('cy', d => d.y);
+
+			vis.data.forEach(d => {
+				if (!d.y) {
+					console.log(vis.xDimension);
+					console.log(vis.yDimension);
+					console.log(d);
+				}
+			});
 		});
 
 		// Update the axes because the underlying scales might have changed

@@ -5,8 +5,8 @@
             "Male",
             "Female",
             "Non-binary",
-            "Prefer not to disclose",
-            "Prefer to self-describe"
+            "Not disclosed",
+            "Self-described"
         ]
     },
     {
@@ -15,13 +15,13 @@
             "Black/African Canadian",
             "East Asian",
             "Hispanic/Latinx",
-            "First Nations or Indigenous (please specify)",
+            "Indigenous",
             "Pacific Islander",
             "South Asian",
             "European/White",
             "Middle Eastern",
-            "Prefer not to disclose",
-            "Prefer to self-describe"
+            "Not disclosed",
+            "Self-described"
         ]
     },
     {
@@ -31,8 +31,7 @@
             "25-35",
             "36-45",
             "45-65",
-            "Over 65",
-            "Prefer not to disclose"
+            "Over 65"
         ]
     }
 ]

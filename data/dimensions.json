@@ -10,17 +10,19 @@
                 "#scatter-plot": false,
                 "#jitter-plot": false,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": false,
+                "#profile": false
             },
             {
                 "name": "Recruitment Category",
-                "type": "Email, Slack, Flyer, Instagram, Facebook Group, Word of mouth",
+                "type": "Discord, Email, Slack, Flyer, Instagram, Facebook, Word of mouth, Not answered",
                 "#word-cloud": true,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Photo Uploaded",
@@ -30,7 +32,8 @@
                 "#scatter-plot": false,
                 "#jitter-plot": false,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": false,
+                "#profile": false
             },
             {
                 "name": "Like to be Contacted",
@@ -40,7 +43,8 @@
                 "#scatter-plot": false,
                 "#jitter-plot": false,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": false,
+                "#profile": false
             }
         ]
     },
@@ -49,63 +53,69 @@
         "dimensions": [
             {
                 "name": "Gender",
-                "type": "Male, Female, Non-binary, Prefer not to disclose, Prefer to self-describe",
+                "type": "Male, Female, Non-binary, Not disclosed, Self-described",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": true
             },
             {
                 "name": "Cultural Background",
-                "type": "Black/African Canadian, East Asian, Hispanic/Latinx, First Nations or Indigenous (please specify), Pacific Islander, South Asian, European/White, Middle Eastern, Prefer not to disclose, Prefer to self-describe",
+                "type": "Black/African Canadian, East Asian, Hispanic/Latinx, Indigenous, Pacific Islander, South Asian, European/White, Middle Eastern, Not disclosed, Self-described",
                 "#word-cloud": true,
                 "#bar-chart": false,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": true
             },
             {
                 "name": "Age",
-                "type": "18-24, 25-35, 36-45, 45-65, Over 65, Prefer not to disclose",
+                "type": "18-24, 25-35, 36-45, 45-65, Over 65",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": true
             },
             {
-                "name": "Education",
-                "type": "No schooling completed, High School Diploma, Some college credit, 1 or more years of college credit, Trade/technical/vocational training, Associates degree, Bachelor's degree, Master's degree, Professional degree beyond bachelor's degree, Doctorate degree, Others, Prefer not to disclose",
+                "name": "Education [OLD]",
+                "type": "No schooling completed, High School Diploma, Some college credit, 1 or more years of college credit, Trade/technical/vocational training, Associates degree, Bachelor's degree, Master's degree, Professional degree beyond bachelor's degree, Doctorate degree, Others, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": false,
                 "#scatter-plot": false,
                 "#jitter-plot": false,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": false,
+                "#profile": false
             },
             {
                 "name": "Education",
-                "type": "No schooling completed, High School Diploma, Bachelor's degree or equivalent, Master's degree or equivalent, Doctorate degree",
+                "type": "No schooling completed, High School, Bachelors, Masters, Doctorate",
                 "#word-cloud": true,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": true
             },
             {
                 "name": "Lived Experiences",
-                "type": "LGBTQIA+, Neurodivergent, Person of Colour, Person of a Marginalised Gender Identity, Indigenous/Native/First Nations, Person of a Minority Religion or Faith, Immigrant or Foreign-Born, Refugee or Asylum Seeker, Person from a Low-Income Background, Survivor of Domestic Violence or Abuse, Survivor of Violence or Abuse, Veteran or Active Duty Military Personnel, Person who has Experienced Homelessness, Person with Chronic Illness or Medical Condition, Caregiver (Caring for a family member or loved one), Person from a Rural or Remote Area, Student, Parent, Not Applicable, Prefer to self-describe, Prefer not to disclose\n\n",
+                "type": "LGBTQIA+, Neurodivergent, Person of Colour, Marginalised Gender Identity, Indigenous, Minority Religion, Immigrant, Refugee, Low-Income, Domestic Violence Survivor, Violence Survivor, Veteran, Homelessness, Medical Condition, Caregiver, From Rural Area, Student, Parent, Not Applicable, Self-described, Not disclosed\n",
                 "#word-cloud": true,
                 "#bar-chart": false,
                 "#scatter-plot": false,
                 "#jitter-plot": false,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": true
             }
         ]
     },
@@ -114,158 +124,113 @@
         "dimensions": [
             {
                 "name": "Reserved Self-Perception",
-                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": true,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Generally Trusting",
-                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": true,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Tends to be Lazy",
-                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": true,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Relaxed, Handles Stress Well",
-                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": true,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Has Few Artistic Interests",
-                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": true,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Outgoing, Sociable",
-                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": true,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Tends to Find Fault",
-                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": true,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Does a Thorough Job",
-                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": true,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Gets Nervous Easily",
-                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": true,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Has an Active Imagination",
-                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": true,
-                "#sankey-diagram": true
-            }
-        ]
-    },
-    {
-        "block": "Demographics: Personality Traits",
-        "dimensions": [
-            {
-                "name": "Extraversion",
-                "type": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
-                "#word-cloud": false,
-                "#bar-chart": true,
-                "#scatter-plot": true,
-                "#jitter-plot": true,
-                "#radar-plot": true,
-                "#sankey-diagram": true
-            },
-            {
-                "name": "Agreeableness",
-                "type": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
-                "#word-cloud": false,
-                "#bar-chart": true,
-                "#scatter-plot": true,
-                "#jitter-plot": true,
-                "#radar-plot": true,
-                "#sankey-diagram": true
-            },
-            {
-                "name": "Conscientiousness",
-                "type": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
-                "#word-cloud": false,
-                "#bar-chart": true,
-                "#scatter-plot": true,
-                "#jitter-plot": true,
-                "#radar-plot": true,
-                "#sankey-diagram": true
-            },
-            {
-                "name": "Neuroticism",
-                "type": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
-                "#word-cloud": false,
-                "#bar-chart": true,
-                "#scatter-plot": true,
-                "#jitter-plot": true,
-                "#radar-plot": true,
-                "#sankey-diagram": true
-            },
-            {
-                "name": "Openness",
-                "type": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
-                "#word-cloud": false,
-                "#bar-chart": true,
-                "#scatter-plot": true,
-                "#jitter-plot": true,
-                "#radar-plot": true,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             }
         ]
     },
@@ -274,43 +239,47 @@
         "dimensions": [
             {
                 "name": "Tendency to Fidget",
-                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": true,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": true
             },
             {
                 "name": "Emotional Attachment to Objects",
-                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": true,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": true
             },
             {
                 "name": "Values Design and Aesthetics",
-                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": true,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": true
             },
             {
                 "name": "Non-Functional Personal Objects",
-                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree",
+                "type": "Strongly agree, Somewhat agree, Neither agree nor disagree, Somewhat disagree, Strongly disagree, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": true,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": true
             }
         ]
     },
@@ -319,23 +288,25 @@
         "dimensions": [
             {
                 "name": "Cultural Significance",
-                "type": "Yes, No, Prefer not to answer",
+                "type": "Yes, No, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Object Category",
-                "type": "Plushies, Toy, Utility Object, Jewelry, Ball, Non Utility Object, Bedding, NA",
+                "type": "Ball, Toy, Utility, Jewelry, Plushies, Non-utility, Bedding, Not applicable",
                 "#word-cloud": true,
                 "#bar-chart": false,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             }
         ]
     },
@@ -344,23 +315,25 @@
         "dimensions": [
             {
                 "name": "Involves Technology",
-                "type": "Yes, No, Prefer not to answer, ",
+                "type": "Yes, No, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Ability to Move",
-                "type": "Capable of moving, Stationary, Prefer not to answer",
+                "type": "Capable of moving, Stationary, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Device Type",
@@ -370,47 +343,52 @@
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Appearance",
-                "type": "Anthropomorphic, Zoomorphic, Neither, Prefer not to answer",
+                "type": "Anthropomorphic, Zoomorphic, Neither, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
-                "name": "Targeted Body Part",
-                "type": "Head, Face, Cheek, Neck, Shoulder, Arm, Hand, Wrist, Finger, Chest, Torso, Abdomen, Back, Thigh, Full Body, Other",
+                "name": "Targeted Body Part [OLD]",
+                "type": "Head, Face, Cheek, Neck, Shoulder, Arm, Hand, Wrist, Finger, Chest, Torso, Abdomen, Back, Thigh, Full Body, Other, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": false,
                 "#scatter-plot": false,
                 "#jitter-plot": false,
                 "#radar-plot": false,
-                "#sankey-diagram": false
+                "#sankey-diagram": false,
+                "#profile": false
             },
             {
                 "name": "Targeted Body Part",
-                "type": "Head, Face, Mouth, Nose, Ears, Hair, Cheek, Neck, Shoulder, Arm, Hand, Wrist, Finger, Chest, Torso, Abdomen, Back, Thigh, Leg/Foot, Full Body, Other, Prefer not to answer",
+                "type": "Head, Face, Mouth, Nose, Ears, Hair, Cheek, Neck, Shoulder, Arm, Hand, Wrist, Finger, Chest, Torso, Abdomen, Back, Thigh, Leg/Foot, Full Body, Not answered",
                 "#word-cloud": true,
                 "#bar-chart": false,
                 "#scatter-plot": false,
                 "#jitter-plot": false,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Portability",
-                "type": "Yes, No, Prefer not to answer",
+                "type": "Yes, No, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Collective vs Individual Use",
@@ -420,7 +398,8 @@
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             }
         ]
     },
@@ -429,13 +408,14 @@
         "dimensions": [
             {
                 "name": "Texture",
-                "type": "Smooth, Rough, Soft, Hard, Bumpy, Fuzzy, Slippery, Prickly, Sticky, Fluffy, Slimy, Silky, Ribbed, Metallic, Felted, Gritty, Velvety, Coarse, Other, Prefer not to answer",
+                "type": "Smooth, Rough, Soft, Hard, Bumpy, Fuzzy, Slippery, Prickly, Sticky, Fluffy, Slimy, Silky, Ribbed, Metallic, Felted, Gritty, Velvety, Coarse, Other",
                 "#word-cloud": true,
                 "#bar-chart": false,
                 "#scatter-plot": false,
                 "#jitter-plot": false,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Size",
@@ -445,57 +425,63 @@
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Shape",
-                "type": "Symmetrical, Asymmetrical, Flat, Spherical, Angular, Rounded, Prefer not to answer",
+                "type": "Symmetrical, Asymmetrical, Flat, Spherical, Angular, Rounded, Not answered, Other",
                 "#word-cloud": true,
                 "#bar-chart": false,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Conformability and Compliance",
-                "type": "Squishy, Moldable, Rigid, Flexible, Powdery, Clicky, Spongy, Elastic, Poppable, Prefer not to answer",
+                "type": "Squishy, Moldable, Rigid, Flexible, Powdery, Clicky, Spongy, Elastic, Poppable, Not answered, Other",
                 "#word-cloud": true,
                 "#bar-chart": false,
                 "#scatter-plot": false,
                 "#jitter-plot": false,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Softness Rating",
-                "type": "NA, 0, 1, 2, 3, 4, 5",
+                "type": "1, 2, 3, 4, 5, Not applicable",
                 "#word-cloud": false,
                 "#bar-chart": false,
                 "#scatter-plot": false,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Subjective Temperature",
-                "type": "Warm, Cool, Neither, Prefer not to answer",
+                "type": "Warm, Cool, Neither, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Other Sensory Channel Used",
-                "type": "Look at it, Listen to it, Smell it, Taste it, Other, Prefer not to answer",
+                "type": "Look at it, Listen to it, Smell it, Taste it, Other, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             }
         ]
     },
@@ -504,33 +490,36 @@
         "dimensions": [
             {
                 "name": "Functional Value",
-                "type": "1, 2, 3, 4, 5",
+                "type": "Not at all important, Slightly important, Moderately important, Very important, Extremely important",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": true,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Emotional Significance",
-                "type": "1, 2, 3, 4, 5",
+                "type": "Not at all important, Slightly important, Moderately important, Very important, Extremely important",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": true,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Physical Soothing",
-                "type": "1, 2, 3, 4, 5",
+                "type": "Not at all important, Slightly important, Moderately important, Very important, Extremely important",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": true,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             }
         ]
     },
@@ -539,13 +528,14 @@
         "dimensions": [
             {
                 "name": "Usage Context",
-                "type": "Personal relevance, Misalignment with desires, Self-blame, Uncertain outcome, Lack of control, Other, Prefer not to answer",
+                "type": "Personal relevance, Misalignment with desires, Self-blame, Uncertain outcome, Lack of control, Other, Not answered",
                 "#word-cloud": true,
                 "#bar-chart": false,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": true
             },
             {
                 "name": "Usage Setting",
@@ -555,57 +545,63 @@
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": true
             },
             {
                 "name": "Non-Usage Settings",
-                "type": "Yes, No, Prefer not to answer",
+                "type": "Yes, No, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Physical Interaction",
-                "type": "Rub, Squish, Hold, Fidget, Press with hand, Press with finger tips, Throw around, Wrap around, Lift, Twist, Glide, Pet, Twirl, Cuddle, Poke, Knead, Other, Prefer not to answer",
+                "type": "Rub, Squish, Hold, Fidget, Press with hand, Press with finger tips, Throw, Wrap, Lift, Twist, Glide, Pet, Twirl, Cuddle, Poke, Knead, Other",
                 "#word-cloud": true,
                 "#bar-chart": false,
                 "#scatter-plot": false,
                 "#jitter-plot": false,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": true
             },
             {
                 "name": "Interaction Type",
-                "type": "When I need it, Randomly, Compulsively Routinely, Prefer not to answer",
+                "type": "Need-driven, Random, Compulsive, Routine, Not answered",
                 "#word-cloud": true,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": true
             },
             {
                 "name": "Usage Frequency",
-                "type": "Several times a day, Several times a week, Several times a month, Once a month or less, Other, Prefer not to answer",
+                "type": "Several times a day, Several times a week, Several times a month, Once a month or less, Other, Not answered",
                 "#word-cloud": true,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": true
             },
             {
                 "name": "Interaction Duration",
-                "type": "A few seconds, A few minutes, A few days, A few weeks or more, Other, Prefer not to answer",
+                "type": "A few seconds, A few minutes, A few days, A few hours, A few weeks, Other, Not answered",
                 "#word-cloud": true,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": true
             },
             {
                 "name": "Usage Start",
@@ -615,7 +611,8 @@
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": true
             }
         ]
     },
@@ -630,47 +627,52 @@
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": true
             },
             {
                 "name": "Object Attachment",
-                "type": "1, 2, 3, 4, 5",
+                "type": "Not significant, Slightly significant, Moderately significant, Very significant, Extremely significant",
                 "#word-cloud": true,
                 "#bar-chart": false,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Object Meaningfulness",
-                "type": "Symbolic, Reminder of someone, Reminder of event, Milestone, Belonging to a group, Emotional attachment, Not meaningful, Other, Prefer not to answer",
+                "type": "Symbolic, Reminder of someone, Reminder of event, Milestone, Belonging to a group, Emotional attachment, Not meaningful, Other",
                 "#word-cloud": true,
                 "#bar-chart": false,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": true
             },
             {
                 "name": "Object Customization",
-                "type": "Yes, No, Prefer not to answer",
+                "type": "Yes, No, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Cultural Influence on Object Significance",
-                "type": "Yes, No, Prefer not to answer",
+                "type": "Yes, No, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             }
         ]
     },
@@ -679,33 +681,96 @@
         "dimensions": [
             {
                 "name": "Emotion-aware Interactions",
-                "type": "Yes, No",
+                "type": "Yes, No, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Social-Emotional Agency",
-                "type": "Yes, No",
+                "type": "Yes, No, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
             },
             {
                 "name": "Communication Facilitation",
-                "type": "Yes, No",
+                "type": "Yes, No, Not answered",
                 "#word-cloud": false,
                 "#bar-chart": true,
                 "#scatter-plot": true,
                 "#jitter-plot": true,
                 "#radar-plot": false,
-                "#sankey-diagram": true
+                "#sankey-diagram": true,
+                "#profile": false
+            }
+        ]
+    },
+    {
+        "block": "Demographics: Personality Traits",
+        "dimensions": [
+            {
+                "name": "Extraversion",
+                "type": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, Not applicable",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true,
+                "#profile": true
+            },
+            {
+                "name": "Agreeableness",
+                "type": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, Not applicable",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true,
+                "#profile": true
+            },
+            {
+                "name": "Conscientiousness",
+                "type": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, Not applicable",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true,
+                "#profile": true
+            },
+            {
+                "name": "Neuroticism",
+                "type": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, Not applicable",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true,
+                "#profile": true
+            },
+            {
+                "name": "Openness",
+                "type": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, Not applicable",
+                "#word-cloud": false,
+                "#bar-chart": true,
+                "#scatter-plot": true,
+                "#jitter-plot": true,
+                "#radar-plot": true,
+                "#sankey-diagram": true,
+                "#profile": true
             }
         ]
     }

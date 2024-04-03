@@ -3,9 +3,13 @@ let filterOptions = [];
 let allData;
 let filteredData;
 
+let photoMap;
+
+let popupDimensions = [];
+
 let globalFontSize;
 
-const dispatch = d3.dispatch("specifyIndividual", "specifyGroup");
+const dispatch = d3.dispatch("specifyIndividual", "specifyGroup", "popUpProfile");
 
 const resize = () => {
     const width = d3.max([window.innerWidth, 1600]);
@@ -14,6 +18,7 @@ const resize = () => {
         height = width * 9 / 16;
     }
 
+    document.getElementById("participant-profile").setAttribute("style", "font-size: " + (width * 100 / 1920) + "%")
     document.getElementById("dashboard").setAttribute("style", "width: " + width + "px; height: " + height + "px; font-size: " + (width * 100 / 1920) + "%");
     const selectors = document.getElementsByClassName("selector");
     for (let i = 0; i < selectors.length; i++) {
@@ -103,9 +108,46 @@ const fillHierarchicalSelection = (dropdown, options, filter, defaultOption, che
 /**
  * Load data from CSV file asynchronously and render charts
  */
-Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json'), d3.json('data/dimensions.json'), d3.json("data/filters.json"), d3.json("data/presets.json")]).then(([data, options, dimensions, filters, presets]) => {
+Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json'), d3.json('data/dimensions.json'), d3.json("data/filters.json"), d3.json("data/presets.json"), d3.json("data/photos.json")]).then(([data, options, dimensions, filters, presets, photos]) => {
     allData = data;
     filteredData = JSON.parse(JSON.stringify(data));
+
+    photoMap = photos;
+
+    const onlyUnique = (value, index, array) => {
+        return array.indexOf(value) === index;
+    };
+
+    dimensions.forEach(b => {
+        b.dimensions.forEach(d => {
+            if (d["#profile"]) {
+                popupDimensions.push(d.name);
+            }
+        });
+    });
+
+    const dimensionMatch = [];
+    dimensions.forEach(b => {
+        dimensionMatch.push(...b.dimensions.map(d => {
+            if (d["#word-cloud"] || d["#bar-chart"] || d["#scatter-plot"] || d["#jitter-plot"] || d["#radar-plot"] || d["#sankey-diagram"]) {
+                let fromData = [];
+                allData.forEach(k => {
+                    fromData.push(...k[d.name].split(","));
+                })
+                fromData = fromData.filter(onlyUnique).sort();
+                const fromStructure = d.type.split(", ").sort();
+    
+                return {
+                    mismatch: fromData.some(k => !fromStructure.includes(k)),
+                    data: fromData,
+                    structure: fromStructure
+                };
+            }
+        }).filter(d => d));
+    });
+
+    console.log(dimensionMatch);
+
 
     const width = d3.max([window.innerWidth, 1600]);
     let height = d3.max([window.innerHeight, 900]);
@@ -140,7 +182,7 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json'), d
         margin: {
             top: 0.10,
             right: 0.01,
-            bottom: 0.10,
+            bottom: 0.15,
             left: 0.15
         }
     }, filteredData, options, dispatch);
@@ -205,7 +247,23 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json'), d
 
     document.getElementById("photo-gallery-button").onclick = () => {
         location.href = "gallery.html"
-    }
+    };
+
+    document.getElementById("schema-link").onclick = () => {
+        window.open("https://docs.google.com/spreadsheets/d/e/2PACX-1vTC-dHTIb4KiGqFQy5jg439IKjv2L7M0IosUELEpOJs6fWA1i2SBAmkbZ5zOIp-EU8SCTx4xsaulBaP/pubhtml?gid=0&single=true", '_blank').focus();
+    };
+
+    document.getElementById("feedback-button").onclick = () => {
+        window.open("https://ubc.ca1.qualtrics.com/jfe/form/SV_9AEuYPxO5ZvDijI", '_blank').focus();
+    };
+
+    document.getElementById("info-button").onclick = () => {
+        window.open("https://docs.google.com/presentation/d/e/2PACX-1vSTttNjY3mJD6D9PYhgdL8VHYISdGtkV9eOeuYvPUpLGsLJh402gNfvCOjfKuG_u_s2ihACtIpek4pV/pub?start=false&loop=false&delayms=60000", '_blank').focus();
+    };
+
+    document.getElementById("faded-background").onclick = () => {
+        document.getElementById("blocker").style.display = "none";
+    };
 
     fillHierarchicalSelection("#global-filter", filters, o => true, "Filter", true, (event) => {
         filteredData = JSON.parse(JSON.stringify(allData));
@@ -567,4 +625,30 @@ dispatch.on("specifyGroup", (g, home) => {
             charts["word-cloud"].updateVis();
         }
     }
+});
+
+dispatch.on("popUpProfile", d => {
+    const profile = document.getElementById("participant-profile");
+    profile.innerHTML = "";
+
+    photoMap.forEach(ph => {
+        if (ph.number === d["SNo"]) {
+            console.log(ph.number, +d["SNo"]);
+            const img = document.createElement("img");
+            img.classList.add("profile-image");
+            img.src = ph.path;
+            profile.appendChild(img);
+        }
+    });
+
+    popupDimensions.forEach(pd => {
+        if (pd in d) {
+            const p = document.createElement("p");
+            p.classList.add("profile-option");
+            p.innerText = pd + ": " + d[pd];
+            profile.appendChild(p);
+        }
+    });
+    
+    document.getElementById("blocker").style.display = "block";
 });

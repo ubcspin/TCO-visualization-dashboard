@@ -116,7 +116,7 @@ class RadarPlot extends Chart {
 		// The maximum width of a violin must be x.bandwidth = the width dedicated to a group
 		vis.violinWidth = d3.scaleLinear()
 			.domain([0, max])
-			.range([0, 0.9 * vis.xScale.bandwidth() / 2]);
+			.range([0, 0.9 * vis.xScale.bandwidth()]);
 
 		vis.renderVis();
 	}
@@ -137,9 +137,9 @@ class RadarPlot extends Chart {
 			.join("rect")
 			.attr("class", "bar")
 			.style("fill","#69b3a2")
-			.attr("x", d => vis.xScale.bandwidth() / 2 - vis.violinWidth(d[1]))
+			.attr("x", 0)
 			.attr("y", d => vis.yScale(d[0]))
-			.attr("width", d => 2 * vis.violinWidth(d[1]))
+			.attr("width", d => vis.violinWidth(d[1]))
 			.attr("height", vis.yScale.bandwidth())
 			.attr("stroke-width", d => {
 				if (vis.emphasized.find(e => e[0] === d[2])) {

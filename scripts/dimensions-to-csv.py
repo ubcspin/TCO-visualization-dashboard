@@ -24,17 +24,18 @@ with open("data/data-structure.csv") as csvFile:
             structure[name] += [{
                 "name": row[3],
                 "type": row[8],
-                "#word-cloud": row[12] == "use",
-                "#bar-chart": row[13] == "use",
-                "#scatter-plot": row[14] == "use",
-                "#jitter-plot": row[15] == "use",
-                "#radar-plot": row[16] == "use",
-                "#sankey-diagram": row[17] == "use",
+                "#word-cloud": row[13] == "use",
+                "#bar-chart": row[14] == "use",
+                "#scatter-plot": row[15] == "use",
+                "#jitter-plot": row[16] == "use",
+                "#radar-plot": row[17] == "use",
+                "#sankey-diagram": row[18] == "use",
+                "#profile": row[19] == "use",
             }]
 
             options[row[4]] = list(map(lambda d: d.strip(), row[8].split(", ")))
         
-        if row[11] == "use":
+        if row[12] == "use":
             filters += [{
                 "block": row[4],
                 "options": row[8].split(", ")
@@ -76,5 +77,5 @@ with open("data/presets.json", "w") as jsonFile:
 with open("data/photos.json", "w") as jsonFile:
     path = "media/object-photos"
     photos = os.listdir(path)
-    photos = list(map(lambda p: { "path": path + "/" + p, "reproduced": "(rep)" in p }, photos))
+    photos = list(map(lambda p: { "path": path + "/" + p, "reproduced": "(rep)" in p, "number": p[1:p.lower().index(".")].split(" ")[0] }, photos))
     jsonFile.write(json.dumps(photos, indent=4))

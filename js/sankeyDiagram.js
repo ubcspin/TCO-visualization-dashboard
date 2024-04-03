@@ -37,11 +37,11 @@ class SankeyDiagram extends Chart {
 		vis.config.margin.bottom = vis.config.containerHeight * vis.config.marginBottom;
 
 		vis.chartArea
-			.attr('transform', `translate(${vis.config.margin.left},0)`);
+			.attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top / 4})`);
 
 		// Calculate inner chart size. Margin specifies the space around the actual chart.
 		vis.config.width = vis.config.containerWidth - vis.config.margin.left - vis.config.margin.right;
-		vis.config.height = vis.config.containerHeight - vis.config.margin.top - vis.config.margin.bottom;
+		vis.config.height = vis.config.containerHeight - (1.5 * vis.config.margin.top) - vis.config.margin.bottom;
 
 		// Set the sankey diagram properties
 		vis.sankey
@@ -164,7 +164,7 @@ class SankeyDiagram extends Chart {
 	
 		// add in the title for the nodes
 		vis.chartArea.selectAll(".node-text")
-			.data(vis.graph.nodes)
+			.data(vis.graph.nodes.filter(n => n.y1 - n.y0 > 0))
 			.join("text")
 			.attr("class", "node-text")
 			.attr("y", d => (d.y0 + d.y1) / 2)
