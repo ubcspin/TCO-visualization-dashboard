@@ -37,35 +37,38 @@ class WordCloud extends Chart {
 
 		vis.data = JSON.parse(JSON.stringify(vis.ogData));
 
+		vis.config.margin.gap = vis.config.containerHeight * vis.config.marginGap;
 		vis.config.margin.left = vis.config.containerWidth * vis.config.marginLeft;
 		vis.config.margin.right = vis.config.containerWidth * vis.config.marginRight;
 		vis.config.margin.top = vis.config.containerHeight * vis.config.marginTop;
 		vis.config.margin.bottom = vis.config.containerHeight * vis.config.marginBottom;
 
 		vis.chartArea
-			.attr('transform', `translate(${vis.config.margin.left},0)`);
+			.attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top})`);
 
 		// Calculate inner chart size. Margin specifies the space around the actual chart.
 		vis.config.width = vis.config.containerWidth - vis.config.margin.left - vis.config.margin.right;
-		vis.config.height = vis.config.containerHeight - vis.config.margin.top - vis.config.margin.bottom;
+		vis.config.height = vis.config.containerHeight - vis.config.margin.gap - vis.config.margin.top - vis.config.margin.bottom;
 
 		vis.svg
 			.attr('width', vis.config.containerWidth)
-			.attr('height', vis.config.containerHeight - vis.config.margin.top)
-			.attr("transform", "translate(0, " + vis.config.margin.top + ")");
+			.attr('height', vis.config.containerHeight - vis.config.margin.gap)
+			.attr("transform", "translate(0, " + vis.config.margin.gap + ")");
 
 		vis.words = [];
 		vis.data.forEach(d => vis.words.push(...d[vis.dimension].split(",")));
 
 		vis.rollupData = d3.rollups(vis.words, d => d.length, d => d);
 		vis.rollupData = vis.rollupData.map(d => { return { text: d[0], size: d[1], x: vis.config.width / 2 + Math.random(), y: vis.config.height / 2 + Math.random() } });
+
+		vis.rollupData = vis.rollupData.filter(d => d.size > 0)
 		
 		vis.simulation
 			.nodes(vis.rollupData);
 
 		vis.sizeScale
-			.domain(d3.extent(vis.rollupData.map(d => d.size)))
-			.range([0.07 * vis.config.width, 0.12 * vis.config.width]);
+			.domain([0, d3.max(vis.rollupData.map(d => d.size))])
+			.range([0, 0.12 * vis.config.width]);
 
 		vis.simulation.force("x").x(vis.config.width / 2);
 		vis.simulation.force("y").y(vis.config.height / 2);
@@ -83,7 +86,7 @@ class WordCloud extends Chart {
 
 		vis.rollupData.forEach(d => {
 			const text = vis.chartArea.append("text").text(d.text);
-			d.lines = Math.ceil(text.node().getBBox().width / (2 * vis.sizeScale(d.size)));
+			d.lines = d3.min([3, Math.ceil(text.node().getBBox().width / (2 * vis.sizeScale(d.size)))]);
 			fontSize = d3.max([text.node().getBBox().height, fontSize]);
 			text.remove();
 		});

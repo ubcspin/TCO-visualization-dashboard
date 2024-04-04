@@ -26,6 +26,14 @@
                 "Neuroticism",
                 "Openness"
             ]
+        },
+        {
+            "name": "Interaction Preferences",
+            "dimensions": [
+                "Emotion-aware Interactions",
+                "Social-Emotional Agency",
+                "Communication Facilitation"
+            ]
         }
     ],
     "Sankey": [
@@ -70,6 +78,14 @@
                 "Conscientiousness",
                 "Neuroticism",
                 "Openness"
+            ]
+        },
+        {
+            "name": "Interaction Preferences",
+            "dimensions": [
+                "Emotion-aware Interactions",
+                "Social-Emotional Agency",
+                "Communication Facilitation"
             ]
         }
     ]

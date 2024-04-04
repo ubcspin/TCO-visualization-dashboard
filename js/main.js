@@ -11,6 +11,30 @@ let globalFontSize;
 
 const dispatch = d3.dispatch("specifyIndividual", "specifyGroup", "popUpProfile");
 
+const checkSankeyDimensionCount = (value) => {
+    d3.select("#sankey-diagram-layer-count").text(value);
+    const dimensions = [];
+    const lefts = {
+        2: [0, 82],
+        3: [0, 41, 82],
+        4: [0, 25.5, 56, 82],
+        5: [0, 17.5, 41, 64.5, 82]
+    };
+    [1, 2, 3, 4, 5].forEach((n, i) => {
+        if (n <= value) {
+            d3.select("#sankey-diagram-dimension-" + n + "-selector")
+                .style("display", "block")
+                .style("left", lefts[value][i] + "%");
+            dimensions.push(d3.select("#sankey-diagram-dimension-" + n + "-selector li a").text());
+        } else {
+            d3.select("#sankey-diagram-dimension-" + n + "-selector")
+                .style("display", "none");
+        }
+    });
+    charts["sankey-diagram"].dimensions = dimensions;
+    charts["sankey-diagram"].updateVis();
+};
+
 const resize = () => {
     const width = d3.max([window.innerWidth, 1600]);
     let height = d3.max([window.innerHeight, 900]);
@@ -45,7 +69,10 @@ const resize = () => {
         c.config.containerHeight = container.clientHeight;
         c.updateVis();
     });
+
+    checkSankeyDimensionCount(+d3.select("#sankey-diagram-layer-count").text());
 };
+
 window.onresize = resize;
 
 const fillFlatSelection = (dropdown, options, defaultOption, onchange) => {
@@ -119,11 +146,13 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json'), d
     };
 
     dimensions.forEach(b => {
+        const block = [];
         b.dimensions.forEach(d => {
             if (d["#profile"]) {
-                popupDimensions.push(d.name);
+                block.push(d.name);
             }
         });
+        popupDimensions.push(block);
     });
 
     const dimensionMatch = [];
@@ -164,7 +193,8 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json'), d
         height: container.clientHeight,
         dimension: "Gender",
         margin: {
-            top: 0.10,
+            gap: 0.10,
+            top: 0.04,
             right: 0.01,
             bottom: 0.20,
             left: 0.10
@@ -180,7 +210,8 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json'), d
         xDimension: "Softness Rating",
         colourDimension: "Gender",
         margin: {
-            top: 0.10,
+            gap: 0.10,
+            top: 0.04,
             right: 0.01,
             bottom: 0.15,
             left: 0.15
@@ -194,10 +225,11 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json'), d
         height: container.clientHeight,
         dimensions: ["Tendency to Fidget", "Emotional Attachment to Objects", "Values Design and Aesthetics", "Non-Functional Personal Objects"],
         margin: {
-            top: 0.10,
+            gap: 0.10,
+            top: 0.04,
             right: 0.01,
-            bottom: 0.20,
-            left: 0.04
+            bottom: 0.26,
+            left: 0.08
         }
     }, filteredData, options, dispatch);
 
@@ -210,7 +242,8 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json'), d
         xDimension: "Portability",
         colourDimension: "Gender",
         margin: {
-            top: 0.08,
+            gap: 0.08,
+            top: 0.04,
             right: 0.01,
             bottom: 0.20,
             left: 0.25
@@ -224,7 +257,8 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json'), d
         height: container.clientHeight,
         dimensions: ["Device Type", "Appearance", "Age", "Gender", "Education"],
         margin: {
-            top: 0.14,
+            gap: 0.14,
+            top: 0.04,
             right: 0.01,
             bottom: 0.01,
             left: 0.01
@@ -238,7 +272,8 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json'), d
         height: container.clientHeight,
         dimension: "Size",
         margin: {
-            top: 0.08,
+            gap: 0.08,
+            top: 0.04,
             right: 0.01,
             bottom: 0.01,
             left: 0.01
@@ -454,35 +489,9 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json'), d
         
         checkSankeyDimensionCount(dimensions.length);
         
-        console.log(charts["sankey-diagram"].dimensions)
         charts["sankey-diagram"].dimensions = dimensions;
-        console.log(charts["sankey-diagram"].dimensions)
         charts["sankey-diagram"].updateVis();
     });
-
-    const checkSankeyDimensionCount = (value) => {
-        d3.select("#sankey-diagram-layer-count").text(value);
-        const dimensions = [];
-        const lefts = {
-            2: [0, 82],
-            3: [0, 41, 82],
-            4: [0, 25.5, 56, 82],
-            5: [0, 17.5, 41, 64.5, 82]
-        };
-        [1, 2, 3, 4, 5].forEach((n, i) => {
-            if (n <= value) {
-                d3.select("#sankey-diagram-dimension-" + n + "-selector")
-                    .style("display", "block")
-                    .style("left", lefts[value][i] + "%");
-                dimensions.push(d3.select("#sankey-diagram-dimension-" + n + "-selector li a").text());
-            } else {
-                d3.select("#sankey-diagram-dimension-" + n + "-selector")
-                    .style("display", "none");
-            }
-        });
-        charts["sankey-diagram"].dimensions = dimensions;
-        charts["sankey-diagram"].updateVis();
-    };
 
     d3.select("#sankey-diagram-layer-minus").on("click", () => {
         let value = +d3.select("#sankey-diagram-layer-count").text();
@@ -633,7 +642,11 @@ dispatch.on("popUpProfile", d => {
 
     photoMap.forEach(ph => {
         if (ph.number === d["SNo"]) {
-            console.log(ph.number, +d["SNo"]);
+            const name = document.createElement("h2");
+            name.classList.add("profile-option");
+            name.innerText = d["Object Identification: Description"];
+            profile.appendChild(name);
+
             const img = document.createElement("img");
             img.classList.add("profile-image");
             img.src = ph.path;
@@ -641,13 +654,17 @@ dispatch.on("popUpProfile", d => {
         }
     });
 
-    popupDimensions.forEach(pd => {
-        if (pd in d) {
-            const p = document.createElement("p");
-            p.classList.add("profile-option");
-            p.innerText = pd + ": " + d[pd];
-            profile.appendChild(p);
-        }
+    popupDimensions.forEach(b => {
+        b.forEach(pd => {
+            if (pd in d) {
+                const p = document.createElement("p");
+                p.classList.add("profile-option");
+                p.innerHTML = "<b>" + pd + "</b>: " + d[pd];
+                profile.appendChild(p);
+            }
+        });
+        const br = document.createElement("br");
+        profile.appendChild(br);
     });
     
     document.getElementById("blocker").style.display = "block";

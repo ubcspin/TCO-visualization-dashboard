@@ -108,7 +108,7 @@
             },
             {
                 "name": "Lived Experiences",
-                "type": "LGBTQIA+, Neurodivergent, Person of Colour, Marginalised Gender Identity, Indigenous, Minority Religion, Immigrant, Refugee, Low-Income, Domestic Violence Survivor, Violence Survivor, Veteran, Homelessness, Medical Condition, Caregiver, From Rural Area, Student, Parent, Not Applicable, Self-described, Not disclosed\n",
+                "type": "LGBTQIA+, Neurodivergent, Person of Colour, Marginalised Gender Identity, Indigenous, Minority Religion, Immigrant, Refugee, Low-Income, Domestic Violence Survivor, Violence Survivor, Veteran, Homelessness, Medical Condition, Caregiver, From Rural Area, Student, Parent, Not Applicable, Self-describe, Not disclosed",
                 "#word-cloud": true,
                 "#bar-chart": false,
                 "#scatter-plot": false,

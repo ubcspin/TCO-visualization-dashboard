@@ -6,6 +6,7 @@ class Chart {
 			parentElement: _config.parentElement,
 			containerWidth: _config.width,
 			containerHeight: _config.height,
+			marginGap: _config.margin.gap,
 			marginTop: _config.margin.top,
 			marginRight: _config.margin.right,
 			marginBottom: _config.margin.bottom,

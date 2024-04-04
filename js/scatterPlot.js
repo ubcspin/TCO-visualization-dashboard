@@ -58,22 +58,23 @@ class ScatterPlot extends Chart {
 
 		vis.data = JSON.parse(JSON.stringify(vis.ogData));
 
+		vis.config.margin.gap = vis.config.containerHeight * vis.config.marginGap;
 		vis.config.margin.left = vis.config.containerWidth * vis.config.marginLeft;
 		vis.config.margin.right = vis.config.containerWidth * vis.config.marginRight;
 		vis.config.margin.top = vis.config.containerHeight * vis.config.marginTop;
 		vis.config.margin.bottom = vis.config.containerHeight * vis.config.marginBottom;
 
 		vis.chartArea
-			.attr('transform', `translate(${vis.config.margin.left},0)`);
+			.attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top})`);
 
 		// Calculate inner chart size. Margin specifies the space around the actual chart.
 		vis.config.width = vis.config.containerWidth - vis.config.margin.left - vis.config.margin.right;
-		vis.config.height = vis.config.containerHeight - vis.config.margin.top - vis.config.margin.bottom;
+		vis.config.height = vis.config.containerHeight - vis.config.margin.gap - vis.config.margin.top - vis.config.margin.bottom;
 
 		vis.svg
 			.attr('width', vis.config.containerWidth)
-			.attr('height', vis.config.containerHeight - vis.config.margin.top)
-			.attr("transform", "translate(0, " + vis.config.margin.top + ")");
+			.attr('height', vis.config.containerHeight - vis.config.margin.gap)
+			.attr("transform", "translate(0, " + vis.config.margin.gap + ")");
 
 		vis.xAxisG
 			.attr('transform', `translate(0,${vis.config.height})`);

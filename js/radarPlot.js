@@ -50,11 +50,8 @@ class RadarPlot extends Chart {
 			.attr('class', 'axis y-axis');
 
 		vis.xAxisTitle = vis.chartArea.append("text")
-			.style("text-anchor", "middle");
-
-		vis.yAxisTitle = vis.chartArea.append("text")
-			.attr("transform", "rotate(-90)")
-			.style("text-anchor", "middle");
+			.style("text-anchor", "middle")
+			.text("Bar width: count of participants")
 	}
 
 	updateVis() {
@@ -62,29 +59,26 @@ class RadarPlot extends Chart {
 
 		vis.data = JSON.parse(JSON.stringify(vis.ogData));
 
+		vis.config.margin.gap = vis.config.containerHeight * vis.config.marginGap;
 		vis.config.margin.left = vis.config.containerWidth * vis.config.marginLeft;
 		vis.config.margin.right = vis.config.containerWidth * vis.config.marginRight;
 		vis.config.margin.top = vis.config.containerHeight * vis.config.marginTop;
 		vis.config.margin.bottom = vis.config.containerHeight * vis.config.marginBottom;
 
 		vis.chartArea
-			.attr('transform', `translate(${vis.config.margin.left},0)`);
+			.attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top})`);
 
 		// Calculate inner chart size. Margin specifies the space around the actual chart.
 		vis.config.width = vis.config.containerWidth - vis.config.margin.left - vis.config.margin.right;
-		vis.config.height = vis.config.containerHeight - vis.config.margin.top - vis.config.margin.bottom;
+		vis.config.height = vis.config.containerHeight - vis.config.margin.gap - vis.config.margin.top - vis.config.margin.bottom;
 
 		vis.svg
 			.attr('width', vis.config.containerWidth)
-			.attr('height', vis.config.containerHeight - vis.config.margin.top)
-			.attr("transform", "translate(0, " + vis.config.margin.top + ")");
+			.attr('height', vis.config.containerHeight - vis.config.margin.gap)
+			.attr("transform", "translate(0, " + vis.config.margin.gap + ")");
 
 		vis.xAxisG
 			.attr('transform', `translate(0,${vis.config.height})`);
-
-		vis.yAxisTitle
-			.attr("y", 0 - vis.config.margin.left + vis.config.width * 0.04)
-			.attr("x", 0 - (vis.config.height / 2));
 
 		vis.xAxisTitle
 			.attr("x", vis.config.width / 2 )
@@ -107,7 +101,7 @@ class RadarPlot extends Chart {
 		vis.histograms = vis.dimensions.map(d => { return { dimension: d, options: yDomain.map(o => [o, vis.data.filter(k => vis.toNumber(k[d]) === o).length, d]) }; });
 	
 		// What is the biggest number of value in a bin? We need it cause this value will have a width of 100% of the bandwidth.
-		let max = 0;
+		let max = 1;
 		vis.histograms.forEach(h => {
 			const longest = d3.max(h.options.map(d => d[1]));
 			max = d3.max([max, longest]);
@@ -171,8 +165,5 @@ class RadarPlot extends Chart {
 		} else {
 			vis.yAxisG.call(vis.yAxis);
 		}
-
-		vis.xAxisTitle.text(vis.xDimension);
-		vis.yAxisTitle.text(vis.yDimension);
 	}
 }
