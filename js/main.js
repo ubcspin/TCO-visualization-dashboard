@@ -565,7 +565,7 @@ dispatch.on("specifyIndividual", i => {
 
 dispatch.on("specifyGroup", (g, home) => {
     if (g) {
-        const filteredData = allData.filter(d => g.every(k => d[k.dimension] === k.option));
+        const filteredData = allData.filter(d => g.every(k => d[k.dimension].split(",").includes(k.option)));
 
         if (home === "bar-chart") {
             charts["bar-chart"].emphasized = [g[0].option];
@@ -639,20 +639,29 @@ dispatch.on("specifyGroup", (g, home) => {
 dispatch.on("popUpProfile", d => {
     const profile = document.getElementById("participant-profile");
     profile.innerHTML = "";
+    
+    const name = document.createElement("h2");
+    name.classList.add("profile-option");
+    name.innerText = d["Object Identification: Description"];
+    profile.appendChild(name);
 
+    let foundPhoto = false;
     photoMap.forEach(ph => {
         if (ph.number === d["SNo"]) {
-            const name = document.createElement("h2");
-            name.classList.add("profile-option");
-            name.innerText = d["Object Identification: Description"];
-            profile.appendChild(name);
-
+            foundPhoto = true;
             const img = document.createElement("img");
             img.classList.add("profile-image");
             img.src = ph.path;
             profile.appendChild(img);
         }
     });
+
+    if (!foundPhoto) {
+        const img = document.createElement("img");
+        img.classList.add("profile-image");
+        img.src = "media/image_not_available.png";
+        profile.appendChild(img);
+    }
 
     popupDimensions.forEach(b => {
         b.forEach(pd => {

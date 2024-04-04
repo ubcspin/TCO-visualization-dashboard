@@ -51,7 +51,7 @@ class RadarPlot extends Chart {
 
 		vis.xAxisTitle = vis.chartArea.append("text")
 			.style("text-anchor", "middle")
-			.text("Bar width: count of participants")
+			.text("Bar width proportional to count of participants")
 	}
 
 	updateVis() {
