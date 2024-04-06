@@ -380,6 +380,9 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json'), d
         charts["bar-chart"].ogData = filteredData;
         charts["bar-chart"].updateVis();
 
+        charts["simple-bar"].ogData = filteredData;
+        charts["simple-bar"].updateVis();
+
         charts["scatter-plot-softness"].ogData = filteredData;
         charts["scatter-plot-softness"].updateVis();
 
