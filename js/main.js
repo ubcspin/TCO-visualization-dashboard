@@ -200,6 +200,20 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json'), d
             left: 0.10
         }
     }, filteredData, options, dispatch);
+    
+    container = document.getElementById("simple-bar-container");
+    charts["simple-bar"] = new SimpleBar({
+        parentElement: "#simple-bar",
+        width: container.clientWidth,
+        height: container.clientHeight,
+        margin: {
+            gap: 0,
+            top: 0.10,
+            right: 0.04,
+            bottom: 0,
+            left: 0
+        }
+    }, filteredData, filteredData.length, dispatch);
 
     container = document.getElementById("scatter-plot-container");
     charts["scatter-plot-softness"] = new ScatterPlot({
@@ -336,6 +350,9 @@ Promise.all([d3.csv('data/comfort-objects.csv'), d3.json('data/options.json'), d
 
         charts["bar-chart"].ogData = filteredData;
         charts["bar-chart"].updateVis();
+
+        charts["simple-bar"].ogData = filteredData;
+        charts["simple-bar"].updateVis();
 
         charts["scatter-plot-softness"].ogData = filteredData;
         charts["scatter-plot-softness"].updateVis();
@@ -575,6 +592,9 @@ dispatch.on("specifyGroup", (g, home) => {
             charts["bar-chart"].updateVis();
         }
 
+        charts["simple-bar"].ogData = filteredData;
+        charts["simple-bar"].updateVis();
+
         charts["scatter-plot-softness"].emphasized = allData.filter(d => g.every(o => d[o.dimension] === o.option)).map(d => d["SNo"]);
         charts["scatter-plot-softness"].renderVis();
         
@@ -610,6 +630,9 @@ dispatch.on("specifyGroup", (g, home) => {
         charts["bar-chart"].emphasized = [];
         charts["bar-chart"].ogData = allData;
         charts["bar-chart"].updateVis();
+
+        charts["simple-bar"].ogData = allData;
+        charts["simple-bar"].updateVis();
              
         charts["scatter-plot-softness"].emphasized = [];
         charts["scatter-plot-softness"].renderVis();

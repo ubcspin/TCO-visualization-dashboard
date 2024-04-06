@@ -86,7 +86,7 @@ class RadarPlot extends Chart {
 
 		vis.toNumber = d => d in vis.likertMap ? vis.likertMap[d] : +d;
 
-		let yDomain = vis.options[vis.dimensions[0]].map(vis.toNumber).toSorted((a, b) => a - b);
+		let yDomain = vis.options[vis.dimensions[0]].map(vis.toNumber).filter(o => o).toSorted((a, b) => a - b);
 
 		// Todo: Prepare data and scales
 		vis.xScale

@@ -7,7 +7,7 @@ html, body {
 }
 
 #dashboard {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 1920px;
@@ -27,7 +27,7 @@ html, body {
 #header h1 {
     flex: 4;
     padding: 0;
-    margin: 4%;
+    margin: 1%;
 }
 
 .header-selector {
@@ -158,6 +158,16 @@ div.selector a {
 #bar-chart-dimension-selector {
     top: 0;
     left: 0;
+}
+
+/* Simple Bar */
+
+#simple-bar-container {
+    position: absolute;
+    top: 0;
+    left: 35%;
+    width: 65%;
+    height: 10%;
 }
 
 /* Scatter Plot - Softness */
