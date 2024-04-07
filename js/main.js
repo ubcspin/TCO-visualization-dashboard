@@ -598,13 +598,13 @@ dispatch.on("specifyGroup", (g, home) => {
         charts["simple-bar"].ogData = filteredData;
         charts["simple-bar"].updateVis();
 
-        charts["scatter-plot-softness"].emphasized = allData.filter(d => g.every(o => d[o.dimension] === o.option)).map(d => d["SNo"]);
+        charts["scatter-plot-softness"].emphasized = allData.filter(d => g.every(k => d[k.dimension].split(",").includes(k.option))).map(d => d["SNo"]);
         charts["scatter-plot-softness"].renderVis();
         
         charts["radar-plot"].ogData = filteredData;
         charts["radar-plot"].updateVis();
         
-        charts["scatter-plot-general"].emphasized = allData.filter(d => g.every(o => d[o.dimension] === o.option)).map(d => d["SNo"]);
+        charts["scatter-plot-general"].emphasized = allData.filter(d => g.every(k => d[k.dimension].split(",").includes(k.option))).map(d => d["SNo"]);
         charts["scatter-plot-general"].renderVis();
         
         if (home === "sankey-diagram") {
